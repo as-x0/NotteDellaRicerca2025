@@ -18,14 +18,18 @@ const PORT = process.env.PORT || 3000;
 // Servire file statici
 app.use(express.static(path.join(__dirname, "public")));
 
+// ======================
 // Lettura CSV
+// ======================
 const productsData = [];
 let csvLoaded = false;
+
 const csvPath = path.join(__dirname, "FAOSTAT_data_it.csv");
 
 fs.createReadStream(csvPath)
   .pipe(csv({ separator: "," }))
   .on("data", (row) => {
+    // Salva solo righe valide
     if (row["Item"] && row["Area"] && row["Year"] && row["Value"]) {
       productsData.push({
         Product: row["Item"],
@@ -43,7 +47,9 @@ fs.createReadStream(csvPath)
     console.error("Errore apertura CSV:", err);
   });
 
+// ======================
 // Endpoint API (opzionale)
+// ======================
 app.get("/api/products", (req, res) => {
   const products = [...new Set(productsData.map(p => p.Product))];
   res.json(products);
@@ -59,7 +65,9 @@ app.get("/api/years", (req, res) => {
   res.json(years);
 });
 
+// ======================
 // Gestione stanze
+// ======================
 const rooms = {};
 
 io.on("connection", (socket) => {
@@ -71,49 +79,49 @@ io.on("connection", (socket) => {
       socket.emit("errorMsg", "⚠️ Dati non ancora pronti. Attendi qualche secondo.");
       return;
     }
-    if (!settings || !settings.product || !settings.numCountries) {
-      socket.emit("errorMsg", "⚠️ Impostazioni mancanti.");
-      return;
-    }
 
     const roomId = Math.random().toString(36).substring(2, 7).toUpperCase();
-    rooms[roomId] = {
-      manager: socket.id,
-      players: [],
-      settings: null,
-      started: false
-    };
-    const products = [...new Set(productsData.map(p => p.Product))].filter(Boolean);
-    const availableCountries = [
-      ...new Set(productsData.filter(p => p.Product === settings.product && p.Year === 2023).map(p => p.Country))
-    ];
-    rooms[roomId].availableCountries = availableCountries;
+    rooms[roomId] = { manager: socket.id, players: [], settings: null, started: false };
     socket.join(roomId);
-  
-    // Invia al manager la conferma di stanza creata
+
+    const products = [...new Set(productsData.map(p => p.Product))].filter(Boolean);
+
     socket.emit("roomCreated", { roomId, products });
-    
-    // Invia ai giocatori (se presenti) eventuale lista Paesi
-      io.to(roomId).emit("settingsUpdated", settings);
-      io.to(roomId).emit("countriesList", availableCountries);
-    });
+  });
 
   // Join stanza
   socket.on("joinRoom", ({ roomId, name }) => {
     const room = rooms[roomId];
-    if (!room) return socket.emit("errorMsg", "Stanza non trovata");
-    
+    if (!room) {
+      socket.emit("errorMsg", "Stanza non trovata");
+      return;
+    }
     const player = { id: socket.id, name, countries: [], score: 0 };
     room.players.push(player);
     socket.join(roomId);
-    
     io.to(roomId).emit("playerList", room.players);
+  });
+
+  // Imposta settaggi
+  socket.on("setSettings", ({ roomId, product, numCountries }) => {
+    const room = rooms[roomId];
+    if (!room) return;
+    room.settings = { product, year: 2023, numCountries };
+
+    // Lista dei Paesi disponibili per il prodotto
+    const availableCountries = [
+      ...new Set(productsData.filter(p => p.Product === product && p.Year === 2023).map(p => p.Country))
+    ];
+    room.availableCountries = availableCountries;
+
+    io.to(roomId).emit("settingsUpdated", room.settings);
+    io.to(roomId).emit("countriesList", availableCountries);
   });
 
   // Avvio partita
   socket.on("startGame", (roomId) => {
     const room = rooms[roomId];
-    if (!room || !room.settings) return socket.emit("errorMsg", "⚠️ Impostazioni mancanti.");
+    if (!room || !room.settings) return;
     room.started = true;
     io.to(roomId).emit("gameStarted", room.settings);
   });
@@ -136,11 +144,24 @@ io.on("connection", (socket) => {
   socket.on("endGame", (roomId) => {
     const room = rooms[roomId];
     if (!room || !room.settings) return;
+  
     const { product, year } = room.settings;
   
+    // 🔹 Debug (facoltativo)
+    console.log("Prodotto selezionato dal manager:", product);
+    console.log("Prodotti disponibili nel CSV:", [...new Set(productsData.map(p => p.Product))]);
+  
     // Filtra i dati del CSV per prodotto + anno (case insensitive e trim)
-    const filtered = productsData.filter(p => p.Product.trim().toLowerCase() === product.trim().toLowerCase() && p.Year === 2023);
-    if (!filtered.length) return socket.emit("errorMsg", "Nessun dato trovato!");
+    const filtered = productsData.filter(
+      (row) =>
+        row.Product.trim().toLowerCase() === product.trim().toLowerCase() &&
+        row.Year === 2023 // anno fisso
+    );
+  
+    if (!filtered.length) {
+      socket.emit("errorMsg", "Nessun dato trovato per questo prodotto/anno!");
+      return;
+    }
   
     // Totale mondiale
     const totalWorld = filtered.reduce((acc, r) => acc + r.Value, 0);
