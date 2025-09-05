@@ -55,11 +55,19 @@ input, select { width: 90%; padding: 8px; margin: 5px 0; border-radius: 6px; bor
   <label>Prodotto:
     <select id="productSelect"></select>
   </label>
+  
   <div style="margin: 10px 0; text-align: center;">
     <span>Numero Paesi:</span>
-    <label style="margin-left:10px;"><input type="radio" name="numCountries" value="3" checked> 3</label>
-    <label style="margin-left:10px;"><input type="radio" name="numCountries" value="5"> 5</label>
+    <label style="margin: 0 15px; display: inline-flex; align-items: center;">
+      <input type="radio" name="numCountries" value="3" checked> 
+      <span style="margin-left:4px;">3</span>
+    </label>
+    <label style="margin: 0 15px; display: inline-flex; align-items: center;">
+      <input type="radio" name="numCountries" value="5"> 
+      <span style="margin-left:4px;">5</span>
+    </label>
   </div>
+
   <button id="createRoomBtn">Crea stanza</button>
 </div>
 
