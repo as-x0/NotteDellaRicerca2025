@@ -88,6 +88,7 @@ io.on("connection", (socket) => {
       players: [],
       settings: null,
       started: false,
+      availableCountries: [],
     };
     socket.join(roomId);
 
@@ -101,10 +102,18 @@ io.on("connection", (socket) => {
       socket.emit("errorMsg", "Stanza non trovata");
       return;
     }
+
     const player = { id: socket.id, name, countries: [], score: 0 };
     room.players.push(player);
     socket.join(roomId);
+
     io.to(roomId).emit("playerList", room.players);
+
+    // 🔹 se la stanza è già configurata, manda subito le info al nuovo player
+    if (room.settings) {
+      socket.emit("settingsUpdated", room.settings);
+      socket.emit("countriesList", room.availableCountries);
+    }
   });
 
   // Imposta settaggi
@@ -131,7 +140,9 @@ io.on("connection", (socket) => {
     const room = rooms[roomId];
     if (!room || !room.settings) return;
     room.started = true;
+
     io.to(roomId).emit("gameStarted", room.settings);
+    io.to(roomId).emit("countriesList", room.availableCountries); // 🔹 invia la lista Paesi a tutti i player
   });
 
   // Scelta Paesi da parte dei giocatori
