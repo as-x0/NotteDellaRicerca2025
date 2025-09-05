@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <title>Player FAOSTAT Game</title>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
+    body { font-family: Arial, sans-serif; margin: 20px; text-align: center; }
     h1, h3 { color: #2c3e50; }
-    button { margin: 5px 0; padding: 5px 10px; }
-    input { margin: 3px 0; padding: 5px; width: 200px; }
-    #countriesForm input { display: block; }
+    button { margin: 5px; padding: 8px 12px; }
+    input { margin: 5px 0; padding: 5px; width: 200px; }
+    #countriesForm input { display: block; margin: 5px auto; }
+    ul { list-style: none; padding: 0; }
   </style>
 </head>
 <body>
@@ -23,13 +23,13 @@
 </div>
 
 <div id="gameArea" style="display:none;">
-  <h3 id="chooseCountriesHeader">Scegli i Paesi</h3>
+  <h3 id="chooseText">Scegli i Paesi</h3>
   <form id="countriesForm"></form>
   <button id="submitCountriesBtn">Invia Scelte</button>
 </div>
 
 <div id="resultsArea" style="display:none;">
-  <h3>Risultati</h3>
+  <h3>Classifica</h3>
   <ul id="resultsList"></ul>
   <br>
   <button id="homeBtn">Torna alla Home</button>
@@ -37,24 +37,17 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const socket = io();
-
-  //DEBUG
-  console.log("Script player.html caricato");
-  console.log("Socket creato:", socket.id);
-  socket.on("connect", () => console.log("Connesso con id:", socket.id));
-  socket.on("disconnect", () => console.log("Disconnesso"));
+  const socket = io(); // ✅ socket inizializzato una sola volta
+  console.log("Socket creato:", socket);
 
   const playerNameInput = document.getElementById("playerName");
   const roomIdInput = document.getElementById("roomIdInput");
   const joinRoomBtn = document.getElementById("joinRoomBtn");
 
   const gameArea = document.getElementById("gameArea");
-  const gameTitle = document.getElementById("gameTitle");
   const countriesForm = document.getElementById("countriesForm");
   const submitCountriesBtn = document.getElementById("submitCountriesBtn");
-
-  const chooseCountriesHeader = document.getElementById("chooseCountriesHeader");
+  const chooseText = document.getElementById("chooseText");
 
   const resultsArea = document.getElementById("resultsArea");
   const resultsList = document.getElementById("resultsList");
@@ -62,8 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentRoomId = null;
   let numCountries = 0;
-  let availableCountries = [];
-  let selectedProduct = "";
 
   // Entra in stanza
   joinRoomBtn.addEventListener("click", () => {
@@ -71,43 +62,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const roomId = roomIdInput.value.trim();
     if (!name || !roomId) return alert("Inserisci nome e Room ID!");
     currentRoomId = roomId;
-    socket.emit("joinRoom", { roomId: currentRoomId, name });
+    socket.emit("joinRoom", { roomId, name });
     joinRoomBtn.disabled = true;
-    alert("Sei entrato nella stanza! Attendi che il manager avvii il gioco.");
+  });
+
+  socket.on("connect", () => {
+    console.log("Connesso con id:", socket.id);
   });
 
   // Riceve le impostazioni dal manager
   socket.on("settingsUpdated", (settings) => {
     numCountries = settings.numCountries;
-    selectedProduct = settings.product.toLowerCase();
+    chooseText.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
   });
 
   // Riceve lista Paesi disponibili
   socket.on("countriesList", (countries) => {
-    availableCountries = countries;
-    // Mostra la form solo se il gioco è iniziato
-    if (!numCountries) return;
-  });
-
-  // Gioco avviato
-  socket.on("gameStarted", (settings) => {
     gameArea.style.display = "block";
     countriesForm.innerHTML = "";
-    numCountries = settings.numCountries;
-    selectedProduct = settings.product.toLowerCase();
 
-    gameTitle.textContent = `Scegli i maggiori esportatori di ${selectedProduct} nel 2023`;
-
-    // Crea datalist per autocompletamento
-    let datalist = document.getElementById("countriesDatalist");
-    if (!datalist) {
-      datalist = document.createElement("datalist");
-      datalist.id = "countriesDatalist";
-      document.body.appendChild(datalist);
-    }
-    datalist.innerHTML = availableCountries.map(c => `<option value="${c}">`).join("");
-
-    // Crea campi input dinamici
     for (let i = 0; i < numCountries; i++) {
       const input = document.createElement("input");
       input.setAttribute("list", "countriesDatalist");
@@ -116,7 +89,14 @@ document.addEventListener("DOMContentLoaded", () => {
       countriesForm.appendChild(input);
     }
 
-    alert("Il gioco è iniziato! Scegli i tuoi paesi.");
+    // Datalist per autocompletamento
+    let datalist = document.getElementById("countriesDatalist");
+    if (!datalist) {
+      datalist = document.createElement("datalist");
+      datalist.id = "countriesDatalist";
+      document.body.appendChild(datalist);
+    }
+    datalist.innerHTML = countries.map(c => `<option value="${c}">`).join("");
   });
 
   // Invio Paesi scelti
@@ -135,12 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
     submitCountriesBtn.disabled = true;
   });
 
-  // Fine partita: mostra risultati
-  socket.on("gameEnded", ({ players }) => {
+  // Fine partita: mostra classifica
+  socket.on("gameEnded", ({ leaderboard }) => {
     gameArea.style.display = "none";
     resultsArea.style.display = "block";
 
-    resultsList.innerHTML = players
+    resultsList.innerHTML = leaderboard
       .map((p, i) => `<li>${i + 1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
       .join("");
   });
