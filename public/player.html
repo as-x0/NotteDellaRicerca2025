@@ -2,84 +2,94 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Player FAOSTAT Game</title>
+  <title>Player - FAOSTAT Game</title>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1, h3 { color: #2c3e50; }
-    button { margin: 5px 0; padding: 5px 10px; }
-    input { margin: 3px 0; padding: 5px; width: 200px; }
-    #countriesForm input { display: block; }
+    body { font-family: Arial, sans-serif; text-align:center; margin:30px; }
+    h1 { color:#2c3e50; margin-bottom:20px; }
+    button { padding:10px 20px; margin:10px; cursor:pointer; }
+    input { padding:8px; margin:5px; }
+    .hidden { display:none; }
   </style>
 </head>
 <body>
-<h1>Player</h1>
+  <h1>Player - Cambiamento climatico e produzione di cibo</h1>
 
-<div id="joinSection">
-  <label>Nome: <input type="text" id="playerName"></label><br>
-  <label>Room ID: <input type="text" id="roomIdInput"></label><br>
-  <button id="joinRoomBtn">Entra</button>
-</div>
+  <!-- 1. Entra -->
+  <div id="joinSection">
+    <input id="playerName" placeholder="Il tuo nome"><br>
+    <input id="roomIdInput" placeholder="Codice stanza"><br>
+    <button id="joinRoomBtn">Entra</button>
+  </div>
 
-<div id="gameArea" style="display:none;">
-  <h3 id="chooseCountriesHeader">Scegli i Paesi</h3>
-  <form id="countriesForm"></form>
-  <button id="submitCountriesBtn">Invia Scelte</button>
-</div>
+  <!-- 2. Attesa -->
+  <div id="waitSection" class="hidden">
+    <h3>⏳ In attesa che il manager avvii il gioco...</h3>
+  </div>
 
-<div id="resultsArea" style="display:none;">
-  <h3>Risultati</h3>
-  <ul id="resultsList"></ul>
-  <br>
-  <button id="homeBtn">Torna alla Home</button>
-</div>
+  <!-- 3. Scelte -->
+  <div id="selectSection" class="hidden">
+    <h3 id="chooseTitle"></h3>
+    <form id="countriesForm"></form>
+    <button id="submitCountriesBtn">Invia le tue scelte</button>
+  </div>
+
+  <!-- 4. Attesa risultati -->
+  <div id="waitResultsSection" class="hidden">
+    <h3>⏳ In attesa che tutti i giocatori abbiano inviato le scelte...</h3>
+  </div>
+
+  <!-- 5. Risultati -->
+  <div id="resultsSection" class="hidden">
+    <h3>Classifica</h3>
+    <ul id="resultsList"></ul>
+    <button id="homeBtn">Torna alla Home</button>
+  </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const socket = io();
 
+  const joinSection = document.getElementById("joinSection");
+  const waitSection = document.getElementById("waitSection");
+  const selectSection = document.getElementById("selectSection");
+  const waitResultsSection = document.getElementById("waitResultsSection");
+  const resultsSection = document.getElementById("resultsSection");
+
   const playerNameInput = document.getElementById("playerName");
   const roomIdInput = document.getElementById("roomIdInput");
   const joinRoomBtn = document.getElementById("joinRoomBtn");
-
-  const gameArea = document.getElementById("gameArea");
+  const chooseTitle = document.getElementById("chooseTitle");
   const countriesForm = document.getElementById("countriesForm");
   const submitCountriesBtn = document.getElementById("submitCountriesBtn");
-
-  const chooseCountriesHeader = document.getElementById("chooseCountriesHeader");
-
-  const resultsArea = document.getElementById("resultsArea");
   const resultsList = document.getElementById("resultsList");
   const homeBtn = document.getElementById("homeBtn");
 
   let currentRoomId = null;
   let numCountries = 0;
-  let availableCountries = [];
 
-  // Quando ricevi le impostazioni dal manager
-  socket.on("settingsUpdated", (settings) => {
-    numCountries = settings.numCountries;
-    chooseCountriesHeader.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
-  });
-
+  // 1. Entra
   joinRoomBtn.addEventListener("click", () => {
     const name = playerNameInput.value.trim();
     const roomId = roomIdInput.value.trim();
-    if (!name || !roomId) return alert("Inserisci nome e Room ID!");
+    if(!name||!roomId) return alert("Inserisci nome e Room ID!");
     currentRoomId = roomId;
     socket.emit("joinRoom", { roomId, name });
-    joinRoomBtn.disabled = true;
-    alert(`Sei entrato nella stanza ${roomId} come ${name}!  Attendi che la partita venga avviata...`)
+    joinSection.classList.add("hidden");
+    waitSection.classList.remove("hidden");
+    alert(`✅ Sei entrato nella stanza ${roomId}`);
   });
 
+  // 2. Riceve impostazioni
   socket.on("settingsUpdated", (settings) => {
     numCountries = settings.numCountries;
+    chooseTitle.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
   });
 
+  // 3. Inizio gioco
   socket.on("countriesList", (countries) => {
-    availableCountries = countries;
-    gameArea.style.display = "block";
+    waitSection.classList.add("hidden");
+    selectSection.classList.remove("hidden");
     countriesForm.innerHTML = "";
 
     let datalist = document.getElementById("countriesDatalist");
@@ -99,36 +109,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // 4. Invio scelte
   submitCountriesBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const selectedCountries = Array.from(countriesForm.querySelectorAll("input"))
-                                  .map(i => i.value.trim())
-                                  .filter(Boolean);
+      .map(i=>i.value.trim()).filter(Boolean);
     if (selectedCountries.length !== numCountries) {
       return alert(`Devi scegliere esattamente ${numCountries} Paesi!`);
     }
-    selectedCountries.forEach(c => {
+    selectedCountries.forEach(c=>{
       socket.emit("selectCountry", { roomId: currentRoomId, country: c });
     });
-    alert("Scelte inviate!");
-    submitCountriesBtn.disabled = true;
+    selectSection.classList.add("hidden");
+    waitResultsSection.classList.remove("hidden");
+    alert("✅ Scelte inviate!");
   });
 
-  // ✅ Fine partita
+  // 5. Risultati
   socket.on("gameEnded", ({ leaderboard }) => {
-    gameArea.style.display = "none";
-    resultsArea.style.display = "block";
+    waitResultsSection.classList.add("hidden");
+    resultsSection.classList.remove("hidden");
 
     resultsList.innerHTML = leaderboard
-      .map((p, i) => `<li>${i + 1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
+      .map((p,i)=>`<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
       .join("");
   });
 
-  socket.on("errorMsg", (msg) => alert(msg));
-
+  // Torna alla Home
   homeBtn.addEventListener("click", () => {
-    window.location.reload();
+    resultsSection.classList.add("hidden");
+    joinSection.classList.remove("hidden");
   });
+
+  socket.on("errorMsg", (msg)=>alert(msg));
 });
 </script>
 </body>
