@@ -99,7 +99,7 @@ fetch("/api/products")
 createRoomBtn.addEventListener("click",()=>{
   const product = productSelect.value;
   const numCountries = parseInt(document.querySelector('input[name="numCountries"]:checked').value);
-  settings = { product, year:2023, numCountries };
+  const settings = { product, year:2023, numCountries };
   socket.emit("createRoom", settings);
 });
 
