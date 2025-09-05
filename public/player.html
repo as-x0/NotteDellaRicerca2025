@@ -1,155 +1,110 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Player - FAOSTAT Game</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <style>
-    body { font-family: Arial, sans-serif; text-align:center; margin:30px; background:#f4f6f9; }
-    h1 { color:#2c3e50; margin-bottom:20px; }
-    button { padding:10px 20px; margin:10px; cursor:pointer; border:none; border-radius:6px; background:#3498db; color:white; font-weight:bold; }
-    button:hover { background:#2980b9; }
-    input { padding:8px; margin:5px; border:1px solid #ccc; border-radius:6px; }
-    .hidden { display:none; }
-  </style>
+<meta charset="UTF-8">
+<title>Player - FAOSTAT Game</title>
+<script src="/socket.io/socket.io.js"></script>
+<style>
+body{font-family:Arial,sans-serif;text-align:center;margin:30px;}
+h1{color:#2c3e50;margin-bottom:20px;}
+button,input{padding:10px;margin:10px;}
+.hidden{display:none;}
+</style>
 </head>
 <body>
-  <h1>👩‍🌾 Player - Cambiamento climatico e produzione di cibo</h1>
+<h1>Player - Cambiamento climatico e produzione di cibo</h1>
 
-  <!-- 1. Entra -->
-  <div id="joinSection">
-    <input id="playerName" placeholder="Il tuo nome"><br>
-    <input id="roomIdInput" placeholder="Codice stanza"><br>
-    <button id="joinRoomBtn">Entra</button>
-  </div>
+<div id="joinSection">
+  <input id="playerName" placeholder="Il tuo nome"><br>
+  <input id="roomIdInput" placeholder="Codice stanza"><br>
+  <button id="joinRoomBtn">Entra</button>
+</div>
 
-  <!-- 2. Attesa -->
-  <div id="waitSection" class="hidden">
-    <h3>⏳ In attesa che il manager avvii il gioco...</h3>
-  </div>
+<div id="selectSection" class="hidden">
+  <h3 id="chooseTitle"></h3>
+  <form id="countriesForm"></form>
+  <button id="submitCountriesBtn">Invia le tue scelte</button>
+</div>
 
-  <!-- 3. Scelte -->
-  <div id="selectSection" class="hidden">
-    <h3 id="chooseTitle"></h3>
-    <form id="countriesForm"></form>
-    <button id="submitCountriesBtn">Invia le tue scelte</button>
-  </div>
-
-  <!-- 4. Attesa risultati -->
-  <div id="waitResultsSection" class="hidden">
-    <h3>⏳ In attesa che tutti i giocatori abbiano inviato le scelte...</h3>
-  </div>
-
-  <!-- 5. Risultati -->
-  <div id="resultsSection" class="hidden">
-    <h3>🏆 Classifica</h3>
-    <ul id="resultsList"></ul>
-    <button id="homeBtn">Torna alla Home</button>
-  </div>
+<div id="resultsSection" class="hidden">
+  <h3>Classifica</h3>
+  <ul id="resultsList"></ul>
+  <button id="homeBtn">Torna alla Home</button>
+</div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",()=>{
   const socket = io();
 
   const joinSection = document.getElementById("joinSection");
-  const waitSection = document.getElementById("waitSection");
   const selectSection = document.getElementById("selectSection");
-  const waitResultsSection = document.getElementById("waitResultsSection");
+  const countriesForm = document.getElementById("countriesForm");
+  const chooseTitle = document.getElementById("chooseTitle");
+  const submitCountriesBtn = document.getElementById("submitCountriesBtn");
   const resultsSection = document.getElementById("resultsSection");
+  const resultsList = document.getElementById("resultsList");
 
   const playerNameInput = document.getElementById("playerName");
   const roomIdInput = document.getElementById("roomIdInput");
   const joinRoomBtn = document.getElementById("joinRoomBtn");
-  const chooseTitle = document.getElementById("chooseTitle");
-  const countriesForm = document.getElementById("countriesForm");
-  const submitCountriesBtn = document.getElementById("submitCountriesBtn");
-  const resultsList = document.getElementById("resultsList");
   const homeBtn = document.getElementById("homeBtn");
 
   let currentRoomId = null;
   let numCountries = 0;
+  let availableCountries = [];
 
-  // 1. Entra
-  joinRoomBtn.addEventListener("click", () => {
+  joinRoomBtn.addEventListener("click",()=>{
     const name = playerNameInput.value.trim();
     const roomId = roomIdInput.value.trim();
-    if(!name || !roomId) return alert("Inserisci nome e codice stanza!");
+    if(!name||!roomId) return alert("Inserisci nome e Room ID!");
     currentRoomId = roomId;
-    socket.emit("joinRoom", { roomId, name });
+    socket.emit("joinRoom",{roomId,name});
     joinSection.classList.add("hidden");
-    waitSection.classList.remove("hidden");
-    alert(`✅ Sei entrato nella stanza ${roomId}`);
-  });
-
-  // 2. Riceve impostazioni dal manager
-  socket.on("settingsUpdated", (settings) => {
-    numCountries = settings.numCountries;
-    chooseTitle.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
-  });
-
-  // 3. Riceve lista paesi disponibili e mostra input
-  socket.on("countriesList", (countries) => {
-    waitSection.classList.add("hidden");
     selectSection.classList.remove("hidden");
+  });
+
+  // Riceve settings
+  socket.on("settingsUpdated",(settings)=>{
+    numCountries = settings.numCountries;
+    chooseTitle.textContent = `Scegli i maggiori esportatori di ${settings.product} (${settings.year})`;
+  });
+
+  // Riceve lista paesi
+  socket.on("countriesList",(countries)=>{
+    availableCountries = countries;
     countriesForm.innerHTML = "";
-
-    let datalist = document.getElementById("countriesDatalist");
-    if (!datalist) {
-      datalist = document.createElement("datalist");
-      datalist.id = "countriesDatalist";
-      document.body.appendChild(datalist);
-    }
-    datalist.innerHTML = countries.map(c => `<option value="${c}">`).join("");
-
-    for (let i = 0; i < numCountries; i++) {
-      const input = document.createElement("input");
-      input.setAttribute("list", "countriesDatalist");
-      input.placeholder = `Paese ${i+1}`;
-      input.required = true;
+    for(let i=0;i<numCountries;i++){
+      const input=document.createElement("input");
+      input.setAttribute("list","countriesDatalist");
+      input.placeholder=`Paese ${i+1}`;
+      input.required=true;
       countriesForm.appendChild(input);
     }
+    let datalist=document.getElementById("countriesDatalist");
+    if(!datalist){
+      datalist=document.createElement("datalist");
+      datalist.id="countriesDatalist";
+      document.body.appendChild(datalist);
+    }
+    datalist.innerHTML=countries.map(c=>`<option value="${c}">`).join("");
   });
 
-  // 4. Invio scelte al server
-  submitCountriesBtn.addEventListener("click", (e) => {
+  submitCountriesBtn.addEventListener("click",(e)=>{
     e.preventDefault();
     const selectedCountries = Array.from(countriesForm.querySelectorAll("input"))
-      .map(i => i.value.trim())
-      .filter(Boolean);
-
-    if (selectedCountries.length !== numCountries) {
-      return alert(`Devi scegliere esattamente ${numCountries} Paesi!`);
-    }
-
-    selectedCountries.forEach(c => {
-      socket.emit("selectCountry", { roomId: currentRoomId, country: c });
-    });
-
-    selectSection.classList.add("hidden");
-    waitResultsSection.classList.remove("hidden");
+      .map(i=>i.value.trim()).filter(Boolean);
+    if(selectedCountries.length!==numCountries) return alert(`Devi scegliere esattamente ${numCountries} Paesi!`);
+    selectedCountries.forEach(c=>socket.emit("selectCountry",{roomId:currentRoomId,country:c}));
     alert("✅ Scelte inviate!");
   });
 
-  // 5. Mostra risultati finali
-  socket.on("gameEnded", ({ leaderboard }) => {
-    waitResultsSection.classList.add("hidden");
+  socket.on("gameEnded",({leaderboard})=>{
+    selectSection.classList.add("hidden");
     resultsSection.classList.remove("hidden");
-
-    resultsList.innerHTML = leaderboard
-      .map((p,i) => `<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
-      .join("");
+    resultsList.innerHTML = leaderboard.map((p,i)=>`<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join('');
   });
 
-  // Ritorna alla home
-  homeBtn.addEventListener("click", () => {
-    resultsSection.classList.add("hidden");
-    joinSection.classList.remove("hidden");
-    playerNameInput.value = "";
-    roomIdInput.value = "";
-  });
-
-  // Gestione errori
-  socket.on("errorMsg", (msg) => alert(msg));
+  homeBtn.addEventListener("click",()=>location.reload());
 });
 </script>
 </body>
