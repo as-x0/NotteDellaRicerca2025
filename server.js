@@ -118,10 +118,6 @@ io.on("connection", (socket) => {
     const player = { id: socket.id, name, countries: [], score: 0 };
     room.players.push(player);
     socket.join(roomId);
-    if (room.settings) {
-      socket.emit("settingsUpdated", room.settings);
-      socket.emit("countriesList", room.availableCountries);
-    }
     socket.emit("settingsUpdated", room.settings);
     socket.emit("countriesList", room.availableCountries);
     io.to(roomId).emit("playerList", room.players);
