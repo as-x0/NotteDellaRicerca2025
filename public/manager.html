@@ -2,145 +2,129 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Manager FAOSTAT Game</title>
+  <title>Manager - FAOSTAT Game</title>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1, h3 { color: #2c3e50; }
-    button { margin: 5px 0; padding: 5px 10px; }
-    select, input { margin: 5px 0; padding: 5px; }
-    #playerList li { margin-bottom: 3px; }
+    body { font-family: Arial, sans-serif; text-align:center; margin:30px; }
+    h1 { color:#2c3e50; margin-bottom:20px; }
+    button { padding:10px 20px; margin:10px; cursor:pointer; }
+    .hidden { display:none; }
+    #resultsChart { max-width:600px; margin:20px auto; }
   </style>
 </head>
 <body>
-<h1>Manager</h1>
+  <h1>Manager - Cambiamento climatico e produzione di cibo</h1>
 
-<!-- Sezione creazione stanza -->
-<div id="createSection">
-  <button id="createRoomBtn">Crea stanza</button>
-</div>
+  <!-- 1. Creazione stanza -->
+  <div id="createSection">
+    <h3>Imposta il gioco</h3>
+    <label>Prodotto: <select id="productSelect"></select></label><br>
+    <label>Anno: <input type="number" id="yearInput" value="2023"></label><br>
+    <label>Numero Paesi: 
+      <input type="radio" name="numCountries" value="3" checked>3
+      <input type="radio" name="numCountries" value="5">5
+    </label><br>
+    <button id="createRoomBtn">Crea stanza</button>
+  </div>
 
-<!-- Sezione stanza -->
-<div id="roomSection" style="display:none;">
-  <p>ID Stanza: <span id="roomIdSpan"></span></p>
+  <!-- 2. Stanza attiva -->
+  <div id="roomSection" class="hidden">
+    <h3>ID Stanza: <span id="roomIdSpan"></span></h3>
+    <p>Giocatori connessi:</p>
+    <ul id="playerList"></ul>
+    <button id="startGameBtn">Avvia Gioco</button>
+  </div>
 
-  <h3>Impostazioni gioco</h3>
-  <label>Prodotto:
-    <select id="productSelect"></select>
-  </label>
-  <p>Anno: 2023</p>
-  <label>Numero Paesi:</label>
-  <input type="radio" name="numCountries" value="3" checked> 3
-  <input type="radio" name="numCountries" value="5"> 5
-  <br><br>
-  <button id="saveSettingsBtn">Salva impostazioni</button>
-  <button id="startGameBtn">Avvia Gioco</button>
-  <button id="endGameBtn">Termina Gioco</button>
-
-  <h3>Giocatori</h3>
-  <ul id="playerList"></ul>
-
-  <h3>Risultati</h3>
-  <ul id="resultsList"></ul>
-  <canvas id="resultsChart"></canvas>
-  <br>
-  <button onclick="window.location.reload()">Torna alla Home</button>
-</div>
+  <!-- 3. Risultati -->
+  <div id="resultsSection" class="hidden">
+    <h3>Classifica</h3>
+    <ul id="resultsList"></ul>
+    <canvas id="resultsChart"></canvas><br>
+    <button id="homeBtn">Torna alla Home</button>
+  </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const socket = io();
 
-  const createRoomBtn = document.getElementById("createRoomBtn");
+  const createSection = document.getElementById("createSection");
   const roomSection = document.getElementById("roomSection");
-  const roomIdSpan = document.getElementById("roomIdSpan");
-  const productSelect = document.getElementById("productSelect");
-  const saveSettingsBtn = document.getElementById("saveSettingsBtn");
+  const resultsSection = document.getElementById("resultsSection");
+
+  const createRoomBtn = document.getElementById("createRoomBtn");
   const startGameBtn = document.getElementById("startGameBtn");
-  const endGameBtn = document.getElementById("endGameBtn");
+  const homeBtn = document.getElementById("homeBtn");
+
+  const productSelect = document.getElementById("productSelect");
+  const yearInput = document.getElementById("yearInput");
   const playerList = document.getElementById("playerList");
+  const roomIdSpan = document.getElementById("roomIdSpan");
   const resultsList = document.getElementById("resultsList");
 
   let currentRoomId = null;
-  let settings = {};
 
+  // 1. Crea stanza
   createRoomBtn.addEventListener("click", () => {
-    socket.emit("createRoom");
-  });
-
-  saveSettingsBtn.addEventListener("click", () => {
     const product = productSelect.value;
+    const year = parseInt(yearInput.value);
     const numCountries = parseInt(document.querySelector('input[name="numCountries"]:checked').value);
-    settings = { product, year: 2023, numCountries };
-    socket.emit("setSettings", { roomId: currentRoomId, ...settings });
-    alert("Impostazioni salvate!");
-  });
-
-  startGameBtn.addEventListener("click", () => {
-    socket.emit("startGame", currentRoomId);
-    alert("Il gioco è stato avviato!");
-  });
-
-  endGameBtn.addEventListener("click", () => {
-    socket.emit("endGame", currentRoomId);
-    alert("Il gioco è terminato!");
+    socket.emit("createRoom", { product, year, numCountries });
   });
 
   socket.on("roomCreated", ({ roomId, products }) => {
-    console.log("RoomCreated ricevuto:", roomId, products); // DEBUG
     currentRoomId = roomId;
     roomIdSpan.textContent = roomId;
-    roomSection.style.display = "block";
+    createSection.classList.add("hidden");
+    roomSection.classList.remove("hidden");
 
-    if (products.length === 0) {
-      alert("❌ Nessun prodotto disponibile nel CSV!");
-      return;
-    }
-
+    // Popola prodotti
     productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
+    alert(`✅ Stanza creata! ID: ${roomId}`);
   });
 
+  // 2. Giocatori connessi
   socket.on("playerList", (players) => {
-    playerList.innerHTML = players.map(p => `<li>${p.name} - ${p.countries.join(", ") || "Nessuna scelta"}</li>`).join("");
+    playerList.innerHTML = players.map(p => `<li>${p.name} (${p.countries.length} scelte)</li>`).join("");
   });
 
-  socket.on("gameEnded", ({ leaderboard, topCountries, totalWorld }) => {
+  // 3. Avvio gioco
+  startGameBtn.addEventListener("click", () => {
+    socket.emit("startGame", currentRoomId);
+    alert("🎮 Gioco avviato!");
+  });
+
+  // 4. Fine gioco con risultati
+  socket.on("gameEnded", ({ leaderboard, topCountries, totalWorld, settings }) => {
+    roomSection.classList.add("hidden");
+    resultsSection.classList.remove("hidden");
+
     resultsList.innerHTML = leaderboard
-      .map(
-        (p, i) =>
-          `<li>${i + 1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`
-      )
+      .map((p,i)=>`<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
       .join("");
-  
+
     const ctx = document.getElementById("resultsChart").getContext("2d");
-    
     new Chart(ctx, {
       type: "bar",
       data: {
-        labels: topCountries.map((c) => c.Country),
+        labels: topCountries.map(c=>c.Country),
         datasets: [{
-          label: `Esportazioni ${settings.product} 2023`,
-          data: topCountries.map((c) => c.Value),
-          backgroundColor: 'rgba(54, 162, 235, 0.6)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
+          label: `${settings.product} ${settings.year}`,
+          data: topCountries.map(c=>c.Value),
+          backgroundColor: 'rgba(54,162,235,0.6)'
         }]
       },
-      options: {
-        responsive: true,
-        plugins: {
-          title: { display: true, text: `Totale mondiale: ${totalWorld.toLocaleString()} t` },
-        },
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
+      options: { responsive:true, plugins:{ title:{ display:true, text:`Totale mondiale: ${totalWorld.toLocaleString()} t`} } }
     });
   });
 
-  // Eventi globali fuori dai singoli callback
-  socket.on("errorMsg", (msg) => alert(msg));
+  // 5. Torna a Home
+  homeBtn.addEventListener("click", () => {
+    resultsSection.classList.add("hidden");
+    createSection.classList.remove("hidden");
+  });
+
+  socket.on("errorMsg", (msg)=>alert(msg));
 });
 </script>
 </body>
