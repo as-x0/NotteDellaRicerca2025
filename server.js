@@ -109,10 +109,9 @@ io.on("connection", (socket) => {
 
     io.to(roomId).emit("playerList", room.players);
 
-    // 🔹 se la stanza è già configurata, manda subito le info al nuovo player
+    // 🔹 invia solo le impostazioni, non la lista Paesi
     if (room.settings) {
       socket.emit("settingsUpdated", room.settings);
-      socket.emit("countriesList", room.availableCountries);
     }
   });
 
@@ -132,7 +131,6 @@ io.on("connection", (socket) => {
     room.availableCountries = availableCountries;
 
     io.to(roomId).emit("settingsUpdated", room.settings);
-    io.to(roomId).emit("countriesList", availableCountries);
   });
 
   // Avvio partita
@@ -142,7 +140,7 @@ io.on("connection", (socket) => {
     room.started = true;
 
     io.to(roomId).emit("gameStarted", room.settings);
-    io.to(roomId).emit("countriesList", room.availableCountries); // 🔹 invia la lista Paesi a tutti i player
+    io.to(roomId).emit("countriesList", room.availableCountries); // 🔹 invia la lista Paesi solo qui
   });
 
   // Scelta Paesi da parte dei giocatori
