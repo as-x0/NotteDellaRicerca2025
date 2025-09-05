@@ -98,6 +98,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const socket = io();
+  socket.emit("getProducts");
 
   const settingsContainer = document.getElementById("settingsContainer");
   const lobbyContainer = document.getElementById("lobbyContainer");
@@ -125,9 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let allPlayers = [];
 
   // Prendi lista prodotti dal server
-  socket.on("connect", () => {
-    socket.emit("getProducts");
-  });
   socket.on("productsList", (products) => {
     productSelect.innerHTML = products.map(p=>`<option value="${p}">${p}</option>`).join("");
   });
