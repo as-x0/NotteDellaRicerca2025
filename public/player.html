@@ -1,179 +1,119 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Player FAOSTAT Game</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-      color: #2c3e50;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      background: #ffffffcc;
-      padding: 30px 50px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      width: 400px;
-    }
-    h1 { color: #1a237e; margin-bottom: 20px; }
-    h3 { color: #2c3e50; margin: 15px 0; }
-    input, button {
-      margin: 8px 0;
-      padding: 8px;
-      width: 90%;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    button {
-      cursor: pointer;
-      background: #1976d2;
-      color: #fff;
-      border: none;
-      transition: all 0.2s ease-in-out;
-    }
-    button:hover { background: #1565c0; transform: translateY(-2px); }
-    #countriesForm input { width: 100%; margin-bottom: 5px; }
-    #resultsList li { margin-bottom: 5px; }
-    footer.copyright {
-      margin-top: 15px;
-      font-size: 12px;
-      color: #607d8b;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Player FAOSTAT Game</title>
+<script src="/socket.io/socket.io.js"></script>
+<style>
+  body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #e0f7fa, #f1f8e9); color: #2c3e50; margin: 0; display:flex; justify-content:center; align-items:center; height:100vh;}
+  .container { background:#ffffffcc; padding:30px 50px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); width:400px; text-align:center;}
+  h1 { color:#1a237e; margin-bottom:20px; }
+  input, button { width: 90%; padding: 8px; margin: 8px 0; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+  button { cursor:pointer; background:#1976d2; color:#fff; border:none; transition:all 0.2s; }
+  button:hover { background:#1565c0; transform:translateY(-2px); }
+  #countriesForm input { width:100%; margin-bottom:5px; }
+</style>
 </head>
 <body>
 <div class="container">
-  <h1>Cambiamento climatico e produzione di cibo</h1>
+<h1>Cambiamento climatico e produzione di cibo</h1>
 
-  <div id="joinSection">
-    <input type="text" id="playerName" placeholder="Inserisci il tuo nome">
-    <input type="text" id="roomIdInput" placeholder="Room ID">
-    <button id="joinRoomBtn">Entra nella Stanza</button>
-  </div>
+<div id="joinContainer">
+  <input type="text" id="playerName" placeholder="Nome">
+  <input type="text" id="roomIdInput" placeholder="Room ID">
+  <button id="joinBtn">Entra nella stanza</button>
+</div>
 
-  <div id="gameArea" style="display:none;">
-    <h3 id="chooseCountriesHeader">In attesa dell'avvio del gioco...</h3>
-    <form id="countriesForm"></form>
-    <button id="submitCountriesBtn" disabled>Invia Scelte</button>
-  </div>
+<div id="lobbyContainer" style="display:none;">
+  <p id="lobbyMsg"></p>
+</div>
 
-  <div id="resultsArea" style="display:none;">
-    <h3>Risultati</h3>
-    <ul id="resultsList"></ul>
-    <button id="homeBtn">Torna alla Home</button>
-  </div>
+<div id="gameContainer" style="display:none;">
+  <h3 id="chooseHeader"></h3>
+  <form id="countriesForm"></form>
+  <button id="submitBtn">Invia Scelte</button>
+</div>
 
-  <footer class="copyright">&copy; A.S.</footer>
+<div id="submittedContainer" style="display:none;">
+  <p>Scelte inviate! Attendi la fine del gioco per vedere i risultati...</p>
+</div>
+
+<div id="resultsContainer" style="display:none;">
+  <h3>Classifica</h3>
+  <ul id="resultsList"></ul>
+  <button onclick="window.location.reload()">Torna alla Home</button>
+</div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", ()=>{
   const socket = io();
+
+  const joinContainer = document.getElementById("joinContainer");
+  const lobbyContainer = document.getElementById("lobbyContainer");
+  const gameContainer = document.getElementById("gameContainer");
+  const submittedContainer = document.getElementById("submittedContainer");
+  const resultsContainer = document.getElementById("resultsContainer");
 
   const playerNameInput = document.getElementById("playerName");
   const roomIdInput = document.getElementById("roomIdInput");
-  const joinRoomBtn = document.getElementById("joinRoomBtn");
-
-  const gameArea = document.getElementById("gameArea");
-  const chooseCountriesHeader = document.getElementById("chooseCountriesHeader");
+  const joinBtn = document.getElementById("joinBtn");
+  const lobbyMsg = document.getElementById("lobbyMsg");
+  const chooseHeader = document.getElementById("chooseHeader");
   const countriesForm = document.getElementById("countriesForm");
-  const submitCountriesBtn = document.getElementById("submitCountriesBtn");
-
-  const resultsArea = document.getElementById("resultsArea");
+  const submitBtn = document.getElementById("submitBtn");
   const resultsList = document.getElementById("resultsList");
-  const homeBtn = document.getElementById("homeBtn");
 
-  let currentRoomId = null;
-  let numCountries = 0;
-  let availableCountries = [];
+  let currentRoomId, playerName, numCountries=0, availableCountries=[];
 
-  // Entrata nella stanza
-  joinRoomBtn.addEventListener("click", () => {
-    const name = playerNameInput.value.trim();
-    const roomId = roomIdInput.value.trim();
-    if(!name || !roomId) return alert("Inserisci nome e Room ID!");
-    currentRoomId = roomId;
-    socket.emit("joinRoom", { roomId, name });
-    joinRoomBtn.disabled = true;
-    alert(`Sei entrato nella stanza ${roomId} come ${name}. Attendi l'avvio del gioco.`);
+  joinBtn.addEventListener("click", ()=>{
+    playerName = playerNameInput.value.trim();
+    currentRoomId = roomIdInput.value.trim();
+    if(!playerName||!currentRoomId) return alert("Inserisci nome e Room ID!");
+    socket.emit("joinRoom",{roomId:currentRoomId,name:playerName});
+    joinContainer.style.display="none";
+    lobbyContainer.style.display="block";
+    lobbyMsg.textContent=`Sei entrato nella stanza ${currentRoomId} come ${playerName}. Attendi l'avvio del gioco.`;
   });
 
-  // Ricezione impostazioni (prima del gioco)
-  socket.on("settingsUpdated", (settings) => {
+  socket.on("settingsUpdated",(settings)=>{
     numCountries = settings.numCountries;
-    chooseCountriesHeader.textContent = `In attesa dell'avvio del gioco...`;
+    availableCountries = settings.availableCountries || [];
   });
 
-  // Lista dei Paesi disponibili
-  socket.on("countriesList", (countries) => {
-    availableCountries = countries;
-  });
-
-  // Avvio del gioco dal manager
-  socket.on("gameStarted", (settings) => {
-    numCountries = settings.numCountries;
-    chooseCountriesHeader.textContent = `Scegli i maggiori esportatori di ${settings.product} nel ${settings.year}`;
-    
-    gameArea.style.display = "block";
-    submitCountriesBtn.disabled = false;
-
-    countriesForm.innerHTML = "";
-    let datalist = document.getElementById("countriesDatalist");
-    if(!datalist){
-      datalist = document.createElement("datalist");
-      datalist.id = "countriesDatalist";
-      document.body.appendChild(datalist);
-    }
-    datalist.innerHTML = availableCountries.map(c => `<option value="${c}">`).join("");
-
-    for(let i=0; i<numCountries; i++){
-      const input = document.createElement("input");
-      input.setAttribute("list", "countriesDatalist");
-      input.placeholder = `Paese ${i+1}`;
-      input.required = true;
+  socket.on("gameStarted",(settings)=>{
+    lobbyContainer.style.display="none";
+    gameContainer.style.display="block";
+    chooseHeader.textContent=`Scegli i maggiori esportatori di ${settings.product} nel ${settings.year}`;
+    countriesForm.innerHTML="";
+    let datalist=document.getElementById("countriesDatalist");
+    if(!datalist){datalist=document.createElement("datalist");datalist.id="countriesDatalist";document.body.appendChild(datalist);}
+    datalist.innerHTML=availableCountries.map(c=>`<option value="${c}">`).join("");
+    for(let i=0;i<numCountries;i++){
+      const input=document.createElement("input");
+      input.setAttribute("list","countriesDatalist");
+      input.placeholder=`Paese ${i+1}`;
+      input.required=true;
       countriesForm.appendChild(input);
     }
   });
 
-  // Invio scelte
-  submitCountriesBtn.addEventListener("click", (e) => {
+  submitBtn.addEventListener("click",(e)=>{
     e.preventDefault();
-    const selectedCountries = Array.from(countriesForm.querySelectorAll("input"))
-                                  .map(i => i.value.trim())
-                                  .filter(Boolean);
-    if(selectedCountries.length !== numCountries){
-      return alert(`Devi scegliere esattamente ${numCountries} Paesi!`);
-    }
-    selectedCountries.forEach(c => {
-      socket.emit("selectCountry", { roomId: currentRoomId, country: c });
-    });
-    alert("Scelte inviate!");
-    submitCountriesBtn.disabled = true;
+    const selected=Array.from(countriesForm.querySelectorAll("input")).map(i=>i.value.trim()).filter(Boolean);
+    if(selected.length!==numCountries) return alert(`Devi scegliere esattamente ${numCountries} Paesi!`);
+    selected.forEach(c=>socket.emit("selectCountry",{roomId:currentRoomId,country:c}));
+    gameContainer.style.display="none";
+    submittedContainer.style.display="block";
   });
 
-  // Fine partita
-  socket.on("gameEnded", ({ leaderboard }) => {
-    gameArea.style.display = "none";
-    resultsArea.style.display = "block";
-
-    resultsList.innerHTML = leaderboard
-      .map((p,i) => `<li>${i+1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
-      .join("");
+  socket.on("gameEnded",({leaderboard})=>{
+    submittedContainer.style.display="none";
+    resultsContainer.style.display="block";
+    resultsList.innerHTML=leaderboard.map((p,i)=>`<li>${i+1}. ${p.name}: ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join("");
   });
 
-  socket.on("errorMsg", (msg) => alert(msg));
-
-  homeBtn.addEventListener("click", () => window.location.reload());
+  socket.on("errorMsg",(msg)=>alert(msg));
 });
 </script>
 </body>
