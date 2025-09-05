@@ -1,0 +1,1086 @@
+Domain Code;Domain;Area Code (M49);Area;Element Code;Element;Item Code (CPC);Item;Year Code;Year;Unit;Value;Flag;Flag Description;Note
+TCL;Crops and livestock products;004;Afghanistan;5910;Export quantity;01610;Caffè;2023;2023;t;0,03;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;004;Afghanistan;5910;Export quantity;0112;Mais;2023;2023;t;106;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;004;Afghanistan;5910;Export quantity;F0030;Riso;2023;2023;t;312,29;E;Estimated value;
+TCL;Crops and livestock products;004;Afghanistan;5910;Export quantity;01234;Pomodori;2023;2023;t;327344,98;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;004;Afghanistan;5910;Export quantity;0111;Grano;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;008;Albania;5910;Export quantity;01610;Caffè;2023;2023;t;7,88;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;008;Albania;5910;Export quantity;0112;Mais;2023;2023;t;35;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;008;Albania;5910;Export quantity;F0030;Riso;2023;2023;t;14,59;E;Estimated value;
+TCL;Crops and livestock products;008;Albania;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;008;Albania;5910;Export quantity;01234;Pomodori;2023;2023;t;44350,16;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;008;Albania;5910;Export quantity;0111;Grano;2023;2023;t;219,82;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;012;Algeria;5910;Export quantity;01640;Cacao;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;012;Algeria;5910;Export quantity;01610;Caffè;2023;2023;t;2,92;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;012;Algeria;5910;Export quantity;0112;Mais;2023;2023;t;516,27;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;012;Algeria;5910;Export quantity;F0030;Riso;2023;2023;t;28,14;E;Estimated value;
+TCL;Crops and livestock products;012;Algeria;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;10,11;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;012;Algeria;5910;Export quantity;01234;Pomodori;2023;2023;t;5,04;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;012;Algeria;5910;Export quantity;0111;Grano;2023;2023;t;24,77;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;024;Angola;5910;Export quantity;01312;Banane;2023;2023;t;12377,26;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;024;Angola;5910;Export quantity;01610;Caffè;2023;2023;t;1024,83;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;024;Angola;5910;Export quantity;0112;Mais;2023;2023;t;81,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;024;Angola;5910;Export quantity;F0030;Riso;2023;2023;t;6,35;E;Estimated value;
+TCL;Crops and livestock products;024;Angola;5910;Export quantity;0111;Grano;2023;2023;t;0,1;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;028;Antigua e Barbuda;5910;Export quantity;01312;Banane;2023;2023;t;0,01;A;Official figure;
+TCL;Crops and livestock products;032;Argentina;5910;Export quantity;0112;Mais;2023;2023;t;23629982;A;Official figure;
+TCL;Crops and livestock products;032;Argentina;5910;Export quantity;F0030;Riso;2023;2023;t;286962,41;E;Estimated value;
+TCL;Crops and livestock products;032;Argentina;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1853775,81;A;Official figure;
+TCL;Crops and livestock products;032;Argentina;5910;Export quantity;01234;Pomodori;2023;2023;t;10954,1;A;Official figure;
+TCL;Crops and livestock products;032;Argentina;5910;Export quantity;0111;Grano;2023;2023;t;2844595,54;A;Official figure;
+TCL;Crops and livestock products;051;Armenia;5910;Export quantity;01312;Banane;2023;2023;t;0,83;A;Official figure;
+TCL;Crops and livestock products;051;Armenia;5910;Export quantity;01640;Cacao;2023;2023;t;47,08;A;Official figure;
+TCL;Crops and livestock products;051;Armenia;5910;Export quantity;01610;Caffè;2023;2023;t;1658,4;A;Official figure;
+TCL;Crops and livestock products;051;Armenia;5910;Export quantity;0112;Mais;2023;2023;t;0,03;A;Official figure;
+TCL;Crops and livestock products;051;Armenia;5910;Export quantity;F0030;Riso;2023;2023;t;6,24;E;Estimated value;
+TCL;Crops and livestock products;051;Armenia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,14;A;Official figure;
+TCL;Crops and livestock products;051;Armenia;5910;Export quantity;01234;Pomodori;2023;2023;t;19385,26;A;Official figure;
+TCL;Crops and livestock products;051;Armenia;5910;Export quantity;0111;Grano;2023;2023;t;31,79;A;Official figure;
+TCL;Crops and livestock products;036;Australia;5910;Export quantity;01312;Banane;2023;2023;t;19,85;A;Official figure;
+TCL;Crops and livestock products;036;Australia;5910;Export quantity;01640;Cacao;2023;2023;t;5,86;A;Official figure;
+TCL;Crops and livestock products;036;Australia;5910;Export quantity;01610;Caffè;2023;2023;t;792,23;A;Official figure;
+TCL;Crops and livestock products;036;Australia;5910;Export quantity;0112;Mais;2023;2023;t;77748,91;A;Official figure;
+TCL;Crops and livestock products;036;Australia;5910;Export quantity;F0030;Riso;2023;2023;t;250709,57;E;Estimated value;
+TCL;Crops and livestock products;036;Australia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;5293,06;A;Official figure;
+TCL;Crops and livestock products;036;Australia;5910;Export quantity;01234;Pomodori;2023;2023;t;1338,6;A;Official figure;
+TCL;Crops and livestock products;036;Australia;5910;Export quantity;0111;Grano;2023;2023;t;29292037,83;A;Official figure;
+TCL;Crops and livestock products;040;Austria;5910;Export quantity;01312;Banane;2023;2023;t;6368,36;A;Official figure;
+TCL;Crops and livestock products;040;Austria;5910;Export quantity;01640;Cacao;2023;2023;t;4,32;A;Official figure;
+TCL;Crops and livestock products;040;Austria;5910;Export quantity;01610;Caffè;2023;2023;t;454,52;A;Official figure;
+TCL;Crops and livestock products;040;Austria;5910;Export quantity;0112;Mais;2023;2023;t;478392,71;A;Official figure;
+TCL;Crops and livestock products;040;Austria;5910;Export quantity;F0030;Riso;2023;2023;t;4267,89;E;Estimated value;
+TCL;Crops and livestock products;040;Austria;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;105556,87;A;Official figure;
+TCL;Crops and livestock products;040;Austria;5910;Export quantity;01234;Pomodori;2023;2023;t;47550,35;A;Official figure;
+TCL;Crops and livestock products;040;Austria;5910;Export quantity;0111;Grano;2023;2023;t;677904,63;A;Official figure;
+TCL;Crops and livestock products;031;Azerbaigian;5910;Export quantity;01610;Caffè;2023;2023;t;0,03;A;Official figure;
+TCL;Crops and livestock products;031;Azerbaigian;5910;Export quantity;0112;Mais;2023;2023;t;17,26;A;Official figure;
+TCL;Crops and livestock products;031;Azerbaigian;5910;Export quantity;F0030;Riso;2023;2023;t;44,3;E;Estimated value;
+TCL;Crops and livestock products;031;Azerbaigian;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;3002,4;A;Official figure;
+TCL;Crops and livestock products;031;Azerbaigian;5910;Export quantity;01234;Pomodori;2023;2023;t;140587,97;A;Official figure;
+TCL;Crops and livestock products;044;Bahamas;5910;Export quantity;01610;Caffè;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;044;Bahamas;5910;Export quantity;F0030;Riso;2023;2023;t;0,4;E;Estimated value;
+TCL;Crops and livestock products;044;Bahamas;5910;Export quantity;0111;Grano;2023;2023;t;0,2;A;Official figure;
+TCL;Crops and livestock products;048;Bahrein;5910;Export quantity;01312;Banane;2023;2023;t;2,16;A;Official figure;
+TCL;Crops and livestock products;048;Bahrein;5910;Export quantity;01640;Cacao;2023;2023;t;0,03;A;Official figure;
+TCL;Crops and livestock products;048;Bahrein;5910;Export quantity;01610;Caffè;2023;2023;t;6,78;I;Imputed value;
+TCL;Crops and livestock products;048;Bahrein;5910;Export quantity;0112;Mais;2023;2023;t;175,16;I;Imputed value;
+TCL;Crops and livestock products;048;Bahrein;5910;Export quantity;F0030;Riso;2023;2023;t;830,66;E;Estimated value;
+TCL;Crops and livestock products;048;Bahrein;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1,38;I;Imputed value;
+TCL;Crops and livestock products;048;Bahrein;5910;Export quantity;01234;Pomodori;2023;2023;t;10,12;I;Imputed value;
+TCL;Crops and livestock products;048;Bahrein;5910;Export quantity;0111;Grano;2023;2023;t;5,8;I;Imputed value;
+TCL;Crops and livestock products;050;Bangladesh;5910;Export quantity;01312;Banane;2023;2023;t;62,53;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;050;Bangladesh;5910;Export quantity;01610;Caffè;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;050;Bangladesh;5910;Export quantity;0112;Mais;2023;2023;t;14,6;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;050;Bangladesh;5910;Export quantity;F0030;Riso;2023;2023;t;9808,71;E;Estimated value;
+TCL;Crops and livestock products;050;Bangladesh;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,06;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;050;Bangladesh;5910;Export quantity;01234;Pomodori;2023;2023;t;280,27;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;050;Bangladesh;5910;Export quantity;0111;Grano;2023;2023;t;0,93;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;052;Barbados;5910;Export quantity;0112;Mais;2023;2023;t;5,18;A;Official figure;
+TCL;Crops and livestock products;052;Barbados;5910;Export quantity;F0030;Riso;2023;2023;t;32,1;E;Estimated value;
+TCL;Crops and livestock products;052;Barbados;5910;Export quantity;01234;Pomodori;2023;2023;t;7,97;A;Official figure;
+TCL;Crops and livestock products;112;Bielorussia;5910;Export quantity;01640;Cacao;2023;2023;t;0,03;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;112;Bielorussia;5910;Export quantity;01610;Caffè;2023;2023;t;58,75;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;112;Bielorussia;5910;Export quantity;0112;Mais;2023;2023;t;4,69;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;112;Bielorussia;5910;Export quantity;F0030;Riso;2023;2023;t;22,52;E;Estimated value;
+TCL;Crops and livestock products;112;Bielorussia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;20;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;112;Bielorussia;5910;Export quantity;01234;Pomodori;2023;2023;t;522,11;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;112;Bielorussia;5910;Export quantity;0111;Grano;2023;2023;t;1567,06;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;056;Belgio;5910;Export quantity;01312;Banane;2023;2023;t;809872,4;A;Official figure;
+TCL;Crops and livestock products;056;Belgio;5910;Export quantity;01640;Cacao;2023;2023;t;219926,67;A;Official figure;
+TCL;Crops and livestock products;056;Belgio;5910;Export quantity;01610;Caffè;2023;2023;t;216004,57;A;Official figure;
+TCL;Crops and livestock products;056;Belgio;5910;Export quantity;0112;Mais;2023;2023;t;63935,01;A;Official figure;
+TCL;Crops and livestock products;056;Belgio;5910;Export quantity;F0030;Riso;2023;2023;t;428948,35;E;Estimated value;
+TCL;Crops and livestock products;056;Belgio;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;88279,27;A;Official figure;
+TCL;Crops and livestock products;056;Belgio;5910;Export quantity;01234;Pomodori;2023;2023;t;206566,84;A;Official figure;
+TCL;Crops and livestock products;056;Belgio;5910;Export quantity;0111;Grano;2023;2023;t;296962,82;A;Official figure;
+TCL;Crops and livestock products;084;Belize;5910;Export quantity;01312;Banane;2023;2023;t;64595,4;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;084;Belize;5910;Export quantity;01640;Cacao;2023;2023;t;64,24;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;084;Belize;5910;Export quantity;01610;Caffè;2023;2023;t;2,16;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;084;Belize;5910;Export quantity;0112;Mais;2023;2023;t;1465,56;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;204;Benin;5910;Export quantity;01640;Cacao;2023;2023;t;0,01;A;Official figure;
+TCL;Crops and livestock products;204;Benin;5910;Export quantity;01610;Caffè;2023;2023;t;0,01;A;Official figure;
+TCL;Crops and livestock products;204;Benin;5910;Export quantity;0112;Mais;2023;2023;t;1511,54;A;Official figure;
+TCL;Crops and livestock products;204;Benin;5910;Export quantity;F0030;Riso;2023;2023;t;9880,28;E;Estimated value;
+TCL;Crops and livestock products;204;Benin;5910;Export quantity;01234;Pomodori;2023;2023;t;0,1;A;Official figure;
+TCL;Crops and livestock products;064;Bhutan;5910;Export quantity;01610;Caffè;2023;2023;t;9,6;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;064;Bhutan;5910;Export quantity;F0030;Riso;2023;2023;t;0,9;E;Estimated value;
+TCL;Crops and livestock products;068;Bolivia;5910;Export quantity;01312;Banane;2023;2023;t;124982,24;A;Official figure;
+TCL;Crops and livestock products;068;Bolivia;5910;Export quantity;01640;Cacao;2023;2023;t;362,23;A;Official figure;
+TCL;Crops and livestock products;068;Bolivia;5910;Export quantity;01610;Caffè;2023;2023;t;1790,83;A;Official figure;
+TCL;Crops and livestock products;068;Bolivia;5910;Export quantity;0112;Mais;2023;2023;t;1373,78;A;Official figure;
+TCL;Crops and livestock products;068;Bolivia;5910;Export quantity;F0030;Riso;2023;2023;t;50,38;E;Estimated value;
+TCL;Crops and livestock products;068;Bolivia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;459178,97;A;Official figure;
+TCL;Crops and livestock products;070;Bosnia-Erzegovina;5910;Export quantity;01312;Banane;2023;2023;t;105,91;A;Official figure;
+TCL;Crops and livestock products;070;Bosnia-Erzegovina;5910;Export quantity;01610;Caffè;2023;2023;t;0,18;A;Official figure;
+TCL;Crops and livestock products;070;Bosnia-Erzegovina;5910;Export quantity;0112;Mais;2023;2023;t;6319,11;A;Official figure;
+TCL;Crops and livestock products;070;Bosnia-Erzegovina;5910;Export quantity;F0030;Riso;2023;2023;t;34,83;E;Estimated value;
+TCL;Crops and livestock products;070;Bosnia-Erzegovina;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;8820,88;A;Official figure;
+TCL;Crops and livestock products;070;Bosnia-Erzegovina;5910;Export quantity;01234;Pomodori;2023;2023;t;271,75;A;Official figure;
+TCL;Crops and livestock products;070;Bosnia-Erzegovina;5910;Export quantity;0111;Grano;2023;2023;t;25754,34;A;Official figure;
+TCL;Crops and livestock products;072;Botswana;5910;Export quantity;01312;Banane;2023;2023;t;0,64;A;Official figure;
+TCL;Crops and livestock products;072;Botswana;5910;Export quantity;01640;Cacao;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;072;Botswana;5910;Export quantity;01610;Caffè;2023;2023;t;0,77;A;Official figure;
+TCL;Crops and livestock products;072;Botswana;5910;Export quantity;0112;Mais;2023;2023;t;567,12;A;Official figure;
+TCL;Crops and livestock products;072;Botswana;5910;Export quantity;F0030;Riso;2023;2023;t;247,46;E;Estimated value;
+TCL;Crops and livestock products;072;Botswana;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;218,08;A;Official figure;
+TCL;Crops and livestock products;072;Botswana;5910;Export quantity;01234;Pomodori;2023;2023;t;2,57;A;Official figure;
+TCL;Crops and livestock products;072;Botswana;5910;Export quantity;0111;Grano;2023;2023;t;648,8;A;Official figure;
+TCL;Crops and livestock products;076;Brasile;5910;Export quantity;01312;Banane;2023;2023;t;55803,67;A;Official figure;
+TCL;Crops and livestock products;076;Brasile;5910;Export quantity;01640;Cacao;2023;2023;t;485,74;A;Official figure;
+TCL;Crops and livestock products;076;Brasile;5910;Export quantity;01610;Caffè;2023;2023;t;2116567,93;I;Imputed value;
+TCL;Crops and livestock products;076;Brasile;5910;Export quantity;0112;Mais;2023;2023;t;55898040,86;A;Official figure;
+TCL;Crops and livestock products;076;Brasile;5910;Export quantity;F0030;Riso;2023;2023;t;1168989,47;E;Estimated value;
+TCL;Crops and livestock products;076;Brasile;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;101869901,2;A;Official figure;
+TCL;Crops and livestock products;076;Brasile;5910;Export quantity;01234;Pomodori;2023;2023;t;1510,53;A;Official figure;
+TCL;Crops and livestock products;076;Brasile;5910;Export quantity;0111;Grano;2023;2023;t;2354625,26;A;Official figure;
+TCL;Crops and livestock products;096;Brunei;5910;Export quantity;01312;Banane;2023;2023;t;2,28;A;Official figure;
+TCL;Crops and livestock products;096;Brunei;5910;Export quantity;01610;Caffè;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;096;Brunei;5910;Export quantity;0112;Mais;2023;2023;t;0,02;A;Official figure;
+TCL;Crops and livestock products;096;Brunei;5910;Export quantity;F0030;Riso;2023;2023;t;521;E;Estimated value;
+TCL;Crops and livestock products;100;Bulgaria;5910;Export quantity;01312;Banane;2023;2023;t;5,92;A;Official figure;
+TCL;Crops and livestock products;100;Bulgaria;5910;Export quantity;01640;Cacao;2023;2023;t;31,57;A;Official figure;
+TCL;Crops and livestock products;100;Bulgaria;5910;Export quantity;01610;Caffè;2023;2023;t;177,6;A;Official figure;
+TCL;Crops and livestock products;100;Bulgaria;5910;Export quantity;0112;Mais;2023;2023;t;1364853,11;A;Official figure;
+TCL;Crops and livestock products;100;Bulgaria;5910;Export quantity;F0030;Riso;2023;2023;t;100013,52;E;Estimated value;
+TCL;Crops and livestock products;100;Bulgaria;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;60,43;A;Official figure;
+TCL;Crops and livestock products;100;Bulgaria;5910;Export quantity;01234;Pomodori;2023;2023;t;17207,42;A;Official figure;
+TCL;Crops and livestock products;100;Bulgaria;5910;Export quantity;0111;Grano;2023;2023;t;6386633,99;A;Official figure;
+TCL;Crops and livestock products;854;Burkina Faso;5910;Export quantity;01312;Banane;2023;2023;t;0,1;A;Official figure;
+TCL;Crops and livestock products;854;Burkina Faso;5910;Export quantity;01610;Caffè;2023;2023;t;2200,35;A;Official figure;
+TCL;Crops and livestock products;854;Burkina Faso;5910;Export quantity;0112;Mais;2023;2023;t;150,09;A;Official figure;
+TCL;Crops and livestock products;854;Burkina Faso;5910;Export quantity;F0030;Riso;2023;2023;t;1685,47;E;Estimated value;
+TCL;Crops and livestock products;854;Burkina Faso;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;30140,46;A;Official figure;
+TCL;Crops and livestock products;854;Burkina Faso;5910;Export quantity;01234;Pomodori;2023;2023;t;270;A;Official figure;
+TCL;Crops and livestock products;854;Burkina Faso;5910;Export quantity;0111;Grano;2023;2023;t;5472;A;Official figure;
+TCL;Crops and livestock products;108;Burundi;5910;Export quantity;01312;Banane;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;108;Burundi;5910;Export quantity;01610;Caffè;2023;2023;t;10834,76;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;108;Burundi;5910;Export quantity;0111;Grano;2023;2023;t;0,05;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;132;Capo Verde;5910;Export quantity;01610;Caffè;2023;2023;t;3,12;A;Official figure;
+TCL;Crops and livestock products;132;Capo Verde;5910;Export quantity;F0030;Riso;2023;2023;t;39,3;E;Estimated value;
+TCL;Crops and livestock products;132;Capo Verde;5910;Export quantity;01234;Pomodori;2023;2023;t;0,01;A;Official figure;
+TCL;Crops and livestock products;116;Cambogia;5910;Export quantity;01312;Banane;2023;2023;t;263765,79;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;116;Cambogia;5910;Export quantity;01640;Cacao;2023;2023;t;5,15;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;116;Cambogia;5910;Export quantity;01610;Caffè;2023;2023;t;0,8;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;116;Cambogia;5910;Export quantity;0112;Mais;2023;2023;t;36902,5;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;116;Cambogia;5910;Export quantity;F0030;Riso;2023;2023;t;640016,98;E;Estimated value;
+TCL;Crops and livestock products;116;Cambogia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;12843,81;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;120;Camerun;5910;Export quantity;01312;Banane;2023;2023;t;207686,45;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;120;Camerun;5910;Export quantity;01640;Cacao;2023;2023;t;274380,38;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;120;Camerun;5910;Export quantity;01610;Caffè;2023;2023;t;11238,92;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;120;Camerun;5910;Export quantity;0112;Mais;2023;2023;t;59,81;I;Imputed value;
+TCL;Crops and livestock products;120;Camerun;5910;Export quantity;F0030;Riso;2023;2023;t;1367,36;E;Estimated value;
+TCL;Crops and livestock products;120;Camerun;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;322,14;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;120;Camerun;5910;Export quantity;01234;Pomodori;2023;2023;t;1;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;120;Camerun;5910;Export quantity;0111;Grano;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;124;Canada;5910;Export quantity;01312;Banane;2023;2023;t;82,72;A;Official figure;
+TCL;Crops and livestock products;124;Canada;5910;Export quantity;01640;Cacao;2023;2023;t;3444,27;A;Official figure;
+TCL;Crops and livestock products;124;Canada;5910;Export quantity;01610;Caffè;2023;2023;t;29615,78;A;Official figure;
+TCL;Crops and livestock products;124;Canada;5910;Export quantity;0112;Mais;2023;2023;t;2826835,83;A;Official figure;
+TCL;Crops and livestock products;124;Canada;5910;Export quantity;F0030;Riso;2023;2023;t;24226,5;E;Estimated value;
+TCL;Crops and livestock products;124;Canada;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;4469498,43;A;Official figure;
+TCL;Crops and livestock products;124;Canada;5910;Export quantity;01234;Pomodori;2023;2023;t;212322,33;A;Official figure;
+TCL;Crops and livestock products;124;Canada;5910;Export quantity;0111;Grano;2023;2023;t;25571108,57;A;Official figure;
+TCL;Crops and livestock products;140;Repubblica Centrafricana;5910;Export quantity;01640;Cacao;2023;2023;t;25,02;A;Official figure;
+TCL;Crops and livestock products;140;Repubblica Centrafricana;5910;Export quantity;01610;Caffè;2023;2023;t;88,33;A;Official figure;
+TCL;Crops and livestock products;152;Cile;5910;Export quantity;01312;Banane;2023;2023;t;17,94;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;152;Cile;5910;Export quantity;01640;Cacao;2023;2023;t;7,28;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;152;Cile;5910;Export quantity;01610;Caffè;2023;2023;t;123,16;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;152;Cile;5910;Export quantity;0112;Mais;2023;2023;t;38558,2;I;Imputed value;
+TCL;Crops and livestock products;152;Cile;5910;Export quantity;F0030;Riso;2023;2023;t;1394;E;Estimated value;
+TCL;Crops and livestock products;152;Cile;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;3566,49;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;152;Cile;5910;Export quantity;01234;Pomodori;2023;2023;t;111,12;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;152;Cile;5910;Export quantity;0111;Grano;2023;2023;t;2,23;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;344;Hong Kong;5910;Export quantity;01312;Banane;2023;2023;t;2690,16;A;Official figure;
+TCL;Crops and livestock products;344;Hong Kong;5910;Export quantity;01610;Caffè;2023;2023;t;1217,63;A;Official figure;
+TCL;Crops and livestock products;344;Hong Kong;5910;Export quantity;0112;Mais;2023;2023;t;0,44;A;Official figure;
+TCL;Crops and livestock products;344;Hong Kong;5910;Export quantity;F0030;Riso;2023;2023;t;9638,22;E;Estimated value;
+TCL;Crops and livestock products;344;Hong Kong;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;601,31;A;Official figure;
+TCL;Crops and livestock products;344;Hong Kong;5910;Export quantity;01234;Pomodori;2023;2023;t;11,2;A;Official figure;
+TCL;Crops and livestock products;344;Hong Kong;5910;Export quantity;0111;Grano;2023;2023;t;0,47;A;Official figure;
+TCL;Crops and livestock products;446;Macao;5910;Export quantity;01610;Caffè;2023;2023;t;0,75;A;Official figure;
+TCL;Crops and livestock products;446;Macao;5910;Export quantity;F0030;Riso;2023;2023;t;36,82;E;Estimated value;
+TCL;Crops and livestock products;446;Macao;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,63;A;Official figure;
+TCL;Crops and livestock products;156;China;5910;Export quantity;01312;Banane;2023;2023;t;26370,05;A;Official figure;
+TCL;Crops and livestock products;156;China;5910;Export quantity;01640;Cacao;2023;2023;t;251,18;A;Official figure;
+TCL;Crops and livestock products;156;China;5910;Export quantity;01610;Caffè;2023;2023;t;16584,15;A;Official figure;
+TCL;Crops and livestock products;156;China;5910;Export quantity;0112;Mais;2023;2023;t;8648,03;A;Official figure;
+TCL;Crops and livestock products;156;China;5910;Export quantity;F0030;Riso;2023;2023;t;1604017,73;E;Estimated value;
+TCL;Crops and livestock products;156;China;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;71398,1;A;Official figure;
+TCL;Crops and livestock products;156;China;5910;Export quantity;01234;Pomodori;2023;2023;t;181449,58;A;Official figure;
+TCL;Crops and livestock products;156;China;5910;Export quantity;0111;Grano;2023;2023;t;16508,68;A;Official figure;
+TCL;Crops and livestock products;158;Taiwan;5910;Export quantity;01312;Banane;2023;2023;t;1636,8;A;Official figure;
+TCL;Crops and livestock products;158;Taiwan;5910;Export quantity;01640;Cacao;2023;2023;t;0,14;A;Official figure;
+TCL;Crops and livestock products;158;Taiwan;5910;Export quantity;01610;Caffè;2023;2023;t;510,88;A;Official figure;
+TCL;Crops and livestock products;158;Taiwan;5910;Export quantity;0112;Mais;2023;2023;t;175,18;A;Official figure;
+TCL;Crops and livestock products;158;Taiwan;5910;Export quantity;F0030;Riso;2023;2023;t;128648,05;E;Estimated value;
+TCL;Crops and livestock products;158;Taiwan;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;43,91;I;Imputed value;
+TCL;Crops and livestock products;158;Taiwan;5910;Export quantity;01234;Pomodori;2023;2023;t;22,07;A;Official figure;
+TCL;Crops and livestock products;158;Taiwan;5910;Export quantity;0111;Grano;2023;2023;t;160;A;Official figure;
+TCL;Crops and livestock products;170;Colombia;5910;Export quantity;01312;Banane;2023;2023;t;1694901,76;A;Official figure;
+TCL;Crops and livestock products;170;Colombia;5910;Export quantity;01640;Cacao;2023;2023;t;4225,78;A;Official figure;
+TCL;Crops and livestock products;170;Colombia;5910;Export quantity;01610;Caffè;2023;2023;t;581350,58;A;Official figure;
+TCL;Crops and livestock products;170;Colombia;5910;Export quantity;0112;Mais;2023;2023;t;1342,51;A;Official figure;
+TCL;Crops and livestock products;170;Colombia;5910;Export quantity;F0030;Riso;2023;2023;t;375,86;E;Estimated value;
+TCL;Crops and livestock products;170;Colombia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,16;A;Official figure;
+TCL;Crops and livestock products;170;Colombia;5910;Export quantity;01234;Pomodori;2023;2023;t;273,99;A;Official figure;
+TCL;Crops and livestock products;170;Colombia;5910;Export quantity;0111;Grano;2023;2023;t;417,8;A;Official figure;
+TCL;Crops and livestock products;174;Comore;5910;Export quantity;01640;Cacao;2023;2023;t;17,78;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;174;Comore;5910;Export quantity;01610;Caffè;2023;2023;t;0,12;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;174;Comore;5910;Export quantity;F0030;Riso;2023;2023;t;0,05;E;Estimated value;
+TCL;Crops and livestock products;178;Congo;5910;Export quantity;01640;Cacao;2023;2023;t;8801,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;178;Congo;5910;Export quantity;01610;Caffè;2023;2023;t;3034,58;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;178;Congo;5910;Export quantity;0112;Mais;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;178;Congo;5910;Export quantity;0111;Grano;2023;2023;t;0,67;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;188;Costa Rica;5910;Export quantity;01312;Banane;2023;2023;t;2243681,57;A;Official figure;
+TCL;Crops and livestock products;188;Costa Rica;5910;Export quantity;01640;Cacao;2023;2023;t;290,62;A;Official figure;
+TCL;Crops and livestock products;188;Costa Rica;5910;Export quantity;01610;Caffè;2023;2023;t;60262,72;A;Official figure;
+TCL;Crops and livestock products;188;Costa Rica;5910;Export quantity;0112;Mais;2023;2023;t;110,73;A;Official figure;
+TCL;Crops and livestock products;188;Costa Rica;5910;Export quantity;F0030;Riso;2023;2023;t;19821,2;E;Estimated value;
+TCL;Crops and livestock products;188;Costa Rica;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;2,87;A;Official figure;
+TCL;Crops and livestock products;188;Costa Rica;5910;Export quantity;01234;Pomodori;2023;2023;t;286,68;A;Official figure;
+TCL;Crops and livestock products;384;Costa d'Avorio;5910;Export quantity;01312;Banane;2023;2023;t;394292,41;A;Official figure;
+TCL;Crops and livestock products;384;Costa d'Avorio;5910;Export quantity;01640;Cacao;2023;2023;t;1339307,31;A;Official figure;
+TCL;Crops and livestock products;384;Costa d'Avorio;5910;Export quantity;01610;Caffè;2023;2023;t;34105,48;A;Official figure;
+TCL;Crops and livestock products;384;Costa d'Avorio;5910;Export quantity;0112;Mais;2023;2023;t;103041,04;A;Official figure;
+TCL;Crops and livestock products;384;Costa d'Avorio;5910;Export quantity;F0030;Riso;2023;2023;t;21416,16;E;Estimated value;
+TCL;Crops and livestock products;384;Costa d'Avorio;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;2648,07;A;Official figure;
+TCL;Crops and livestock products;384;Costa d'Avorio;5910;Export quantity;01234;Pomodori;2023;2023;t;3,09;A;Official figure;
+TCL;Crops and livestock products;191;Croazia;5910;Export quantity;01312;Banane;2023;2023;t;13093,71;A;Official figure;
+TCL;Crops and livestock products;191;Croazia;5910;Export quantity;01640;Cacao;2023;2023;t;0,29;A;Official figure;
+TCL;Crops and livestock products;191;Croazia;5910;Export quantity;01610;Caffè;2023;2023;t;62,21;I;Imputed value;
+TCL;Crops and livestock products;191;Croazia;5910;Export quantity;0112;Mais;2023;2023;t;931114,85;A;Official figure;
+TCL;Crops and livestock products;191;Croazia;5910;Export quantity;F0030;Riso;2023;2023;t;93,37;E;Estimated value;
+TCL;Crops and livestock products;191;Croazia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;223805,99;A;Official figure;
+TCL;Crops and livestock products;191;Croazia;5910;Export quantity;01234;Pomodori;2023;2023;t;8174,14;A;Official figure;
+TCL;Crops and livestock products;191;Croazia;5910;Export quantity;0111;Grano;2023;2023;t;499955,15;A;Official figure;
+TCL;Crops and livestock products;192;Cuba;5910;Export quantity;01312;Banane;2023;2023;t;0,09;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;192;Cuba;5910;Export quantity;01640;Cacao;2023;2023;t;429,43;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;192;Cuba;5910;Export quantity;01610;Caffè;2023;2023;t;654,29;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;196;Cipro;5910;Export quantity;01312;Banane;2023;2023;t;61,25;A;Official figure;
+TCL;Crops and livestock products;196;Cipro;5910;Export quantity;01610;Caffè;2023;2023;t;20,2;A;Official figure;
+TCL;Crops and livestock products;196;Cipro;5910;Export quantity;0112;Mais;2023;2023;t;0,83;A;Official figure;
+TCL;Crops and livestock products;196;Cipro;5910;Export quantity;F0030;Riso;2023;2023;t;95,39;E;Estimated value;
+TCL;Crops and livestock products;196;Cipro;5910;Export quantity;01234;Pomodori;2023;2023;t;0,68;A;Official figure;
+TCL;Crops and livestock products;196;Cipro;5910;Export quantity;0111;Grano;2023;2023;t;1,75;A;Official figure;
+TCL;Crops and livestock products;203;Repubblica Ceca;5910;Export quantity;01312;Banane;2023;2023;t;47357,75;A;Official figure;
+TCL;Crops and livestock products;203;Repubblica Ceca;5910;Export quantity;01640;Cacao;2023;2023;t;15,56;A;Official figure;
+TCL;Crops and livestock products;203;Repubblica Ceca;5910;Export quantity;01610;Caffè;2023;2023;t;287,02;A;Official figure;
+TCL;Crops and livestock products;203;Repubblica Ceca;5910;Export quantity;0112;Mais;2023;2023;t;289015,11;A;Official figure;
+TCL;Crops and livestock products;203;Repubblica Ceca;5910;Export quantity;F0030;Riso;2023;2023;t;22517,79;E;Estimated value;
+TCL;Crops and livestock products;203;Repubblica Ceca;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;40644,95;A;Official figure;
+TCL;Crops and livestock products;203;Repubblica Ceca;5910;Export quantity;01234;Pomodori;2023;2023;t;5883,55;A;Official figure;
+TCL;Crops and livestock products;203;Repubblica Ceca;5910;Export quantity;0111;Grano;2023;2023;t;2627225,24;A;Official figure;
+TCL;Crops and livestock products;408;Corea del Nord;5910;Export quantity;F0030;Riso;2023;2023;t;0,03;E;Estimated value;
+TCL;Crops and livestock products;180;Repubblica Democratica del Congo;5910;Export quantity;01312;Banane;2023;2023;t;0,39;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;180;Repubblica Democratica del Congo;5910;Export quantity;01640;Cacao;2023;2023;t;40139,36;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;180;Repubblica Democratica del Congo;5910;Export quantity;01610;Caffè;2023;2023;t;7380,33;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;180;Repubblica Democratica del Congo;5910;Export quantity;F0030;Riso;2023;2023;t;1,41;E;Estimated value;
+TCL;Crops and livestock products;180;Repubblica Democratica del Congo;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,56;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;180;Repubblica Democratica del Congo;5910;Export quantity;0111;Grano;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;208;Danimarca;5910;Export quantity;01312;Banane;2023;2023;t;11584,76;A;Official figure;
+TCL;Crops and livestock products;208;Danimarca;5910;Export quantity;01640;Cacao;2023;2023;t;2,81;A;Official figure;
+TCL;Crops and livestock products;208;Danimarca;5910;Export quantity;01610;Caffè;2023;2023;t;617,7;A;Official figure;
+TCL;Crops and livestock products;208;Danimarca;5910;Export quantity;0112;Mais;2023;2023;t;4389,05;A;Official figure;
+TCL;Crops and livestock products;208;Danimarca;5910;Export quantity;F0030;Riso;2023;2023;t;5052,73;E;Estimated value;
+TCL;Crops and livestock products;208;Danimarca;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1315,32;A;Official figure;
+TCL;Crops and livestock products;208;Danimarca;5910;Export quantity;01234;Pomodori;2023;2023;t;2739,52;A;Official figure;
+TCL;Crops and livestock products;208;Danimarca;5910;Export quantity;0111;Grano;2023;2023;t;472277,7;A;Official figure;
+TCL;Crops and livestock products;262;Gibuti;5910;Export quantity;01640;Cacao;2023;2023;t;91;A;Official figure;
+TCL;Crops and livestock products;262;Gibuti;5910;Export quantity;0112;Mais;2023;2023;t;7901,5;A;Official figure;
+TCL;Crops and livestock products;262;Gibuti;5910;Export quantity;F0030;Riso;2023;2023;t;494165,68;E;Estimated value;
+TCL;Crops and livestock products;262;Gibuti;5910;Export quantity;01234;Pomodori;2023;2023;t;266;A;Official figure;
+TCL;Crops and livestock products;262;Gibuti;5910;Export quantity;0111;Grano;2023;2023;t;4890,61;A;Official figure;
+TCL;Crops and livestock products;212;Dominica;5910;Export quantity;01312;Banane;2023;2023;t;502,87;A;Official figure;
+TCL;Crops and livestock products;212;Dominica;5910;Export quantity;01640;Cacao;2023;2023;t;0,36;A;Official figure;
+TCL;Crops and livestock products;212;Dominica;5910;Export quantity;01610;Caffè;2023;2023;t;0,02;A;Official figure;
+TCL;Crops and livestock products;212;Dominica;5910;Export quantity;01234;Pomodori;2023;2023;t;0,4;A;Official figure;
+TCL;Crops and livestock products;214;Repubblica Dominicana;5910;Export quantity;01312;Banane;2023;2023;t;273972,78;A;Official figure;
+TCL;Crops and livestock products;214;Repubblica Dominicana;5910;Export quantity;01640;Cacao;2023;2023;t;66011,81;A;Official figure;
+TCL;Crops and livestock products;214;Repubblica Dominicana;5910;Export quantity;01610;Caffè;2023;2023;t;670,37;A;Official figure;
+TCL;Crops and livestock products;214;Repubblica Dominicana;5910;Export quantity;0112;Mais;2023;2023;t;7367,74;A;Official figure;
+TCL;Crops and livestock products;214;Repubblica Dominicana;5910;Export quantity;F0030;Riso;2023;2023;t;364,2;E;Estimated value;
+TCL;Crops and livestock products;214;Repubblica Dominicana;5910;Export quantity;01234;Pomodori;2023;2023;t;13363,05;A;Official figure;
+TCL;Crops and livestock products;214;Repubblica Dominicana;5910;Export quantity;0111;Grano;2023;2023;t;284,39;A;Official figure;
+TCL;Crops and livestock products;218;Ecuador;5910;Export quantity;01312;Banane;2023;2023;t;3978140,53;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;218;Ecuador;5910;Export quantity;01640;Cacao;2023;2023;t;398869,98;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;218;Ecuador;5910;Export quantity;01610;Caffè;2023;2023;t;1978,99;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;218;Ecuador;5910;Export quantity;0112;Mais;2023;2023;t;395,13;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;218;Ecuador;5910;Export quantity;F0030;Riso;2023;2023;t;7223,78;E;Estimated value;
+TCL;Crops and livestock products;218;Ecuador;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;32,62;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;218;Ecuador;5910;Export quantity;01234;Pomodori;2023;2023;t;16,46;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;218;Ecuador;5910;Export quantity;0111;Grano;2023;2023;t;0,24;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;818;Egitto;5910;Export quantity;01312;Banane;2023;2023;t;5363,91;I;Imputed value;
+TCL;Crops and livestock products;818;Egitto;5910;Export quantity;01640;Cacao;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;818;Egitto;5910;Export quantity;01610;Caffè;2023;2023;t;308,17;I;Imputed value;
+TCL;Crops and livestock products;818;Egitto;5910;Export quantity;0112;Mais;2023;2023;t;6067,24;I;Imputed value;
+TCL;Crops and livestock products;818;Egitto;5910;Export quantity;F0030;Riso;2023;2023;t;34911,63;E;Estimated value;
+TCL;Crops and livestock products;818;Egitto;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;17,56;I;Imputed value;
+TCL;Crops and livestock products;818;Egitto;5910;Export quantity;01234;Pomodori;2023;2023;t;86439,06;I;Imputed value;
+TCL;Crops and livestock products;818;Egitto;5910;Export quantity;0111;Grano;2023;2023;t;2643,6;I;Imputed value;
+TCL;Crops and livestock products;222;El Salvador;5910;Export quantity;01640;Cacao;2023;2023;t;30,4;A;Official figure;
+TCL;Crops and livestock products;222;El Salvador;5910;Export quantity;01610;Caffè;2023;2023;t;28799,41;A;Official figure;
+TCL;Crops and livestock products;222;El Salvador;5910;Export quantity;0112;Mais;2023;2023;t;709,26;A;Official figure;
+TCL;Crops and livestock products;222;El Salvador;5910;Export quantity;F0030;Riso;2023;2023;t;13658,62;E;Estimated value;
+TCL;Crops and livestock products;222;El Salvador;5910;Export quantity;01234;Pomodori;2023;2023;t;14,88;A;Official figure;
+TCL;Crops and livestock products;222;El Salvador;5910;Export quantity;0111;Grano;2023;2023;t;380;A;Official figure;
+TCL;Crops and livestock products;226;Guinea Equatoriale;5910;Export quantity;01640;Cacao;2023;2023;t;502,85;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;226;Guinea Equatoriale;5910;Export quantity;01610;Caffè;2023;2023;t;19,17;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;226;Guinea Equatoriale;5910;Export quantity;F0030;Riso;2023;2023;t;141,09;E;Estimated value;
+TCL;Crops and livestock products;232;Eritrea;5910;Export quantity;01312;Banane;2023;2023;t;81,57;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;232;Eritrea;5910;Export quantity;01610;Caffè;2023;2023;t;0,26;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;232;Eritrea;5910;Export quantity;0112;Mais;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;232;Eritrea;5910;Export quantity;0111;Grano;2023;2023;t;499,58;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;233;Estonia;5910;Export quantity;01312;Banane;2023;2023;t;137,74;A;Official figure;
+TCL;Crops and livestock products;233;Estonia;5910;Export quantity;01640;Cacao;2023;2023;t;10174,91;A;Official figure;
+TCL;Crops and livestock products;233;Estonia;5910;Export quantity;01610;Caffè;2023;2023;t;97,66;A;Official figure;
+TCL;Crops and livestock products;233;Estonia;5910;Export quantity;0112;Mais;2023;2023;t;30562,52;A;Official figure;
+TCL;Crops and livestock products;233;Estonia;5910;Export quantity;F0030;Riso;2023;2023;t;410,49;E;Estimated value;
+TCL;Crops and livestock products;233;Estonia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;11,83;A;Official figure;
+TCL;Crops and livestock products;233;Estonia;5910;Export quantity;01234;Pomodori;2023;2023;t;325,61;A;Official figure;
+TCL;Crops and livestock products;233;Estonia;5910;Export quantity;0111;Grano;2023;2023;t;558465,22;A;Official figure;
+TCL;Crops and livestock products;748;Eswatini;5910;Export quantity;01312;Banane;2023;2023;t;29054,24;A;Official figure;
+TCL;Crops and livestock products;748;Eswatini;5910;Export quantity;01610;Caffè;2023;2023;t;3,28;A;Official figure;
+TCL;Crops and livestock products;748;Eswatini;5910;Export quantity;0112;Mais;2023;2023;t;99,09;A;Official figure;
+TCL;Crops and livestock products;748;Eswatini;5910;Export quantity;F0030;Riso;2023;2023;t;60,2;E;Estimated value;
+TCL;Crops and livestock products;748;Eswatini;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;456,44;A;Official figure;
+TCL;Crops and livestock products;231;Etiopia;5910;Export quantity;01312;Banane;2023;2023;t;12998,87;A;Official figure;
+TCL;Crops and livestock products;231;Etiopia;5910;Export quantity;01610;Caffè;2023;2023;t;235373,37;A;Official figure;
+TCL;Crops and livestock products;231;Etiopia;5910;Export quantity;F0030;Riso;2023;2023;t;219,35;E;Estimated value;
+TCL;Crops and livestock products;231;Etiopia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;207604,4;A;Official figure;
+TCL;Crops and livestock products;231;Etiopia;5910;Export quantity;01234;Pomodori;2023;2023;t;22806,33;A;Official figure;
+TCL;Crops and livestock products;242;Fiji;5910;Export quantity;01312;Banane;2023;2023;t;1,7;A;Official figure;
+TCL;Crops and livestock products;242;Fiji;5910;Export quantity;01640;Cacao;2023;2023;t;1,56;A;Official figure;
+TCL;Crops and livestock products;242;Fiji;5910;Export quantity;01610;Caffè;2023;2023;t;0,4;A;Official figure;
+TCL;Crops and livestock products;242;Fiji;5910;Export quantity;0112;Mais;2023;2023;t;14,71;A;Official figure;
+TCL;Crops and livestock products;242;Fiji;5910;Export quantity;F0030;Riso;2023;2023;t;2954,15;E;Estimated value;
+TCL;Crops and livestock products;242;Fiji;5910;Export quantity;01234;Pomodori;2023;2023;t;0,01;A;Official figure;
+TCL;Crops and livestock products;242;Fiji;5910;Export quantity;0111;Grano;2023;2023;t;4,05;A;Official figure;
+TCL;Crops and livestock products;246;Finlandia;5910;Export quantity;01312;Banane;2023;2023;t;4408,98;A;Official figure;
+TCL;Crops and livestock products;246;Finlandia;5910;Export quantity;01640;Cacao;2023;2023;t;0,08;A;Official figure;
+TCL;Crops and livestock products;246;Finlandia;5910;Export quantity;01610;Caffè;2023;2023;t;1020,02;A;Official figure;
+TCL;Crops and livestock products;246;Finlandia;5910;Export quantity;0112;Mais;2023;2023;t;1,02;A;Official figure;
+TCL;Crops and livestock products;246;Finlandia;5910;Export quantity;F0030;Riso;2023;2023;t;281,85;E;Estimated value;
+TCL;Crops and livestock products;246;Finlandia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,02;A;Official figure;
+TCL;Crops and livestock products;246;Finlandia;5910;Export quantity;01234;Pomodori;2023;2023;t;155,14;A;Official figure;
+TCL;Crops and livestock products;246;Finlandia;5910;Export quantity;0111;Grano;2023;2023;t;56518,13;A;Official figure;
+TCL;Crops and livestock products;250;Francia;5910;Export quantity;01312;Banane;2023;2023;t;232759,64;A;Official figure;
+TCL;Crops and livestock products;250;Francia;5910;Export quantity;01640;Cacao;2023;2023;t;763,75;A;Official figure;
+TCL;Crops and livestock products;250;Francia;5910;Export quantity;01610;Caffè;2023;2023;t;6942,37;A;Official figure;
+TCL;Crops and livestock products;250;Francia;5910;Export quantity;0112;Mais;2023;2023;t;3750411,86;A;Official figure;
+TCL;Crops and livestock products;250;Francia;5910;Export quantity;F0030;Riso;2023;2023;t;29613,08;E;Estimated value;
+TCL;Crops and livestock products;250;Francia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;121401,91;A;Official figure;
+TCL;Crops and livestock products;250;Francia;5910;Export quantity;01234;Pomodori;2023;2023;t;319071,59;A;Official figure;
+TCL;Crops and livestock products;250;Francia;5910;Export quantity;0111;Grano;2023;2023;t;13476663,17;A;Official figure;
+TCL;Crops and livestock products;258;Polinesia Francese;5910;Export quantity;01640;Cacao;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;258;Polinesia Francese;5910;Export quantity;01610;Caffè;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;266;Gabon;5910;Export quantity;01312;Banane;2023;2023;t;0,02;A;Official figure;
+TCL;Crops and livestock products;266;Gabon;5910;Export quantity;01610;Caffè;2023;2023;t;17,76;A;Official figure;
+TCL;Crops and livestock products;266;Gabon;5910;Export quantity;0112;Mais;2023;2023;t;0,02;A;Official figure;
+TCL;Crops and livestock products;266;Gabon;5910;Export quantity;F0030;Riso;2023;2023;t;4,81;E;Estimated value;
+TCL;Crops and livestock products;266;Gabon;5910;Export quantity;01234;Pomodori;2023;2023;t;0,04;A;Official figure;
+TCL;Crops and livestock products;270;Gambia;5910;Export quantity;01610;Caffè;2023;2023;t;0,12;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;270;Gambia;5910;Export quantity;0112;Mais;2023;2023;t;52,47;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;270;Gambia;5910;Export quantity;F0030;Riso;2023;2023;t;0,35;E;Estimated value;
+TCL;Crops and livestock products;270;Gambia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;270;Gambia;5910;Export quantity;0111;Grano;2023;2023;t;153,08;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;268;Georgia;5910;Export quantity;01312;Banane;2023;2023;t;3736,1;A;Official figure;
+TCL;Crops and livestock products;268;Georgia;5910;Export quantity;01610;Caffè;2023;2023;t;278,71;A;Official figure;
+TCL;Crops and livestock products;268;Georgia;5910;Export quantity;0112;Mais;2023;2023;t;728,69;A;Official figure;
+TCL;Crops and livestock products;268;Georgia;5910;Export quantity;F0030;Riso;2023;2023;t;73,82;E;Estimated value;
+TCL;Crops and livestock products;268;Georgia;5910;Export quantity;01234;Pomodori;2023;2023;t;3222,84;A;Official figure;
+TCL;Crops and livestock products;268;Georgia;5910;Export quantity;0111;Grano;2023;2023;t;21,03;A;Official figure;
+TCL;Crops and livestock products;276;Germania;5910;Export quantity;01312;Banane;2023;2023;t;348052;A;Official figure;
+TCL;Crops and livestock products;276;Germania;5910;Export quantity;01640;Cacao;2023;2023;t;7325,17;A;Official figure;
+TCL;Crops and livestock products;276;Germania;5910;Export quantity;01610;Caffè;2023;2023;t;301987,72;A;Official figure;
+TCL;Crops and livestock products;276;Germania;5910;Export quantity;0112;Mais;2023;2023;t;468127,2;A;Official figure;
+TCL;Crops and livestock products;276;Germania;5910;Export quantity;F0030;Riso;2023;2023;t;49256,31;E;Estimated value;
+TCL;Crops and livestock products;276;Germania;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;26969,64;A;Official figure;
+TCL;Crops and livestock products;276;Germania;5910;Export quantity;01234;Pomodori;2023;2023;t;16842,84;A;Official figure;
+TCL;Crops and livestock products;276;Germania;5910;Export quantity;0111;Grano;2023;2023;t;6784192,03;A;Official figure;
+TCL;Crops and livestock products;288;Ghana;5910;Export quantity;01312;Banane;2023;2023;t;114775,81;A;Official figure;
+TCL;Crops and livestock products;288;Ghana;5910;Export quantity;01640;Cacao;2023;2023;t;433288,04;A;Official figure;
+TCL;Crops and livestock products;288;Ghana;5910;Export quantity;01610;Caffè;2023;2023;t;75,13;A;Official figure;
+TCL;Crops and livestock products;288;Ghana;5910;Export quantity;0112;Mais;2023;2023;t;530,48;A;Official figure;
+TCL;Crops and livestock products;288;Ghana;5910;Export quantity;F0030;Riso;2023;2023;t;502,92;E;Estimated value;
+TCL;Crops and livestock products;288;Ghana;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;61607,76;A;Official figure;
+TCL;Crops and livestock products;288;Ghana;5910;Export quantity;01234;Pomodori;2023;2023;t;2,83;A;Official figure;
+TCL;Crops and livestock products;288;Ghana;5910;Export quantity;0111;Grano;2023;2023;t;8,19;A;Official figure;
+TCL;Crops and livestock products;300;Grecia;5910;Export quantity;01312;Banane;2023;2023;t;67139,3;A;Official figure;
+TCL;Crops and livestock products;300;Grecia;5910;Export quantity;01640;Cacao;2023;2023;t;17,66;A;Official figure;
+TCL;Crops and livestock products;300;Grecia;5910;Export quantity;01610;Caffè;2023;2023;t;916,71;A;Official figure;
+TCL;Crops and livestock products;300;Grecia;5910;Export quantity;0112;Mais;2023;2023;t;17156,62;A;Official figure;
+TCL;Crops and livestock products;300;Grecia;5910;Export quantity;F0030;Riso;2023;2023;t;96632,18;E;Estimated value;
+TCL;Crops and livestock products;300;Grecia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1146,42;A;Official figure;
+TCL;Crops and livestock products;300;Grecia;5910;Export quantity;01234;Pomodori;2023;2023;t;36847,18;A;Official figure;
+TCL;Crops and livestock products;300;Grecia;5910;Export quantity;0111;Grano;2023;2023;t;527008,42;A;Official figure;
+TCL;Crops and livestock products;308;Grenada;5910;Export quantity;01640;Cacao;2023;2023;t;312,58;A;Official figure;
+TCL;Crops and livestock products;320;Guatemala;5910;Export quantity;01312;Banane;2023;2023;t;2799411,6;A;Official figure;
+TCL;Crops and livestock products;320;Guatemala;5910;Export quantity;01640;Cacao;2023;2023;t;146,32;A;Official figure;
+TCL;Crops and livestock products;320;Guatemala;5910;Export quantity;01610;Caffè;2023;2023;t;182082,07;A;Official figure;
+TCL;Crops and livestock products;320;Guatemala;5910;Export quantity;0112;Mais;2023;2023;t;4188,45;I;Imputed value;
+TCL;Crops and livestock products;320;Guatemala;5910;Export quantity;F0030;Riso;2023;2023;t;409,8;E;Estimated value;
+TCL;Crops and livestock products;320;Guatemala;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;10,04;A;Official figure;
+TCL;Crops and livestock products;320;Guatemala;5910;Export quantity;01234;Pomodori;2023;2023;t;60632,9;A;Official figure;
+TCL;Crops and livestock products;320;Guatemala;5910;Export quantity;0111;Grano;2023;2023;t;478,43;A;Official figure;
+TCL;Crops and livestock products;324;Guinea;5910;Export quantity;01312;Banane;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;324;Guinea;5910;Export quantity;01640;Cacao;2023;2023;t;76344,5;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;324;Guinea;5910;Export quantity;01610;Caffè;2023;2023;t;5112,69;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;324;Guinea;5910;Export quantity;0112;Mais;2023;2023;t;4,16;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;324;Guinea;5910;Export quantity;F0030;Riso;2023;2023;t;0,14;E;Estimated value;
+TCL;Crops and livestock products;324;Guinea;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,23;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;324;Guinea;5910;Export quantity;01234;Pomodori;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;328;Guyana;5910;Export quantity;01312;Banane;2023;2023;t;0,2;A;Official figure;
+TCL;Crops and livestock products;328;Guyana;5910;Export quantity;01640;Cacao;2023;2023;t;0,2;A;Official figure;
+TCL;Crops and livestock products;328;Guyana;5910;Export quantity;01610;Caffè;2023;2023;t;0,06;A;Official figure;
+TCL;Crops and livestock products;328;Guyana;5910;Export quantity;0112;Mais;2023;2023;t;4,24;A;Official figure;
+TCL;Crops and livestock products;328;Guyana;5910;Export quantity;F0030;Riso;2023;2023;t;400076,43;E;Estimated value;
+TCL;Crops and livestock products;328;Guyana;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1,13;A;Official figure;
+TCL;Crops and livestock products;332;Haiti;5910;Export quantity;01640;Cacao;2023;2023;t;2566,5;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;332;Haiti;5910;Export quantity;01610;Caffè;2023;2023;t;98,2;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;332;Haiti;5910;Export quantity;0112;Mais;2023;2023;t;19,08;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;332;Haiti;5910;Export quantity;F0030;Riso;2023;2023;t;230,15;E;Estimated value;
+TCL;Crops and livestock products;340;Honduras;5910;Export quantity;01312;Banane;2023;2023;t;538337,1;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;340;Honduras;5910;Export quantity;01640;Cacao;2023;2023;t;1172,08;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;340;Honduras;5910;Export quantity;01610;Caffè;2023;2023;t;333609,71;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;340;Honduras;5910;Export quantity;0112;Mais;2023;2023;t;2105;A;Official figure;
+TCL;Crops and livestock products;340;Honduras;5910;Export quantity;F0030;Riso;2023;2023;t;3095,06;E;Estimated value;
+TCL;Crops and livestock products;340;Honduras;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;262,63;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;340;Honduras;5910;Export quantity;01234;Pomodori;2023;2023;t;54888,11;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;348;Ungheria;5910;Export quantity;01312;Banane;2023;2023;t;13084,9;A;Official figure;
+TCL;Crops and livestock products;348;Ungheria;5910;Export quantity;01640;Cacao;2023;2023;t;8,23;A;Official figure;
+TCL;Crops and livestock products;348;Ungheria;5910;Export quantity;01610;Caffè;2023;2023;t;386,43;A;Official figure;
+TCL;Crops and livestock products;348;Ungheria;5910;Export quantity;0112;Mais;2023;2023;t;1334624,99;A;Official figure;
+TCL;Crops and livestock products;348;Ungheria;5910;Export quantity;F0030;Riso;2023;2023;t;4933,13;E;Estimated value;
+TCL;Crops and livestock products;348;Ungheria;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;149174,19;A;Official figure;
+TCL;Crops and livestock products;348;Ungheria;5910;Export quantity;01234;Pomodori;2023;2023;t;20908,07;A;Official figure;
+TCL;Crops and livestock products;348;Ungheria;5910;Export quantity;0111;Grano;2023;2023;t;2829778,41;A;Official figure;
+TCL;Crops and livestock products;352;Islanda;5910;Export quantity;01312;Banane;2023;2023;t;465,9;A;Official figure;
+TCL;Crops and livestock products;352;Islanda;5910;Export quantity;01610;Caffè;2023;2023;t;0,9;A;Official figure;
+TCL;Crops and livestock products;352;Islanda;5910;Export quantity;0112;Mais;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;352;Islanda;5910;Export quantity;F0030;Riso;2023;2023;t;1,17;E;Estimated value;
+TCL;Crops and livestock products;352;Islanda;5910;Export quantity;01234;Pomodori;2023;2023;t;46,85;A;Official figure;
+TCL;Crops and livestock products;352;Islanda;5910;Export quantity;0111;Grano;2023;2023;t;0,01;A;Official figure;
+TCL;Crops and livestock products;356;India;5910;Export quantity;01312;Banane;2023;2023;t;499131,23;A;Official figure;
+TCL;Crops and livestock products;356;India;5910;Export quantity;01640;Cacao;2023;2023;t;69,55;A;Official figure;
+TCL;Crops and livestock products;356;India;5910;Export quantity;01610;Caffè;2023;2023;t;232176,71;A;Official figure;
+TCL;Crops and livestock products;356;India;5910;Export quantity;0112;Mais;2023;2023;t;2311640,98;A;Official figure;
+TCL;Crops and livestock products;356;India;5910;Export quantity;F0030;Riso;2023;2023;t;17696955,46;E;Estimated value;
+TCL;Crops and livestock products;356;India;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;22477,34;A;Official figure;
+TCL;Crops and livestock products;356;India;5910;Export quantity;01234;Pomodori;2023;2023;t;96801,85;A;Official figure;
+TCL;Crops and livestock products;356;India;5910;Export quantity;0111;Grano;2023;2023;t;157566,49;A;Official figure;
+TCL;Crops and livestock products;360;Indonesia;5910;Export quantity;01312;Banane;2023;2023;t;8364,45;A;Official figure;
+TCL;Crops and livestock products;360;Indonesia;5910;Export quantity;01640;Cacao;2023;2023;t;14451,07;A;Official figure;
+TCL;Crops and livestock products;360;Indonesia;5910;Export quantity;01610;Caffè;2023;2023;t;276335,17;A;Official figure;
+TCL;Crops and livestock products;360;Indonesia;5910;Export quantity;0112;Mais;2023;2023;t;92136,54;A;Official figure;
+TCL;Crops and livestock products;360;Indonesia;5910;Export quantity;F0030;Riso;2023;2023;t;1633,02;E;Estimated value;
+TCL;Crops and livestock products;360;Indonesia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;2561,07;A;Official figure;
+TCL;Crops and livestock products;360;Indonesia;5910;Export quantity;01234;Pomodori;2023;2023;t;500,88;A;Official figure;
+TCL;Crops and livestock products;360;Indonesia;5910;Export quantity;0111;Grano;2023;2023;t;0,21;A;Official figure;
+TCL;Crops and livestock products;364;Iran;5910;Export quantity;01312;Banane;2023;2023;t;4,48;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;364;Iran;5910;Export quantity;01640;Cacao;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;364;Iran;5910;Export quantity;01610;Caffè;2023;2023;t;2,7;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;364;Iran;5910;Export quantity;0112;Mais;2023;2023;t;13812,2;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;364;Iran;5910;Export quantity;F0030;Riso;2023;2023;t;26525,34;E;Estimated value;
+TCL;Crops and livestock products;364;Iran;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;40,76;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;364;Iran;5910;Export quantity;01234;Pomodori;2023;2023;t;127573,97;I;Imputed value;
+TCL;Crops and livestock products;364;Iran;5910;Export quantity;0111;Grano;2023;2023;t;12,08;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;368;Iraq;5910;Export quantity;01610;Caffè;2023;2023;t;0,52;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;368;Iraq;5910;Export quantity;F0030;Riso;2023;2023;t;168,69;E;Estimated value;
+TCL;Crops and livestock products;368;Iraq;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,17;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;368;Iraq;5910;Export quantity;0111;Grano;2023;2023;t;498;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;372;Irlanda;5910;Export quantity;01312;Banane;2023;2023;t;7902,3;A;Official figure;
+TCL;Crops and livestock products;372;Irlanda;5910;Export quantity;01640;Cacao;2023;2023;t;0,15;A;Official figure;
+TCL;Crops and livestock products;372;Irlanda;5910;Export quantity;01610;Caffè;2023;2023;t;545,6;A;Official figure;
+TCL;Crops and livestock products;372;Irlanda;5910;Export quantity;0112;Mais;2023;2023;t;109151,05;A;Official figure;
+TCL;Crops and livestock products;372;Irlanda;5910;Export quantity;F0030;Riso;2023;2023;t;3552;E;Estimated value;
+TCL;Crops and livestock products;372;Irlanda;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1342;A;Official figure;
+TCL;Crops and livestock products;372;Irlanda;5910;Export quantity;01234;Pomodori;2023;2023;t;346,49;A;Official figure;
+TCL;Crops and livestock products;372;Irlanda;5910;Export quantity;0111;Grano;2023;2023;t;30878,8;A;Official figure;
+TCL;Crops and livestock products;376;Israele;5910;Export quantity;01610;Caffè;2023;2023;t;25,7;I;Imputed value;
+TCL;Crops and livestock products;376;Israele;5910;Export quantity;F0030;Riso;2023;2023;t;71,91;E;Estimated value;
+TCL;Crops and livestock products;376;Israele;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;376;Israele;5910;Export quantity;01234;Pomodori;2023;2023;t;17,18;I;Imputed value;
+TCL;Crops and livestock products;376;Israele;5910;Export quantity;0111;Grano;2023;2023;t;446,38;I;Imputed value;
+TCL;Crops and livestock products;380;Italia;5910;Export quantity;01312;Banane;2023;2023;t;110692,54;A;Official figure;
+TCL;Crops and livestock products;380;Italia;5910;Export quantity;01640;Cacao;2023;2023;t;1931,34;A;Official figure;
+TCL;Crops and livestock products;380;Italia;5910;Export quantity;01610;Caffè;2023;2023;t;12269,25;A;Official figure;
+TCL;Crops and livestock products;380;Italia;5910;Export quantity;0112;Mais;2023;2023;t;64195,24;A;Official figure;
+TCL;Crops and livestock products;380;Italia;5910;Export quantity;F0030;Riso;2023;2023;t;664503,64;E;Estimated value;
+TCL;Crops and livestock products;380;Italia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;17365,62;A;Official figure;
+TCL;Crops and livestock products;380;Italia;5910;Export quantity;01234;Pomodori;2023;2023;t;77235,96;A;Official figure;
+TCL;Crops and livestock products;380;Italia;5910;Export quantity;0111;Grano;2023;2023;t;162086,37;A;Official figure;
+TCL;Crops and livestock products;388;Giamaica;5910;Export quantity;01312;Banane;2023;2023;t;798,64;A;Official figure;
+TCL;Crops and livestock products;388;Giamaica;5910;Export quantity;01640;Cacao;2023;2023;t;20,52;A;Official figure;
+TCL;Crops and livestock products;388;Giamaica;5910;Export quantity;01610;Caffè;2023;2023;t;762,9;A;Official figure;
+TCL;Crops and livestock products;388;Giamaica;5910;Export quantity;0112;Mais;2023;2023;t;599,73;A;Official figure;
+TCL;Crops and livestock products;388;Giamaica;5910;Export quantity;F0030;Riso;2023;2023;t;6,24;E;Estimated value;
+TCL;Crops and livestock products;388;Giamaica;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,38;A;Official figure;
+TCL;Crops and livestock products;392;Giappone;5910;Export quantity;01640;Cacao;2023;2023;t;25,04;A;Official figure;
+TCL;Crops and livestock products;392;Giappone;5910;Export quantity;01610;Caffè;2023;2023;t;286,81;A;Official figure;
+TCL;Crops and livestock products;392;Giappone;5910;Export quantity;0112;Mais;2023;2023;t;3,39;I;Imputed value;
+TCL;Crops and livestock products;392;Giappone;5910;Export quantity;F0030;Riso;2023;2023;t;42497,77;E;Estimated value;
+TCL;Crops and livestock products;392;Giappone;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;139,92;A;Official figure;
+TCL;Crops and livestock products;392;Giappone;5910;Export quantity;01234;Pomodori;2023;2023;t;51,18;A;Official figure;
+TCL;Crops and livestock products;392;Giappone;5910;Export quantity;0111;Grano;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;400;Giordania;5910;Export quantity;01312;Banane;2023;2023;t;61,26;I;Imputed value;
+TCL;Crops and livestock products;400;Giordania;5910;Export quantity;01610;Caffè;2023;2023;t;2276,02;I;Imputed value;
+TCL;Crops and livestock products;400;Giordania;5910;Export quantity;0112;Mais;2023;2023;t;282,93;I;Imputed value;
+TCL;Crops and livestock products;400;Giordania;5910;Export quantity;F0030;Riso;2023;2023;t;870,54;E;Estimated value;
+TCL;Crops and livestock products;400;Giordania;5910;Export quantity;01234;Pomodori;2023;2023;t;158239,59;I;Imputed value;
+TCL;Crops and livestock products;398;Kazakistan;5910;Export quantity;01312;Banane;2023;2023;t;370,61;A;Official figure;
+TCL;Crops and livestock products;398;Kazakistan;5910;Export quantity;01610;Caffè;2023;2023;t;2,25;A;Official figure;
+TCL;Crops and livestock products;398;Kazakistan;5910;Export quantity;0112;Mais;2023;2023;t;89851,8;A;Official figure;
+TCL;Crops and livestock products;398;Kazakistan;5910;Export quantity;F0030;Riso;2023;2023;t;112328;E;Estimated value;
+TCL;Crops and livestock products;398;Kazakistan;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;46119,98;A;Official figure;
+TCL;Crops and livestock products;398;Kazakistan;5910;Export quantity;01234;Pomodori;2023;2023;t;17142,71;A;Official figure;
+TCL;Crops and livestock products;398;Kazakistan;5910;Export quantity;0111;Grano;2023;2023;t;7202625,71;A;Official figure;
+TCL;Crops and livestock products;404;Kenya;5910;Export quantity;01312;Banane;2023;2023;t;78,22;A;Official figure;
+TCL;Crops and livestock products;404;Kenya;5910;Export quantity;01640;Cacao;2023;2023;t;0,79;A;Official figure;
+TCL;Crops and livestock products;404;Kenya;5910;Export quantity;01610;Caffè;2023;2023;t;48822,17;A;Official figure;
+TCL;Crops and livestock products;404;Kenya;5910;Export quantity;0112;Mais;2023;2023;t;2034,78;A;Official figure;
+TCL;Crops and livestock products;404;Kenya;5910;Export quantity;F0030;Riso;2023;2023;t;1372,73;E;Estimated value;
+TCL;Crops and livestock products;404;Kenya;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;22,61;A;Official figure;
+TCL;Crops and livestock products;404;Kenya;5910;Export quantity;01234;Pomodori;2023;2023;t;33028,77;A;Official figure;
+TCL;Crops and livestock products;404;Kenya;5910;Export quantity;0111;Grano;2023;2023;t;19348,67;A;Official figure;
+TCL;Crops and livestock products;414;Kuwait;5910;Export quantity;01312;Banane;2023;2023;t;190,72;I;Imputed value;
+TCL;Crops and livestock products;414;Kuwait;5910;Export quantity;01640;Cacao;2023;2023;t;0,19;A;Official figure;
+TCL;Crops and livestock products;414;Kuwait;5910;Export quantity;01610;Caffè;2023;2023;t;146;I;Imputed value;
+TCL;Crops and livestock products;414;Kuwait;5910;Export quantity;F0030;Riso;2023;2023;t;118,1;E;Estimated value;
+TCL;Crops and livestock products;414;Kuwait;5910;Export quantity;01234;Pomodori;2023;2023;t;217,65;I;Imputed value;
+TCL;Crops and livestock products;414;Kuwait;5910;Export quantity;0111;Grano;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;417;Kirghizistan;5910;Export quantity;01312;Banane;2023;2023;t;39,36;A;Official figure;
+TCL;Crops and livestock products;417;Kirghizistan;5910;Export quantity;0112;Mais;2023;2023;t;16573,06;A;Official figure;
+TCL;Crops and livestock products;417;Kirghizistan;5910;Export quantity;F0030;Riso;2023;2023;t;409,28;E;Estimated value;
+TCL;Crops and livestock products;417;Kirghizistan;5910;Export quantity;01234;Pomodori;2023;2023;t;785,72;A;Official figure;
+TCL;Crops and livestock products;418;Laos;5910;Export quantity;01312;Banane;2023;2023;t;69742,32;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;418;Laos;5910;Export quantity;01610;Caffè;2023;2023;t;19117,67;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;418;Laos;5910;Export quantity;0112;Mais;2023;2023;t;171456,26;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;418;Laos;5910;Export quantity;F0030;Riso;2023;2023;t;33246,16;E;Estimated value;
+TCL;Crops and livestock products;418;Laos;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;418;Laos;5910;Export quantity;01234;Pomodori;2023;2023;t;0,04;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;428;Lettonia;5910;Export quantity;01312;Banane;2023;2023;t;22425,81;A;Official figure;
+TCL;Crops and livestock products;428;Lettonia;5910;Export quantity;01640;Cacao;2023;2023;t;24,03;A;Official figure;
+TCL;Crops and livestock products;428;Lettonia;5910;Export quantity;01610;Caffè;2023;2023;t;392,89;A;Official figure;
+TCL;Crops and livestock products;428;Lettonia;5910;Export quantity;0112;Mais;2023;2023;t;286235,07;A;Official figure;
+TCL;Crops and livestock products;428;Lettonia;5910;Export quantity;F0030;Riso;2023;2023;t;2059,98;E;Estimated value;
+TCL;Crops and livestock products;428;Lettonia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;2035,72;A;Official figure;
+TCL;Crops and livestock products;428;Lettonia;5910;Export quantity;01234;Pomodori;2023;2023;t;7846,21;A;Official figure;
+TCL;Crops and livestock products;428;Lettonia;5910;Export quantity;0111;Grano;2023;2023;t;2362606,1;A;Official figure;
+TCL;Crops and livestock products;422;Libano;5910;Export quantity;01312;Banane;2023;2023;t;28701,53;I;Imputed value;
+TCL;Crops and livestock products;422;Libano;5910;Export quantity;01640;Cacao;2023;2023;t;0,05;A;Official figure;
+TCL;Crops and livestock products;422;Libano;5910;Export quantity;01610;Caffè;2023;2023;t;920,43;I;Imputed value;
+TCL;Crops and livestock products;422;Libano;5910;Export quantity;0112;Mais;2023;2023;t;9189,22;I;Imputed value;
+TCL;Crops and livestock products;422;Libano;5910;Export quantity;F0030;Riso;2023;2023;t;4557,59;E;Estimated value;
+TCL;Crops and livestock products;422;Libano;5910;Export quantity;01234;Pomodori;2023;2023;t;122,4;I;Imputed value;
+TCL;Crops and livestock products;422;Libano;5910;Export quantity;0111;Grano;2023;2023;t;3218,27;I;Imputed value;
+TCL;Crops and livestock products;426;Lesotho;5910;Export quantity;0112;Mais;2023;2023;t;37,62;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;430;Liberia;5910;Export quantity;01640;Cacao;2023;2023;t;1447,29;A;Official figure;
+TCL;Crops and livestock products;430;Liberia;5910;Export quantity;01610;Caffè;2023;2023;t;2,4;A;Official figure;
+TCL;Crops and livestock products;434;Libia;5910;Export quantity;01610;Caffè;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;434;Libia;5910;Export quantity;0112;Mais;2023;2023;t;0,31;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;434;Libia;5910;Export quantity;F0030;Riso;2023;2023;t;0,57;E;Estimated value;
+TCL;Crops and livestock products;434;Libia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,12;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;434;Libia;5910;Export quantity;0111;Grano;2023;2023;t;0,03;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;440;Lituania;5910;Export quantity;01312;Banane;2023;2023;t;8202,59;A;Official figure;
+TCL;Crops and livestock products;440;Lituania;5910;Export quantity;01640;Cacao;2023;2023;t;149,93;A;Official figure;
+TCL;Crops and livestock products;440;Lituania;5910;Export quantity;01610;Caffè;2023;2023;t;1515,44;A;Official figure;
+TCL;Crops and livestock products;440;Lituania;5910;Export quantity;0112;Mais;2023;2023;t;145123,43;A;Official figure;
+TCL;Crops and livestock products;440;Lituania;5910;Export quantity;F0030;Riso;2023;2023;t;14987,39;E;Estimated value;
+TCL;Crops and livestock products;440;Lituania;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;716,79;A;Official figure;
+TCL;Crops and livestock products;440;Lituania;5910;Export quantity;01234;Pomodori;2023;2023;t;2412,24;A;Official figure;
+TCL;Crops and livestock products;440;Lituania;5910;Export quantity;0111;Grano;2023;2023;t;3704409,45;A;Official figure;
+TCL;Crops and livestock products;442;Lussemburgo;5910;Export quantity;01312;Banane;2023;2023;t;314,63;A;Official figure;
+TCL;Crops and livestock products;442;Lussemburgo;5910;Export quantity;01640;Cacao;2023;2023;t;0,13;A;Official figure;
+TCL;Crops and livestock products;442;Lussemburgo;5910;Export quantity;01610;Caffè;2023;2023;t;125,24;A;Official figure;
+TCL;Crops and livestock products;442;Lussemburgo;5910;Export quantity;0112;Mais;2023;2023;t;7228,23;A;Official figure;
+TCL;Crops and livestock products;442;Lussemburgo;5910;Export quantity;F0030;Riso;2023;2023;t;159,63;E;Estimated value;
+TCL;Crops and livestock products;442;Lussemburgo;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;21,48;A;Official figure;
+TCL;Crops and livestock products;442;Lussemburgo;5910;Export quantity;01234;Pomodori;2023;2023;t;556,55;A;Official figure;
+TCL;Crops and livestock products;442;Lussemburgo;5910;Export quantity;0111;Grano;2023;2023;t;25619,69;A;Official figure;
+TCL;Crops and livestock products;450;Madagascar;5910;Export quantity;01312;Banane;2023;2023;t;45,1;A;Official figure;
+TCL;Crops and livestock products;450;Madagascar;5910;Export quantity;01640;Cacao;2023;2023;t;11616,8;A;Official figure;
+TCL;Crops and livestock products;450;Madagascar;5910;Export quantity;01610;Caffè;2023;2023;t;60,6;A;Official figure;
+TCL;Crops and livestock products;450;Madagascar;5910;Export quantity;0112;Mais;2023;2023;t;27,93;A;Official figure;
+TCL;Crops and livestock products;450;Madagascar;5910;Export quantity;F0030;Riso;2023;2023;t;2,5;E;Estimated value;
+TCL;Crops and livestock products;450;Madagascar;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;48;A;Official figure;
+TCL;Crops and livestock products;450;Madagascar;5910;Export quantity;01234;Pomodori;2023;2023;t;17,01;A;Official figure;
+TCL;Crops and livestock products;454;Malawi;5910;Export quantity;01312;Banane;2023;2023;t;30,83;A;Official figure;
+TCL;Crops and livestock products;454;Malawi;5910;Export quantity;01610;Caffè;2023;2023;t;189,61;A;Official figure;
+TCL;Crops and livestock products;454;Malawi;5910;Export quantity;0112;Mais;2023;2023;t;3472,34;A;Official figure;
+TCL;Crops and livestock products;454;Malawi;5910;Export quantity;F0030;Riso;2023;2023;t;846,09;E;Estimated value;
+TCL;Crops and livestock products;454;Malawi;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;57897,07;A;Official figure;
+TCL;Crops and livestock products;454;Malawi;5910;Export quantity;01234;Pomodori;2023;2023;t;41,58;A;Official figure;
+TCL;Crops and livestock products;458;Malaysia;5910;Export quantity;01312;Banane;2023;2023;t;24462,13;A;Official figure;
+TCL;Crops and livestock products;458;Malaysia;5910;Export quantity;01640;Cacao;2023;2023;t;104370,79;A;Official figure;
+TCL;Crops and livestock products;458;Malaysia;5910;Export quantity;01610;Caffè;2023;2023;t;2415,33;A;Official figure;
+TCL;Crops and livestock products;458;Malaysia;5910;Export quantity;0112;Mais;2023;2023;t;6113,35;A;Official figure;
+TCL;Crops and livestock products;458;Malaysia;5910;Export quantity;F0030;Riso;2023;2023;t;123441,8;E;Estimated value;
+TCL;Crops and livestock products;458;Malaysia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;9888,43;A;Official figure;
+TCL;Crops and livestock products;458;Malaysia;5910;Export quantity;01234;Pomodori;2023;2023;t;34708,43;A;Official figure;
+TCL;Crops and livestock products;458;Malaysia;5910;Export quantity;0111;Grano;2023;2023;t;822,05;A;Official figure;
+TCL;Crops and livestock products;466;Mali;5910;Export quantity;01610;Caffè;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;466;Mali;5910;Export quantity;0112;Mais;2023;2023;t;6107,08;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;466;Mali;5910;Export quantity;F0030;Riso;2023;2023;t;1,89;E;Estimated value;
+TCL;Crops and livestock products;466;Mali;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;43,03;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;466;Mali;5910;Export quantity;01234;Pomodori;2023;2023;t;11274,62;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;466;Mali;5910;Export quantity;0111;Grano;2023;2023;t;0,1;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;470;Malta;5910;Export quantity;01610;Caffè;2023;2023;t;0,1;A;Official figure;
+TCL;Crops and livestock products;470;Malta;5910;Export quantity;F0030;Riso;2023;2023;t;3,2;E;Estimated value;
+TCL;Crops and livestock products;470;Malta;5910;Export quantity;01234;Pomodori;2023;2023;t;0,48;A;Official figure;
+TCL;Crops and livestock products;470;Malta;5910;Export quantity;0111;Grano;2023;2023;t;10500;A;Official figure;
+TCL;Crops and livestock products;480;Mauritius;5910;Export quantity;01640;Cacao;2023;2023;t;0,53;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;480;Mauritius;5910;Export quantity;01610;Caffè;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;480;Mauritius;5910;Export quantity;0112;Mais;2023;2023;t;2640,96;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;480;Mauritius;5910;Export quantity;F0030;Riso;2023;2023;t;49285,5;E;Estimated value;
+TCL;Crops and livestock products;480;Mauritius;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1,2;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;480;Mauritius;5910;Export quantity;0111;Grano;2023;2023;t;10000,07;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;484;Messico;5910;Export quantity;01312;Banane;2023;2023;t;406909,08;A;Official figure;
+TCL;Crops and livestock products;484;Messico;5910;Export quantity;01640;Cacao;2023;2023;t;19;A;Official figure;
+TCL;Crops and livestock products;484;Messico;5910;Export quantity;01610;Caffè;2023;2023;t;84644,47;A;Official figure;
+TCL;Crops and livestock products;484;Messico;5910;Export quantity;0112;Mais;2023;2023;t;104692,7;I;Imputed value;
+TCL;Crops and livestock products;484;Messico;5910;Export quantity;F0030;Riso;2023;2023;t;5740,19;E;Estimated value;
+TCL;Crops and livestock products;484;Messico;5910;Export quantity;01234;Pomodori;2023;2023;t;2010308,85;A;Official figure;
+TCL;Crops and livestock products;484;Messico;5910;Export quantity;0111;Grano;2023;2023;t;126158,51;I;Imputed value;
+TCL;Crops and livestock products;499;Montenegro;5910;Export quantity;01610;Caffè;2023;2023;t;0,02;A;Official figure;
+TCL;Crops and livestock products;499;Montenegro;5910;Export quantity;0112;Mais;2023;2023;t;780,24;A;Official figure;
+TCL;Crops and livestock products;499;Montenegro;5910;Export quantity;F0030;Riso;2023;2023;t;23;E;Estimated value;
+TCL;Crops and livestock products;499;Montenegro;5910;Export quantity;01234;Pomodori;2023;2023;t;6,07;A;Official figure;
+TCL;Crops and livestock products;504;Marocco;5910;Export quantity;01640;Cacao;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;504;Marocco;5910;Export quantity;01610;Caffè;2023;2023;t;9,45;A;Official figure;
+TCL;Crops and livestock products;504;Marocco;5910;Export quantity;0112;Mais;2023;2023;t;0,02;A;Official figure;
+TCL;Crops and livestock products;504;Marocco;5910;Export quantity;F0030;Riso;2023;2023;t;163,23;E;Estimated value;
+TCL;Crops and livestock products;504;Marocco;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,18;A;Official figure;
+TCL;Crops and livestock products;504;Marocco;5910;Export quantity;01234;Pomodori;2023;2023;t;658746,2;A;Official figure;
+TCL;Crops and livestock products;504;Marocco;5910;Export quantity;0111;Grano;2023;2023;t;0,14;A;Official figure;
+TCL;Crops and livestock products;508;Mozambico;5910;Export quantity;01312;Banane;2023;2023;t;135115,18;A;Official figure;
+TCL;Crops and livestock products;508;Mozambico;5910;Export quantity;01610;Caffè;2023;2023;t;9,86;A;Official figure;
+TCL;Crops and livestock products;508;Mozambico;5910;Export quantity;0112;Mais;2023;2023;t;23737,45;A;Official figure;
+TCL;Crops and livestock products;508;Mozambico;5910;Export quantity;F0030;Riso;2023;2023;t;2616,65;E;Estimated value;
+TCL;Crops and livestock products;508;Mozambico;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;86427,74;A;Official figure;
+TCL;Crops and livestock products;508;Mozambico;5910;Export quantity;01234;Pomodori;2023;2023;t;3,23;A;Official figure;
+TCL;Crops and livestock products;508;Mozambico;5910;Export quantity;0111;Grano;2023;2023;t;12002,15;A;Official figure;
+TCL;Crops and livestock products;104;Myanmar;5910;Export quantity;01610;Caffè;2023;2023;t;1700,21;A;Official figure;
+TCL;Crops and livestock products;104;Myanmar;5910;Export quantity;0112;Mais;2023;2023;t;1222929,65;A;Official figure;
+TCL;Crops and livestock products;104;Myanmar;5910;Export quantity;F0030;Riso;2023;2023;t;1516170,51;E;Estimated value;
+TCL;Crops and livestock products;104;Myanmar;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;483,87;A;Official figure;
+TCL;Crops and livestock products;516;Namibia;5910;Export quantity;01312;Banane;2023;2023;t;0,06;A;Official figure;
+TCL;Crops and livestock products;516;Namibia;5910;Export quantity;01610;Caffè;2023;2023;t;2,75;A;Official figure;
+TCL;Crops and livestock products;516;Namibia;5910;Export quantity;0112;Mais;2023;2023;t;76,75;A;Official figure;
+TCL;Crops and livestock products;516;Namibia;5910;Export quantity;F0030;Riso;2023;2023;t;491,55;E;Estimated value;
+TCL;Crops and livestock products;516;Namibia;5910;Export quantity;01234;Pomodori;2023;2023;t;8165,34;A;Official figure;
+TCL;Crops and livestock products;516;Namibia;5910;Export quantity;0111;Grano;2023;2023;t;0,84;A;Official figure;
+TCL;Crops and livestock products;524;Nepal;5910;Export quantity;01312;Banane;2023;2023;t;0,03;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;524;Nepal;5910;Export quantity;01610;Caffè;2023;2023;t;81,25;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;524;Nepal;5910;Export quantity;0112;Mais;2023;2023;t;1;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;524;Nepal;5910;Export quantity;F0030;Riso;2023;2023;t;51,76;E;Estimated value;
+TCL;Crops and livestock products;524;Nepal;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;10,96;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;524;Nepal;5910;Export quantity;01234;Pomodori;2023;2023;t;39,04;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;524;Nepal;5910;Export quantity;0111;Grano;2023;2023;t;0,19;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;528;Paesi Bassi;5910;Export quantity;01312;Banane;2023;2023;t;1012848,92;A;Official figure;
+TCL;Crops and livestock products;528;Paesi Bassi;5910;Export quantity;01640;Cacao;2023;2023;t;202036,21;A;Official figure;
+TCL;Crops and livestock products;528;Paesi Bassi;5910;Export quantity;01610;Caffè;2023;2023;t;78803,99;A;Official figure;
+TCL;Crops and livestock products;528;Paesi Bassi;5910;Export quantity;0112;Mais;2023;2023;t;345877,72;A;Official figure;
+TCL;Crops and livestock products;528;Paesi Bassi;5910;Export quantity;F0030;Riso;2023;2023;t;324119,06;E;Estimated value;
+TCL;Crops and livestock products;528;Paesi Bassi;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;794252,73;A;Official figure;
+TCL;Crops and livestock products;528;Paesi Bassi;5910;Export quantity;01234;Pomodori;2023;2023;t;866876,88;A;Official figure;
+TCL;Crops and livestock products;528;Paesi Bassi;5910;Export quantity;0111;Grano;2023;2023;t;187323,78;A;Official figure;
+TCL;Crops and livestock products;540;Nuova Caledonia;5910;Export quantity;01610;Caffè;2023;2023;t;18,98;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;540;Nuova Caledonia;5910;Export quantity;F0030;Riso;2023;2023;t;0;E;Estimated value;
+TCL;Crops and livestock products;554;Nuova Zelanda;5910;Export quantity;01312;Banane;2023;2023;t;11,67;A;Official figure;
+TCL;Crops and livestock products;554;Nuova Zelanda;5910;Export quantity;01640;Cacao;2023;2023;t;1,69;A;Official figure;
+TCL;Crops and livestock products;554;Nuova Zelanda;5910;Export quantity;01610;Caffè;2023;2023;t;288,37;A;Official figure;
+TCL;Crops and livestock products;554;Nuova Zelanda;5910;Export quantity;0112;Mais;2023;2023;t;841,85;A;Official figure;
+TCL;Crops and livestock products;554;Nuova Zelanda;5910;Export quantity;F0030;Riso;2023;2023;t;213,25;E;Estimated value;
+TCL;Crops and livestock products;554;Nuova Zelanda;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,05;A;Official figure;
+TCL;Crops and livestock products;554;Nuova Zelanda;5910;Export quantity;01234;Pomodori;2023;2023;t;904,33;A;Official figure;
+TCL;Crops and livestock products;554;Nuova Zelanda;5910;Export quantity;0111;Grano;2023;2023;t;1277,63;I;Imputed value;
+TCL;Crops and livestock products;558;Nicaragua;5910;Export quantity;01312;Banane;2023;2023;t;122056,08;A;Official figure;
+TCL;Crops and livestock products;558;Nicaragua;5910;Export quantity;01640;Cacao;2023;2023;t;5928,58;A;Official figure;
+TCL;Crops and livestock products;558;Nicaragua;5910;Export quantity;01610;Caffè;2023;2023;t;139511,41;A;Official figure;
+TCL;Crops and livestock products;558;Nicaragua;5910;Export quantity;0112;Mais;2023;2023;t;2345,14;A;Official figure;
+TCL;Crops and livestock products;558;Nicaragua;5910;Export quantity;F0030;Riso;2023;2023;t;4333,89;E;Estimated value;
+TCL;Crops and livestock products;558;Nicaragua;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;175,06;A;Official figure;
+TCL;Crops and livestock products;558;Nicaragua;5910;Export quantity;01234;Pomodori;2023;2023;t;1263,84;A;Official figure;
+TCL;Crops and livestock products;558;Nicaragua;5910;Export quantity;0111;Grano;2023;2023;t;9,76;A;Official figure;
+TCL;Crops and livestock products;562;Niger;5910;Export quantity;0112;Mais;2023;2023;t;45;A;Official figure;
+TCL;Crops and livestock products;562;Niger;5910;Export quantity;F0030;Riso;2023;2023;t;50;E;Estimated value;
+TCL;Crops and livestock products;562;Niger;5910;Export quantity;01234;Pomodori;2023;2023;t;67,5;A;Official figure;
+TCL;Crops and livestock products;566;Nigeria;5910;Export quantity;01312;Banane;2023;2023;t;12,86;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;566;Nigeria;5910;Export quantity;01640;Cacao;2023;2023;t;329104,7;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;566;Nigeria;5910;Export quantity;01610;Caffè;2023;2023;t;21,73;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;566;Nigeria;5910;Export quantity;0112;Mais;2023;2023;t;1523,24;I;Imputed value;
+TCL;Crops and livestock products;566;Nigeria;5910;Export quantity;F0030;Riso;2023;2023;t;3716,77;E;Estimated value;
+TCL;Crops and livestock products;566;Nigeria;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;97750,2;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;566;Nigeria;5910;Export quantity;01234;Pomodori;2023;2023;t;116,34;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;566;Nigeria;5910;Export quantity;0111;Grano;2023;2023;t;20,52;I;Imputed value;
+TCL;Crops and livestock products;807;Macedonia del Nord;5910;Export quantity;01640;Cacao;2023;2023;t;15,78;A;Official figure;
+TCL;Crops and livestock products;807;Macedonia del Nord;5910;Export quantity;0112;Mais;2023;2023;t;14847,35;A;Official figure;
+TCL;Crops and livestock products;807;Macedonia del Nord;5910;Export quantity;F0030;Riso;2023;2023;t;6615,55;E;Estimated value;
+TCL;Crops and livestock products;807;Macedonia del Nord;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,02;A;Official figure;
+TCL;Crops and livestock products;807;Macedonia del Nord;5910;Export quantity;01234;Pomodori;2023;2023;t;14916,41;A;Official figure;
+TCL;Crops and livestock products;807;Macedonia del Nord;5910;Export quantity;0111;Grano;2023;2023;t;18875,22;A;Official figure;
+TCL;Crops and livestock products;578;Norvegia;5910;Export quantity;01312;Banane;2023;2023;t;0,77;A;Official figure;
+TCL;Crops and livestock products;578;Norvegia;5910;Export quantity;01640;Cacao;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;578;Norvegia;5910;Export quantity;01610;Caffè;2023;2023;t;235,96;A;Official figure;
+TCL;Crops and livestock products;578;Norvegia;5910;Export quantity;0112;Mais;2023;2023;t;21,71;A;Official figure;
+TCL;Crops and livestock products;578;Norvegia;5910;Export quantity;F0030;Riso;2023;2023;t;292,16;E;Estimated value;
+TCL;Crops and livestock products;578;Norvegia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;2,49;A;Official figure;
+TCL;Crops and livestock products;578;Norvegia;5910;Export quantity;01234;Pomodori;2023;2023;t;22,64;A;Official figure;
+TCL;Crops and livestock products;578;Norvegia;5910;Export quantity;0111;Grano;2023;2023;t;2,61;A;Official figure;
+TCL;Crops and livestock products;512;Oman;5910;Export quantity;01640;Cacao;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;512;Oman;5910;Export quantity;01610;Caffè;2023;2023;t;116,02;I;Imputed value;
+TCL;Crops and livestock products;512;Oman;5910;Export quantity;0112;Mais;2023;2023;t;152,14;I;Imputed value;
+TCL;Crops and livestock products;512;Oman;5910;Export quantity;F0030;Riso;2023;2023;t;6369,53;E;Estimated value;
+TCL;Crops and livestock products;512;Oman;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;512;Oman;5910;Export quantity;01234;Pomodori;2023;2023;t;7046,73;I;Imputed value;
+TCL;Crops and livestock products;512;Oman;5910;Export quantity;0111;Grano;2023;2023;t;63333,72;I;Imputed value;
+TCL;Crops and livestock products;586;Pakistan;5910;Export quantity;01312;Banane;2023;2023;t;140356,08;A;Official figure;
+TCL;Crops and livestock products;586;Pakistan;5910;Export quantity;0112;Mais;2023;2023;t;1504232;A;Official figure;
+TCL;Crops and livestock products;586;Pakistan;5910;Export quantity;F0030;Riso;2023;2023;t;4530413;E;Estimated value;
+TCL;Crops and livestock products;586;Pakistan;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;70932,75;A;Official figure;
+TCL;Crops and livestock products;586;Pakistan;5910;Export quantity;01234;Pomodori;2023;2023;t;56119,86;A;Official figure;
+TCL;Crops and livestock products;275;Palestina;5910;Export quantity;F0030;Riso;2023;2023;t;25;E;Estimated value;
+TCL;Crops and livestock products;275;Palestina;5910;Export quantity;01234;Pomodori;2023;2023;t;11,14;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;275;Palestina;5910;Export quantity;0111;Grano;2023;2023;t;11,5;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;591;Panama;5910;Export quantity;01312;Banane;2023;2023;t;312850,02;A;Official figure;
+TCL;Crops and livestock products;591;Panama;5910;Export quantity;01640;Cacao;2023;2023;t;681,3;A;Official figure;
+TCL;Crops and livestock products;591;Panama;5910;Export quantity;01610;Caffè;2023;2023;t;51,21;A;Official figure;
+TCL;Crops and livestock products;591;Panama;5910;Export quantity;0112;Mais;2023;2023;t;23,82;A;Official figure;
+TCL;Crops and livestock products;591;Panama;5910;Export quantity;F0030;Riso;2023;2023;t;6;E;Estimated value;
+TCL;Crops and livestock products;598;Papua Nuova Guinea;5910;Export quantity;01640;Cacao;2023;2023;t;39223,22;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;598;Papua Nuova Guinea;5910;Export quantity;01610;Caffè;2023;2023;t;53521,87;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;598;Papua Nuova Guinea;5910;Export quantity;0111;Grano;2023;2023;t;2700;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;600;Paraguay;5910;Export quantity;01312;Banane;2023;2023;t;107349,4;A;Official figure;
+TCL;Crops and livestock products;600;Paraguay;5910;Export quantity;01610;Caffè;2023;2023;t;0,13;A;Official figure;
+TCL;Crops and livestock products;600;Paraguay;5910;Export quantity;0112;Mais;2023;2023;t;3789793,29;A;Official figure;
+TCL;Crops and livestock products;600;Paraguay;5910;Export quantity;F0030;Riso;2023;2023;t;862887,29;E;Estimated value;
+TCL;Crops and livestock products;600;Paraguay;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;6494844,9;A;Official figure;
+TCL;Crops and livestock products;600;Paraguay;5910;Export quantity;0111;Grano;2023;2023;t;247037,5;A;Official figure;
+TCL;Crops and livestock products;604;Perù;5910;Export quantity;01312;Banane;2023;2023;t;142366,39;A;Official figure;
+TCL;Crops and livestock products;604;Perù;5910;Export quantity;01640;Cacao;2023;2023;t;71271,82;A;Official figure;
+TCL;Crops and livestock products;604;Perù;5910;Export quantity;01610;Caffè;2023;2023;t;204548,44;A;Official figure;
+TCL;Crops and livestock products;604;Perù;5910;Export quantity;0112;Mais;2023;2023;t;10555,33;A;Official figure;
+TCL;Crops and livestock products;604;Perù;5910;Export quantity;F0030;Riso;2023;2023;t;10861,46;E;Estimated value;
+TCL;Crops and livestock products;604;Perù;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;264,34;A;Official figure;
+TCL;Crops and livestock products;604;Perù;5910;Export quantity;01234;Pomodori;2023;2023;t;3198,78;A;Official figure;
+TCL;Crops and livestock products;604;Perù;5910;Export quantity;0111;Grano;2023;2023;t;97,34;A;Official figure;
+TCL;Crops and livestock products;608;Filippine;5910;Export quantity;01312;Banane;2023;2023;t;2031799;I;Imputed value;
+TCL;Crops and livestock products;608;Filippine;5910;Export quantity;01640;Cacao;2023;2023;t;2689,89;A;Official figure;
+TCL;Crops and livestock products;608;Filippine;5910;Export quantity;01610;Caffè;2023;2023;t;33,93;I;Imputed value;
+TCL;Crops and livestock products;608;Filippine;5910;Export quantity;0112;Mais;2023;2023;t;1512,84;I;Imputed value;
+TCL;Crops and livestock products;608;Filippine;5910;Export quantity;F0030;Riso;2023;2023;t;289,98;E;Estimated value;
+TCL;Crops and livestock products;608;Filippine;5910;Export quantity;01234;Pomodori;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;616;Polonia;5910;Export quantity;01312;Banane;2023;2023;t;38921,52;A;Official figure;
+TCL;Crops and livestock products;616;Polonia;5910;Export quantity;01640;Cacao;2023;2023;t;168,91;A;Official figure;
+TCL;Crops and livestock products;616;Polonia;5910;Export quantity;01610;Caffè;2023;2023;t;4143,71;A;Official figure;
+TCL;Crops and livestock products;616;Polonia;5910;Export quantity;0112;Mais;2023;2023;t;4568782,01;A;Official figure;
+TCL;Crops and livestock products;616;Polonia;5910;Export quantity;F0030;Riso;2023;2023;t;43546,43;E;Estimated value;
+TCL;Crops and livestock products;616;Polonia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;79140,22;A;Official figure;
+TCL;Crops and livestock products;616;Polonia;5910;Export quantity;01234;Pomodori;2023;2023;t;76168,78;A;Official figure;
+TCL;Crops and livestock products;616;Polonia;5910;Export quantity;0111;Grano;2023;2023;t;6972401,02;A;Official figure;
+TCL;Crops and livestock products;620;Portogallo;5910;Export quantity;01312;Banane;2023;2023;t;26296,98;A;Official figure;
+TCL;Crops and livestock products;620;Portogallo;5910;Export quantity;01640;Cacao;2023;2023;t;2,99;A;Official figure;
+TCL;Crops and livestock products;620;Portogallo;5910;Export quantity;01610;Caffè;2023;2023;t;1926,44;A;Official figure;
+TCL;Crops and livestock products;620;Portogallo;5910;Export quantity;0112;Mais;2023;2023;t;233869,6;A;Official figure;
+TCL;Crops and livestock products;620;Portogallo;5910;Export quantity;F0030;Riso;2023;2023;t;76654,62;E;Estimated value;
+TCL;Crops and livestock products;620;Portogallo;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;7720,38;A;Official figure;
+TCL;Crops and livestock products;620;Portogallo;5910;Export quantity;01234;Pomodori;2023;2023;t;242040,43;A;Official figure;
+TCL;Crops and livestock products;620;Portogallo;5910;Export quantity;0111;Grano;2023;2023;t;41990,9;A;Official figure;
+TCL;Crops and livestock products;634;Qatar;5910;Export quantity;01312;Banane;2023;2023;t;502,51;I;Imputed value;
+TCL;Crops and livestock products;634;Qatar;5910;Export quantity;01234;Pomodori;2023;2023;t;622,43;I;Imputed value;
+TCL;Crops and livestock products;410;Corea del Sud;5910;Export quantity;01312;Banane;2023;2023;t;0,45;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;410;Corea del Sud;5910;Export quantity;01640;Cacao;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;410;Corea del Sud;5910;Export quantity;01610;Caffè;2023;2023;t;177,9;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;410;Corea del Sud;5910;Export quantity;0112;Mais;2023;2023;t;50,39;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;410;Corea del Sud;5910;Export quantity;F0030;Riso;2023;2023;t;46200,15;E;Estimated value;
+TCL;Crops and livestock products;410;Corea del Sud;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;29,77;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;410;Corea del Sud;5910;Export quantity;01234;Pomodori;2023;2023;t;3504,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;410;Corea del Sud;5910;Export quantity;0111;Grano;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;498;Moldavia;5910;Export quantity;01312;Banane;2023;2023;t;20,05;A;Official figure;
+TCL;Crops and livestock products;498;Moldavia;5910;Export quantity;01610;Caffè;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;498;Moldavia;5910;Export quantity;0112;Mais;2023;2023;t;605544,79;A;Official figure;
+TCL;Crops and livestock products;498;Moldavia;5910;Export quantity;F0030;Riso;2023;2023;t;110,1;E;Estimated value;
+TCL;Crops and livestock products;498;Moldavia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;41760,28;A;Official figure;
+TCL;Crops and livestock products;498;Moldavia;5910;Export quantity;01234;Pomodori;2023;2023;t;1,81;A;Official figure;
+TCL;Crops and livestock products;498;Moldavia;5910;Export quantity;0111;Grano;2023;2023;t;1060095,42;A;Official figure;
+TCL;Crops and livestock products;642;Romania;5910;Export quantity;01312;Banane;2023;2023;t;3619,7;A;Official figure;
+TCL;Crops and livestock products;642;Romania;5910;Export quantity;01640;Cacao;2023;2023;t;0,03;A;Official figure;
+TCL;Crops and livestock products;642;Romania;5910;Export quantity;01610;Caffè;2023;2023;t;65,46;A;Official figure;
+TCL;Crops and livestock products;642;Romania;5910;Export quantity;0112;Mais;2023;2023;t;5351322,97;A;Official figure;
+TCL;Crops and livestock products;642;Romania;5910;Export quantity;F0030;Riso;2023;2023;t;23727,36;E;Estimated value;
+TCL;Crops and livestock products;642;Romania;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;132776,18;A;Official figure;
+TCL;Crops and livestock products;642;Romania;5910;Export quantity;01234;Pomodori;2023;2023;t;3747,38;A;Official figure;
+TCL;Crops and livestock products;642;Romania;5910;Export quantity;0111;Grano;2023;2023;t;8171216,09;A;Official figure;
+TCL;Crops and livestock products;643;Russia;5910;Export quantity;01312;Banane;2023;2023;t;70800;E;Estimated value;
+TCL;Crops and livestock products;643;Russia;5910;Export quantity;01640;Cacao;2023;2023;t;0,93;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;643;Russia;5910;Export quantity;01610;Caffè;2023;2023;t;578,06;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;643;Russia;5910;Export quantity;0112;Mais;2023;2023;t;3301956,31;I;Imputed value;
+TCL;Crops and livestock products;643;Russia;5910;Export quantity;F0030;Riso;2023;2023;t;57051,99;E;Estimated value;
+TCL;Crops and livestock products;643;Russia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1379308,32;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;643;Russia;5910;Export quantity;01234;Pomodori;2023;2023;t;1914,2;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;643;Russia;5910;Export quantity;0111;Grano;2023;2023;t;31599103,87;I;Imputed value;
+TCL;Crops and livestock products;646;Ruanda;5910;Export quantity;01640;Cacao;2023;2023;t;2,13;I;Imputed value;
+TCL;Crops and livestock products;646;Ruanda;5910;Export quantity;01610;Caffè;2023;2023;t;16206,93;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;646;Ruanda;5910;Export quantity;0112;Mais;2023;2023;t;452,97;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;646;Ruanda;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,35;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;659;Saint Kitts e Nevis;5910;Export quantity;01610;Caffè;2023;2023;t;32,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;662;Saint Lucia;5910;Export quantity;01312;Banane;2023;2023;t;1190,95;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;662;Saint Lucia;5910;Export quantity;01640;Cacao;2023;2023;t;15,94;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;662;Saint Lucia;5910;Export quantity;01610;Caffè;2023;2023;t;3,2;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;662;Saint Lucia;5910;Export quantity;F0030;Riso;2023;2023;t;45,36;E;Estimated value;
+TCL;Crops and livestock products;662;Saint Lucia;5910;Export quantity;01234;Pomodori;2023;2023;t;0,34;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;662;Saint Lucia;5910;Export quantity;0111;Grano;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;670;Saint Vincent e Grenadines;5910;Export quantity;01312;Banane;2023;2023;t;291;A;Official figure;
+TCL;Crops and livestock products;670;Saint Vincent e Grenadines;5910;Export quantity;01640;Cacao;2023;2023;t;34,75;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;670;Saint Vincent e Grenadines;5910;Export quantity;01610;Caffè;2023;2023;t;9,87;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;670;Saint Vincent e Grenadines;5910;Export quantity;F0030;Riso;2023;2023;t;0,92;E;Estimated value;
+TCL;Crops and livestock products;882;Samoa;5910;Export quantity;01312;Banane;2023;2023;t;0,11;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;882;Samoa;5910;Export quantity;01640;Cacao;2023;2023;t;8,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;678;Sao Tomé e Príncipe;5910;Export quantity;01640;Cacao;2023;2023;t;3544,63;A;Official figure;
+TCL;Crops and livestock products;678;Sao Tomé e Príncipe;5910;Export quantity;01610;Caffè;2023;2023;t;1,9;A;Official figure;
+TCL;Crops and livestock products;678;Sao Tomé e Príncipe;5910;Export quantity;F0030;Riso;2023;2023;t;0,04;E;Estimated value;
+TCL;Crops and livestock products;682;Arabia Saudita;5910;Export quantity;01312;Banane;2023;2023;t;1842,75;I;Imputed value;
+TCL;Crops and livestock products;682;Arabia Saudita;5910;Export quantity;01610;Caffè;2023;2023;t;2500,74;I;Imputed value;
+TCL;Crops and livestock products;682;Arabia Saudita;5910;Export quantity;0112;Mais;2023;2023;t;3356,97;I;Imputed value;
+TCL;Crops and livestock products;682;Arabia Saudita;5910;Export quantity;F0030;Riso;2023;2023;t;3090,37;E;Estimated value;
+TCL;Crops and livestock products;682;Arabia Saudita;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0;A;Official figure;
+TCL;Crops and livestock products;682;Arabia Saudita;5910;Export quantity;01234;Pomodori;2023;2023;t;941,49;I;Imputed value;
+TCL;Crops and livestock products;682;Arabia Saudita;5910;Export quantity;0111;Grano;2023;2023;t;205,47;I;Imputed value;
+TCL;Crops and livestock products;686;Senegal;5910;Export quantity;01610;Caffè;2023;2023;t;59,11;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;686;Senegal;5910;Export quantity;0112;Mais;2023;2023;t;751,85;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;686;Senegal;5910;Export quantity;F0030;Riso;2023;2023;t;80509,02;E;Estimated value;
+TCL;Crops and livestock products;686;Senegal;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,16;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;686;Senegal;5910;Export quantity;01234;Pomodori;2023;2023;t;4238,16;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;686;Senegal;5910;Export quantity;0111;Grano;2023;2023;t;9100;A;Official figure;
+TCL;Crops and livestock products;688;Serbia;5910;Export quantity;01312;Banane;2023;2023;t;267,37;A;Official figure;
+TCL;Crops and livestock products;688;Serbia;5910;Export quantity;01640;Cacao;2023;2023;t;2,52;A;Official figure;
+TCL;Crops and livestock products;688;Serbia;5910;Export quantity;01610;Caffè;2023;2023;t;25,95;A;Official figure;
+TCL;Crops and livestock products;688;Serbia;5910;Export quantity;0112;Mais;2023;2023;t;1050016;A;Official figure;
+TCL;Crops and livestock products;688;Serbia;5910;Export quantity;F0030;Riso;2023;2023;t;1169,55;E;Estimated value;
+TCL;Crops and livestock products;688;Serbia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;4913,61;A;Official figure;
+TCL;Crops and livestock products;688;Serbia;5910;Export quantity;01234;Pomodori;2023;2023;t;8501,58;A;Official figure;
+TCL;Crops and livestock products;688;Serbia;5910;Export quantity;0111;Grano;2023;2023;t;674900,64;A;Official figure;
+TCL;Crops and livestock products;690;Seychelles;5910;Export quantity;F0030;Riso;2023;2023;t;2;E;Estimated value;
+TCL;Crops and livestock products;690;Seychelles;5910;Export quantity;0111;Grano;2023;2023;t;26,03;A;Official figure;
+TCL;Crops and livestock products;694;Sierra Leone;5910;Export quantity;01640;Cacao;2023;2023;t;18039,47;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;694;Sierra Leone;5910;Export quantity;01610;Caffè;2023;2023;t;1589,1;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;694;Sierra Leone;5910;Export quantity;F0030;Riso;2023;2023;t;0,13;E;Estimated value;
+TCL;Crops and livestock products;702;Singapore;5910;Export quantity;01312;Banane;2023;2023;t;52,43;A;Official figure;
+TCL;Crops and livestock products;702;Singapore;5910;Export quantity;01640;Cacao;2023;2023;t;7,18;A;Official figure;
+TCL;Crops and livestock products;702;Singapore;5910;Export quantity;01610;Caffè;2023;2023;t;4562,83;A;Official figure;
+TCL;Crops and livestock products;702;Singapore;5910;Export quantity;0112;Mais;2023;2023;t;50,8;A;Official figure;
+TCL;Crops and livestock products;702;Singapore;5910;Export quantity;F0030;Riso;2023;2023;t;156792,85;E;Estimated value;
+TCL;Crops and livestock products;702;Singapore;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;286,58;A;Official figure;
+TCL;Crops and livestock products;702;Singapore;5910;Export quantity;01234;Pomodori;2023;2023;t;199,62;A;Official figure;
+TCL;Crops and livestock products;702;Singapore;5910;Export quantity;0111;Grano;2023;2023;t;16,47;A;Official figure;
+TCL;Crops and livestock products;703;Slovacchia;5910;Export quantity;01312;Banane;2023;2023;t;14957,36;A;Official figure;
+TCL;Crops and livestock products;703;Slovacchia;5910;Export quantity;01640;Cacao;2023;2023;t;1,95;A;Official figure;
+TCL;Crops and livestock products;703;Slovacchia;5910;Export quantity;01610;Caffè;2023;2023;t;1198,39;A;Official figure;
+TCL;Crops and livestock products;703;Slovacchia;5910;Export quantity;0112;Mais;2023;2023;t;574816,67;A;Official figure;
+TCL;Crops and livestock products;703;Slovacchia;5910;Export quantity;F0030;Riso;2023;2023;t;8326,47;E;Estimated value;
+TCL;Crops and livestock products;703;Slovacchia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;114317,08;A;Official figure;
+TCL;Crops and livestock products;703;Slovacchia;5910;Export quantity;01234;Pomodori;2023;2023;t;6620,86;A;Official figure;
+TCL;Crops and livestock products;703;Slovacchia;5910;Export quantity;0111;Grano;2023;2023;t;1602518,08;A;Official figure;
+TCL;Crops and livestock products;705;Slovenia;5910;Export quantity;01312;Banane;2023;2023;t;65581,91;A;Official figure;
+TCL;Crops and livestock products;705;Slovenia;5910;Export quantity;01640;Cacao;2023;2023;t;0,74;A;Official figure;
+TCL;Crops and livestock products;705;Slovenia;5910;Export quantity;01610;Caffè;2023;2023;t;17128,72;A;Official figure;
+TCL;Crops and livestock products;705;Slovenia;5910;Export quantity;0112;Mais;2023;2023;t;1121033,96;A;Official figure;
+TCL;Crops and livestock products;705;Slovenia;5910;Export quantity;F0030;Riso;2023;2023;t;11881,03;E;Estimated value;
+TCL;Crops and livestock products;705;Slovenia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;60103,53;A;Official figure;
+TCL;Crops and livestock products;705;Slovenia;5910;Export quantity;01234;Pomodori;2023;2023;t;3175,97;A;Official figure;
+TCL;Crops and livestock products;705;Slovenia;5910;Export quantity;0111;Grano;2023;2023;t;377969,24;A;Official figure;
+TCL;Crops and livestock products;090;Isole Salomone;5910;Export quantity;01640;Cacao;2023;2023;t;3483,27;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;090;Isole Salomone;5910;Export quantity;01610;Caffè;2023;2023;t;18,98;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;090;Isole Salomone;5910;Export quantity;F0030;Riso;2023;2023;t;0,23;E;Estimated value;
+TCL;Crops and livestock products;710;Sudafrica;5910;Export quantity;01312;Banane;2023;2023;t;14012,51;A;Official figure;
+TCL;Crops and livestock products;710;Sudafrica;5910;Export quantity;01640;Cacao;2023;2023;t;5,95;A;Official figure;
+TCL;Crops and livestock products;710;Sudafrica;5910;Export quantity;01610;Caffè;2023;2023;t;1093,92;A;Official figure;
+TCL;Crops and livestock products;710;Sudafrica;5910;Export quantity;0112;Mais;2023;2023;t;3978399,59;A;Official figure;
+TCL;Crops and livestock products;710;Sudafrica;5910;Export quantity;F0030;Riso;2023;2023;t;158434,16;E;Estimated value;
+TCL;Crops and livestock products;710;Sudafrica;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;688968,69;A;Official figure;
+TCL;Crops and livestock products;710;Sudafrica;5910;Export quantity;01234;Pomodori;2023;2023;t;16516,34;A;Official figure;
+TCL;Crops and livestock products;710;Sudafrica;5910;Export quantity;0111;Grano;2023;2023;t;453841,19;A;Official figure;
+TCL;Crops and livestock products;728;Sudan;5910;Export quantity;0112;Mais;2023;2023;t;929,6;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;724;Spagna;5910;Export quantity;01312;Banane;2023;2023;t;121068,79;A;Official figure;
+TCL;Crops and livestock products;724;Spagna;5910;Export quantity;01640;Cacao;2023;2023;t;719,99;A;Official figure;
+TCL;Crops and livestock products;724;Spagna;5910;Export quantity;01610;Caffè;2023;2023;t;37555,49;A;Official figure;
+TCL;Crops and livestock products;724;Spagna;5910;Export quantity;0112;Mais;2023;2023;t;165274,59;A;Official figure;
+TCL;Crops and livestock products;724;Spagna;5910;Export quantity;F0030;Riso;2023;2023;t;186737,75;E;Estimated value;
+TCL;Crops and livestock products;724;Spagna;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;4005,93;A;Official figure;
+TCL;Crops and livestock products;724;Spagna;5910;Export quantity;01234;Pomodori;2023;2023;t;559743,54;A;Official figure;
+TCL;Crops and livestock products;724;Spagna;5910;Export quantity;0111;Grano;2023;2023;t;103172,45;A;Official figure;
+TCL;Crops and livestock products;144;Sri Lanka;5910;Export quantity;01312;Banane;2023;2023;t;284,71;A;Official figure;
+TCL;Crops and livestock products;144;Sri Lanka;5910;Export quantity;01640;Cacao;2023;2023;t;83,9;A;Official figure;
+TCL;Crops and livestock products;144;Sri Lanka;5910;Export quantity;01610;Caffè;2023;2023;t;5,77;A;Official figure;
+TCL;Crops and livestock products;144;Sri Lanka;5910;Export quantity;0112;Mais;2023;2023;t;277,64;A;Official figure;
+TCL;Crops and livestock products;144;Sri Lanka;5910;Export quantity;F0030;Riso;2023;2023;t;9631,43;E;Estimated value;
+TCL;Crops and livestock products;144;Sri Lanka;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;16,24;A;Official figure;
+TCL;Crops and livestock products;144;Sri Lanka;5910;Export quantity;0111;Grano;2023;2023;t;9500,39;A;Official figure;
+TCL;Crops and livestock products;729;Sudan;5910;Export quantity;01610;Caffè;2023;2023;t;0,3;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;729;Sudan;5910;Export quantity;0112;Mais;2023;2023;t;1326,28;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;729;Sudan;5910;Export quantity;F0030;Riso;2023;2023;t;0;E;Estimated value;
+TCL;Crops and livestock products;729;Sudan;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;15118,45;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;729;Sudan;5910;Export quantity;01234;Pomodori;2023;2023;t;0,8;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;740;Suriname;5910;Export quantity;F0030;Riso;2023;2023;t;37761,86;E;Estimated value;
+TCL;Crops and livestock products;752;Svezia;5910;Export quantity;01312;Banane;2023;2023;t;20988,37;A;Official figure;
+TCL;Crops and livestock products;752;Svezia;5910;Export quantity;01640;Cacao;2023;2023;t;1,3;A;Official figure;
+TCL;Crops and livestock products;752;Svezia;5910;Export quantity;01610;Caffè;2023;2023;t;4118,39;A;Official figure;
+TCL;Crops and livestock products;752;Svezia;5910;Export quantity;0112;Mais;2023;2023;t;740,92;A;Official figure;
+TCL;Crops and livestock products;752;Svezia;5910;Export quantity;F0030;Riso;2023;2023;t;1602,44;E;Estimated value;
+TCL;Crops and livestock products;752;Svezia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;133,82;A;Official figure;
+TCL;Crops and livestock products;752;Svezia;5910;Export quantity;01234;Pomodori;2023;2023;t;859,26;A;Official figure;
+TCL;Crops and livestock products;752;Svezia;5910;Export quantity;0111;Grano;2023;2023;t;325042,04;A;Official figure;
+TCL;Crops and livestock products;756;Svizzera;5910;Export quantity;01312;Banane;2023;2023;t;60,31;A;Official figure;
+TCL;Crops and livestock products;756;Svizzera;5910;Export quantity;01640;Cacao;2023;2023;t;467,91;I;Imputed value;
+TCL;Crops and livestock products;756;Svizzera;5910;Export quantity;01610;Caffè;2023;2023;t;3655,54;I;Imputed value;
+TCL;Crops and livestock products;756;Svizzera;5910;Export quantity;0112;Mais;2023;2023;t;391,43;I;Imputed value;
+TCL;Crops and livestock products;756;Svizzera;5910;Export quantity;F0030;Riso;2023;2023;t;1269,45;E;Estimated value;
+TCL;Crops and livestock products;756;Svizzera;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;60,09;A;Official figure;
+TCL;Crops and livestock products;756;Svizzera;5910;Export quantity;01234;Pomodori;2023;2023;t;13,07;A;Official figure;
+TCL;Crops and livestock products;756;Svizzera;5910;Export quantity;0111;Grano;2023;2023;t;530,53;I;Imputed value;
+TCL;Crops and livestock products;760;Siria;5910;Export quantity;01640;Cacao;2023;2023;t;0,03;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;760;Siria;5910;Export quantity;01610;Caffè;2023;2023;t;41,36;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;760;Siria;5910;Export quantity;0112;Mais;2023;2023;t;15101,61;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;760;Siria;5910;Export quantity;F0030;Riso;2023;2023;t;3,51;E;Estimated value;
+TCL;Crops and livestock products;760;Siria;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;136,22;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;760;Siria;5910;Export quantity;01234;Pomodori;2023;2023;t;88441,3;I;Imputed value;
+TCL;Crops and livestock products;760;Siria;5910;Export quantity;0111;Grano;2023;2023;t;49142,21;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;762;Tagikistan;5910;Export quantity;0112;Mais;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;762;Tagikistan;5910;Export quantity;F0030;Riso;2023;2023;t;26,82;E;Estimated value;
+TCL;Crops and livestock products;762;Tagikistan;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,55;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;762;Tagikistan;5910;Export quantity;01234;Pomodori;2023;2023;t;44,9;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;764;Thailandia;5910;Export quantity;01312;Banane;2023;2023;t;8897,61;A;Official figure;
+TCL;Crops and livestock products;764;Thailandia;5910;Export quantity;01640;Cacao;2023;2023;t;27,05;A;Official figure;
+TCL;Crops and livestock products;764;Thailandia;5910;Export quantity;01610;Caffè;2023;2023;t;255,18;A;Official figure;
+TCL;Crops and livestock products;764;Thailandia;5910;Export quantity;0112;Mais;2023;2023;t;37125,04;A;Official figure;
+TCL;Crops and livestock products;764;Thailandia;5910;Export quantity;F0030;Riso;2023;2023;t;8759655,25;E;Estimated value;
+TCL;Crops and livestock products;764;Thailandia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;299,23;A;Official figure;
+TCL;Crops and livestock products;764;Thailandia;5910;Export quantity;01234;Pomodori;2023;2023;t;1523,33;A;Official figure;
+TCL;Crops and livestock products;764;Thailandia;5910;Export quantity;0111;Grano;2023;2023;t;16,34;A;Official figure;
+TCL;Crops and livestock products;626;Timor Est;5910;Export quantity;01610;Caffè;2023;2023;t;5612,72;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;768;Togo;5910;Export quantity;01640;Cacao;2023;2023;t;13798,78;A;Official figure;
+TCL;Crops and livestock products;768;Togo;5910;Export quantity;01610;Caffè;2023;2023;t;6509,54;A;Official figure;
+TCL;Crops and livestock products;768;Togo;5910;Export quantity;0112;Mais;2023;2023;t;260,1;A;Official figure;
+TCL;Crops and livestock products;768;Togo;5910;Export quantity;F0030;Riso;2023;2023;t;1882,69;E;Estimated value;
+TCL;Crops and livestock products;768;Togo;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;121086,59;A;Official figure;
+TCL;Crops and livestock products;776;Tonga;5910;Export quantity;01312;Banane;2023;2023;t;54,31;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;776;Tonga;5910;Export quantity;01640;Cacao;2023;2023;t;19,88;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;776;Tonga;5910;Export quantity;0112;Mais;2023;2023;t;0,02;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;776;Tonga;5910;Export quantity;F0030;Riso;2023;2023;t;0,01;E;Estimated value;
+TCL;Crops and livestock products;780;Trinidad e Tobago;5910;Export quantity;01312;Banane;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;780;Trinidad e Tobago;5910;Export quantity;01640;Cacao;2023;2023;t;26;A;Official figure;
+TCL;Crops and livestock products;780;Trinidad e Tobago;5910;Export quantity;01610;Caffè;2023;2023;t;12,33;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;780;Trinidad e Tobago;5910;Export quantity;0112;Mais;2023;2023;t;969,13;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;780;Trinidad e Tobago;5910;Export quantity;F0030;Riso;2023;2023;t;516,27;E;Estimated value;
+TCL;Crops and livestock products;780;Trinidad e Tobago;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,67;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;788;Tunisia;5910;Export quantity;01640;Cacao;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;788;Tunisia;5910;Export quantity;01610;Caffè;2023;2023;t;0,11;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;788;Tunisia;5910;Export quantity;0112;Mais;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;788;Tunisia;5910;Export quantity;F0030;Riso;2023;2023;t;1,74;E;Estimated value;
+TCL;Crops and livestock products;788;Tunisia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;788;Tunisia;5910;Export quantity;01234;Pomodori;2023;2023;t;29954,23;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;788;Tunisia;5910;Export quantity;0111;Grano;2023;2023;t;0,47;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;792;Turchia;5910;Export quantity;01312;Banane;2023;2023;t;4205,16;A;Official figure;
+TCL;Crops and livestock products;792;Turchia;5910;Export quantity;01640;Cacao;2023;2023;t;1862,18;A;Official figure;
+TCL;Crops and livestock products;792;Turchia;5910;Export quantity;01610;Caffè;2023;2023;t;4294,65;A;Official figure;
+TCL;Crops and livestock products;792;Turchia;5910;Export quantity;0112;Mais;2023;2023;t;1667081,79;I;Imputed value;
+TCL;Crops and livestock products;792;Turchia;5910;Export quantity;F0030;Riso;2023;2023;t;257535,59;E;Estimated value;
+TCL;Crops and livestock products;792;Turchia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;80079,79;A;Official figure;
+TCL;Crops and livestock products;792;Turchia;5910;Export quantity;01234;Pomodori;2023;2023;t;578897,19;A;Official figure;
+TCL;Crops and livestock products;792;Turchia;5910;Export quantity;0111;Grano;2023;2023;t;1814622,68;A;Official figure;
+TCL;Crops and livestock products;795;Turkmenistan;5910;Export quantity;01312;Banane;2023;2023;t;21,49;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;795;Turkmenistan;5910;Export quantity;F0030;Riso;2023;2023;t;7;E;Estimated value;
+TCL;Crops and livestock products;795;Turkmenistan;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;1340,22;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;795;Turkmenistan;5910;Export quantity;01234;Pomodori;2023;2023;t;51010,63;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;800;Uganda;5910;Export quantity;01312;Banane;2023;2023;t;3070;A;Official figure;
+TCL;Crops and livestock products;800;Uganda;5910;Export quantity;01640;Cacao;2023;2023;t;47470;A;Official figure;
+TCL;Crops and livestock products;800;Uganda;5910;Export quantity;01610;Caffè;2023;2023;t;368721;A;Official figure;
+TCL;Crops and livestock products;800;Uganda;5910;Export quantity;0112;Mais;2023;2023;t;488392;A;Official figure;
+TCL;Crops and livestock products;800;Uganda;5910;Export quantity;F0030;Riso;2023;2023;t;1761,08;E;Estimated value;
+TCL;Crops and livestock products;800;Uganda;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;18739,5;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;800;Uganda;5910;Export quantity;01234;Pomodori;2023;2023;t;4210;A;Official figure;
+TCL;Crops and livestock products;800;Uganda;5910;Export quantity;0111;Grano;2023;2023;t;133;A;Official figure;
+TCL;Crops and livestock products;804;Ucraina;5910;Export quantity;01312;Banane;2023;2023;t;230,32;A;Official figure;
+TCL;Crops and livestock products;804;Ucraina;5910;Export quantity;01640;Cacao;2023;2023;t;21,27;A;Official figure;
+TCL;Crops and livestock products;804;Ucraina;5910;Export quantity;01610;Caffè;2023;2023;t;110,94;A;Official figure;
+TCL;Crops and livestock products;804;Ucraina;5910;Export quantity;0112;Mais;2023;2023;t;26367041,08;A;Official figure;
+TCL;Crops and livestock products;804;Ucraina;5910;Export quantity;F0030;Riso;2023;2023;t;86,73;E;Estimated value;
+TCL;Crops and livestock products;804;Ucraina;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;3489891,66;A;Official figure;
+TCL;Crops and livestock products;804;Ucraina;5910;Export quantity;01234;Pomodori;2023;2023;t;1213,07;A;Official figure;
+TCL;Crops and livestock products;804;Ucraina;5910;Export quantity;0111;Grano;2023;2023;t;16151704,85;A;Official figure;
+TCL;Crops and livestock products;784;Emirati Arabi Uniti;5910;Export quantity;01312;Banane;2023;2023;t;5476,93;I;Imputed value;
+TCL;Crops and livestock products;784;Emirati Arabi Uniti;5910;Export quantity;01640;Cacao;2023;2023;t;7103,2;I;Imputed value;
+TCL;Crops and livestock products;784;Emirati Arabi Uniti;5910;Export quantity;01610;Caffè;2023;2023;t;28429,5;I;Imputed value;
+TCL;Crops and livestock products;784;Emirati Arabi Uniti;5910;Export quantity;0112;Mais;2023;2023;t;61910,35;I;Imputed value;
+TCL;Crops and livestock products;784;Emirati Arabi Uniti;5910;Export quantity;F0030;Riso;2023;2023;t;41855,45;E;Estimated value;
+TCL;Crops and livestock products;784;Emirati Arabi Uniti;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;975,38;I;Imputed value;
+TCL;Crops and livestock products;784;Emirati Arabi Uniti;5910;Export quantity;01234;Pomodori;2023;2023;t;7008,2;I;Imputed value;
+TCL;Crops and livestock products;784;Emirati Arabi Uniti;5910;Export quantity;0111;Grano;2023;2023;t;74349,01;I;Imputed value;
+TCL;Crops and livestock products;826;Regno Unito;5910;Export quantity;01312;Banane;2023;2023;t;292,37;A;Official figure;
+TCL;Crops and livestock products;826;Regno Unito;5910;Export quantity;01640;Cacao;2023;2023;t;976,81;A;Official figure;
+TCL;Crops and livestock products;826;Regno Unito;5910;Export quantity;01610;Caffè;2023;2023;t;19582,67;A;Official figure;
+TCL;Crops and livestock products;826;Regno Unito;5910;Export quantity;0112;Mais;2023;2023;t;162911,6;A;Official figure;
+TCL;Crops and livestock products;826;Regno Unito;5910;Export quantity;F0030;Riso;2023;2023;t;30022,67;E;Estimated value;
+TCL;Crops and livestock products;826;Regno Unito;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;2575,02;A;Official figure;
+TCL;Crops and livestock products;826;Regno Unito;5910;Export quantity;01234;Pomodori;2023;2023;t;1004,21;A;Official figure;
+TCL;Crops and livestock products;826;Regno Unito;5910;Export quantity;0111;Grano;2023;2023;t;1154959,14;A;Official figure;
+TCL;Crops and livestock products;834;Tanzania;5910;Export quantity;01312;Banane;2023;2023;t;8082,14;A;Official figure;
+TCL;Crops and livestock products;834;Tanzania;5910;Export quantity;01640;Cacao;2023;2023;t;12382,56;A;Official figure;
+TCL;Crops and livestock products;834;Tanzania;5910;Export quantity;01610;Caffè;2023;2023;t;84394,11;A;Official figure;
+TCL;Crops and livestock products;834;Tanzania;5910;Export quantity;0112;Mais;2023;2023;t;174825,73;A;Official figure;
+TCL;Crops and livestock products;834;Tanzania;5910;Export quantity;F0030;Riso;2023;2023;t;212923,45;E;Estimated value;
+TCL;Crops and livestock products;834;Tanzania;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;100519,52;A;Official figure;
+TCL;Crops and livestock products;834;Tanzania;5910;Export quantity;01234;Pomodori;2023;2023;t;6,25;A;Official figure;
+TCL;Crops and livestock products;834;Tanzania;5910;Export quantity;0111;Grano;2023;2023;t;1589;A;Official figure;
+TCL;Crops and livestock products;840;Stati Uniti;5910;Export quantity;01312;Banane;2023;2023;t;588045,36;A;Official figure;
+TCL;Crops and livestock products;840;Stati Uniti;5910;Export quantity;01640;Cacao;2023;2023;t;9376,83;A;Official figure;
+TCL;Crops and livestock products;840;Stati Uniti;5910;Export quantity;01610;Caffè;2023;2023;t;58811,4;A;Official figure;
+TCL;Crops and livestock products;840;Stati Uniti;5910;Export quantity;0112;Mais;2023;2023;t;45944483,01;A;Official figure;
+TCL;Crops and livestock products;840;Stati Uniti;5910;Export quantity;F0030;Riso;2023;2023;t;2281744;E;Estimated value;
+TCL;Crops and livestock products;840;Stati Uniti;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;48718703,23;A;Official figure;
+TCL;Crops and livestock products;840;Stati Uniti;5910;Export quantity;01234;Pomodori;2023;2023;t;195290,36;A;Official figure;
+TCL;Crops and livestock products;840;Stati Uniti;5910;Export quantity;0111;Grano;2023;2023;t;17942310,41;A;Official figure;
+TCL;Crops and livestock products;858;Uruguay;5910;Export quantity;01312;Banane;2023;2023;t;2,3;A;Official figure;
+TCL;Crops and livestock products;858;Uruguay;5910;Export quantity;0112;Mais;2023;2023;t;0,1;A;Official figure;
+TCL;Crops and livestock products;858;Uruguay;5910;Export quantity;F0030;Riso;2023;2023;t;996519,86;E;Estimated value;
+TCL;Crops and livestock products;858;Uruguay;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;775459,19;A;Official figure;
+TCL;Crops and livestock products;858;Uruguay;5910;Export quantity;01234;Pomodori;2023;2023;t;3,87;A;Official figure;
+TCL;Crops and livestock products;858;Uruguay;5910;Export quantity;0111;Grano;2023;2023;t;821643,15;A;Official figure;
+TCL;Crops and livestock products;860;Uzbekistan;5910;Export quantity;01312;Banane;2023;2023;t;5,6;I;Imputed value;
+TCL;Crops and livestock products;860;Uzbekistan;5910;Export quantity;F0030;Riso;2023;2023;t;598,82;E;Estimated value;
+TCL;Crops and livestock products;860;Uzbekistan;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;10;A;Official figure;
+TCL;Crops and livestock products;860;Uzbekistan;5910;Export quantity;01234;Pomodori;2023;2023;t;63080,51;A;Official figure;
+TCL;Crops and livestock products;860;Uzbekistan;5910;Export quantity;0111;Grano;2023;2023;t;34852,46;A;Official figure;
+TCL;Crops and livestock products;548;Vanuatu;5910;Export quantity;01640;Cacao;2023;2023;t;853,72;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;548;Vanuatu;5910;Export quantity;01610;Caffè;2023;2023;t;6,44;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;862;Venezuela;5910;Export quantity;01640;Cacao;2023;2023;t;9395,16;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;862;Venezuela;5910;Export quantity;01610;Caffè;2023;2023;t;2010,92;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;862;Venezuela;5910;Export quantity;0112;Mais;2023;2023;t;3,1;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;862;Venezuela;5910;Export quantity;F0030;Riso;2023;2023;t;1,84;E;Estimated value;
+TCL;Crops and livestock products;862;Venezuela;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;704;Vietnam;5910;Export quantity;01312;Banane;2023;2023;t;545474,73;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;704;Vietnam;5910;Export quantity;01640;Cacao;2023;2023;t;1873,91;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;704;Vietnam;5910;Export quantity;01610;Caffè;2023;2023;t;1243387,78;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;704;Vietnam;5910;Export quantity;0112;Mais;2023;2023;t;161930,94;I;Imputed value;
+TCL;Crops and livestock products;704;Vietnam;5910;Export quantity;F0030;Riso;2023;2023;t;6843978,89;E;Estimated value;
+TCL;Crops and livestock products;704;Vietnam;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;275,01;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;704;Vietnam;5910;Export quantity;01234;Pomodori;2023;2023;t;360,25;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;704;Vietnam;5910;Export quantity;0111;Grano;2023;2023;t;16,48;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;887;Yemen;5910;Export quantity;01312;Banane;2023;2023;t;20,84;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;887;Yemen;5910;Export quantity;01610;Caffè;2023;2023;t;1415,53;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;887;Yemen;5910;Export quantity;0112;Mais;2023;2023;t;6543,63;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;887;Yemen;5910;Export quantity;F0030;Riso;2023;2023;t;265,46;E;Estimated value;
+TCL;Crops and livestock products;887;Yemen;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;0,3;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;887;Yemen;5910;Export quantity;01234;Pomodori;2023;2023;t;2660,96;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;887;Yemen;5910;Export quantity;0111;Grano;2023;2023;t;91,44;X;Figure from international organizations;Estimated data using trading partners database
+TCL;Crops and livestock products;894;Zambia;5910;Export quantity;01610;Caffè;2023;2023;t;5631,88;A;Official figure;
+TCL;Crops and livestock products;894;Zambia;5910;Export quantity;0112;Mais;2023;2023;t;59405,73;A;Official figure;
+TCL;Crops and livestock products;894;Zambia;5910;Export quantity;F0030;Riso;2023;2023;t;7328,85;E;Estimated value;
+TCL;Crops and livestock products;894;Zambia;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;91902,09;A;Official figure;
+TCL;Crops and livestock products;894;Zambia;5910;Export quantity;0111;Grano;2023;2023;t;995;A;Official figure;
+TCL;Crops and livestock products;716;Zimbabwe;5910;Export quantity;01312;Banane;2023;2023;t;6311,97;A;Official figure;
+TCL;Crops and livestock products;716;Zimbabwe;5910;Export quantity;01610;Caffè;2023;2023;t;43,7;A;Official figure;
+TCL;Crops and livestock products;716;Zimbabwe;5910;Export quantity;0112;Mais;2023;2023;t;2566,81;A;Official figure;
+TCL;Crops and livestock products;716;Zimbabwe;5910;Export quantity;F0030;Riso;2023;2023;t;0;E;Estimated value;
+TCL;Crops and livestock products;716;Zimbabwe;5910;Export quantity;0141;Fagioli di soia;2023;2023;t;55,87;A;Official figure;
+TCL;Crops and livestock products;716;Zimbabwe;5910;Export quantity;0111;Grano;2023;2023;t;124,3;A;Official figure;
