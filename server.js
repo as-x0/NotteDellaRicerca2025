@@ -19,17 +19,36 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, "public")));
 
 // ======================
-// Lettura CSV "bulletproof"
+// Funzione per rilevare separatore
+// ======================
+function detectSeparator(csvPath) {
+  const firstLine = fs.readFileSync(csvPath, "utf-8").split("\n")[0];
+  const counts = {
+    comma: (firstLine.match(/,/g) || []).length,
+    semicolon: (firstLine.match(/;/g) || []).length,
+    tab: (firstLine.match(/\t/g) || []).length,
+  };
+
+  // Scegli il separatore più frequente
+  let sep = ",";
+  if (counts.tab >= counts.comma && counts.tab >= counts.semicolon) sep = "\t";
+  else if (counts.semicolon >= counts.comma && counts.semicolon >= counts.tab) sep = ";";
+  return sep;
+}
+
+// ======================
+// Lettura CSV "bulletproof" con separatore automatico
 // ======================
 const productsData = [];
 let csvLoaded = false;
 
 const csvPath = path.join(__dirname, "FAOSTAT_data_it.csv");
+const separator = detectSeparator(csvPath);
+console.log("Separatore rilevato:", separator === "\t" ? "TAB" : separator);
 
 fs.createReadStream(csvPath)
-  .pipe(csv({ separator: "\t" }))
+  .pipe(csv({ separator }))
   .on("data", (row) => {
-    // Rimuove BOM, spazi e mette tutto in lowercase per confronto sicuro
     const item = row["Item"]?.replace(/^\uFEFF/, "").trim();
     const area = row["Area"]?.trim();
     const year = parseInt(row["Year"]);
@@ -61,20 +80,17 @@ const rooms = {};
 io.on("connection", (socket) => {
   console.log("Nuovo client connesso:", socket.id);
 
-  // Richiesta lista prodotti
   socket.on("getProducts", () => {
     if (!csvLoaded) return socket.emit("errorMsg", "CSV non pronto, attendi...");
     const products = [...new Set(productsData.map(p => p.Product))].filter(Boolean);
     socket.emit("productsList", products);
   });
 
-  // Creazione stanza con impostazioni
   socket.on("createRoom", ({ product, numCountries }) => {
     if (!csvLoaded) return socket.emit("errorMsg", "CSV non pronto, attendi...");
     const roomId = Math.random().toString(36).substring(2, 7).toUpperCase();
     const roomSettings = { product, numCountries, year: 2023 };
 
-    // Lista Paesi disponibili
     const availableCountries = [
       ...new Set(
         productsData
@@ -96,7 +112,6 @@ io.on("connection", (socket) => {
     console.log(`Stanza ${roomId} creata per prodotto: ${product}`);
   });
 
-  // Join stanza
   socket.on("joinRoom", ({ roomId, name }) => {
     const room = rooms[roomId];
     if (!room) return socket.emit("errorMsg", "Stanza non trovata");
@@ -104,14 +119,12 @@ io.on("connection", (socket) => {
     room.players.push(player);
     socket.join(roomId);
 
-    // Invia impostazioni e lista Paesi
     socket.emit("settingsUpdated", room.settings);
     socket.emit("countriesList", room.availableCountries);
 
     io.to(roomId).emit("playerList", room.players);
   });
 
-  // Avvio partita
   socket.on("startGame", (roomId) => {
     const room = rooms[roomId];
     if (!room || !room.settings) return;
@@ -119,7 +132,6 @@ io.on("connection", (socket) => {
     io.to(roomId).emit("gameStarted", room.settings);
   });
 
-  // Scelta Paesi
   socket.on("selectCountry", ({ roomId, country }) => {
     const room = rooms[roomId];
     if (!room) return;
@@ -132,7 +144,6 @@ io.on("connection", (socket) => {
     io.to(roomId).emit("playerList", room.players);
   });
 
-  // Fine partita
   socket.on("endGame", (roomId) => {
     const room = rooms[roomId];
     if (!room || !room.settings) return;
@@ -171,7 +182,6 @@ io.on("connection", (socket) => {
     io.to(roomId).emit("gameEnded", { leaderboard, topCountries, totalWorld });
   });
 
-  // Disconnessione
   socket.on("disconnect", () => {
     console.log("Client disconnesso:", socket.id);
     for (const roomId in rooms) {
@@ -182,7 +192,4 @@ io.on("connection", (socket) => {
   });
 });
 
-// ======================
-// Avvio server
-// ======================
-server.listen(PORT, ()=>console.log(`Server attivo su http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`Server attivo su http://localhost:${PORT}`));
