@@ -69,6 +69,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", ()=>{
   const socket = io();
+
   const productSelect = document.getElementById("productSelect");
   const createRoomBtn = document.getElementById("createRoomBtn");
   const roomSection = document.getElementById("roomSection");
@@ -81,20 +82,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
   let currentRoomId=null;
   let settings={};
 
-  // Recupero lista prodotti dal CSV tramite API
-   fetch('/api/products')
-    .then((response) => response.json())
-    .then((products) => {
-      products.forEach((product) => {
-        const option = document.createElement('option');
-        option.value = product;
-        option.textContent = product;
-        productSelect.appendChild(option);
-      });
-    })
-    .catch((error) => {
-      console.error('Errore nel recupero dei prodotti:', error);
-    });
+  // Richiesta lista prodotti dal server
+  socket.emit("getProducts");
+  socket.on("productsList", products=>{
+    productSelect.innerHTML = products.map(p=>`<option value="${p}">${p}</option>`).join("");
+  });
 
   createRoomBtn.addEventListener("click", ()=>{
     const product = productSelect.value;
@@ -103,15 +95,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
     socket.emit("createRoom", { product,numCountries });
   });
 
-  socket.on("roomCreated", ({roomId,settings})=>{
-    currentRoomId=roomId;
-    roomIdSpan.textContent=roomId;
+  socket.on("roomCreated", ({roomId, settings, availableCountries})=>{
+    currentRoomId = roomId;
+    roomIdSpan.textContent = roomId;
     roomSection.style.display="block";
     alert(`Stanza creata con ID ${roomId}`);
   });
 
   socket.on("playerList", players=>{
-    playerList.innerHTML=players.map(p=>`<li>${p.name} - ${p.countries.join(", ")||"Nessuna scelta"}</li>`).join("");
+    playerList.innerHTML = players.map(p=>`<li>${p.name} - ${p.countries.join(", ")||"Nessuna scelta"}</li>`).join("");
   });
 
   startGameBtn.addEventListener("click", ()=>{ socket.emit("startGame", currentRoomId); alert("Gioco avviato!"); });
