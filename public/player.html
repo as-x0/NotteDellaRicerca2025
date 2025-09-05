@@ -57,48 +57,43 @@ document.addEventListener("DOMContentLoaded", () => {
   let numCountries = 0;
   let availableCountries = [];
 
-  // Quando ricevi le impostazioni dal manager
-  socket.on("settingsUpdated", (settings) => {
-    numCountries = settings.numCountries;
-    chooseCountriesHeader.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
-  });
-
-  joinRoomBtn.addEventListener("click", () => {
-    const name = playerNameInput.value.trim();
-    const roomId = roomIdInput.value.trim();
-    if (!name || !roomId) return alert("Inserisci nome e Room ID!");
-    currentRoomId = roomId;
-    socket.emit("joinRoom", { roomId, name });
-    joinRoomBtn.disabled = true;
-    alert(`Sei entrato nella stanza ${roomId} come ${name}!  Attendi che la partita venga avviata...`)
-  });
-
-  socket.on("settingsUpdated", (settings) => {
-    numCountries = settings.numCountries;
-  });
-
+  // Riceve lista Paesi disponibili
   socket.on("countriesList", (countries) => {
     availableCountries = countries;
+    numCountries = countries.length; // aggiorniamo numCountries temporaneamente
+  });
+
+  // 🔹 Nuovo listener per l'inizio del gioco
+  socket.on("gameStarted", (settings) => {
     gameArea.style.display = "block";
+    numCountries = settings.numCountries;
+
+    // Pulisce form
     countriesForm.innerHTML = "";
 
+    // Crea datalist per autocompletamento
     let datalist = document.getElementById("countriesDatalist");
     if (!datalist) {
       datalist = document.createElement("datalist");
       datalist.id = "countriesDatalist";
       document.body.appendChild(datalist);
     }
-    datalist.innerHTML = countries.map(c => `<option value="${c}">`).join("");
+    datalist.innerHTML = availableCountries.map(c => `<option value="${c}">`).join("");
 
+    // Crea campi input dinamici
     for (let i = 0; i < numCountries; i++) {
       const input = document.createElement("input");
       input.setAttribute("list", "countriesDatalist");
       input.placeholder = `Paese ${i+1}`;
       input.required = true;
       countriesForm.appendChild(input);
+      countriesForm.appendChild(document.createElement("br"));
     }
+
+    alert("Il gioco è iniziato! Scegli i tuoi paesi.");
   });
 
+  // Invio Paesi scelti
   submitCountriesBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const selectedCountries = Array.from(countriesForm.querySelectorAll("input"))
