@@ -15,12 +15,8 @@ const io = new Server(server);
 
 const PORT = process.env.PORT || 3000;
 
-// Servire file statici
 app.use(express.static(path.join(__dirname, "public")));
 
-// ======================
-// Lettura CSV
-// ======================
 const productsData = [];
 let csvLoaded = false;
 
@@ -41,86 +37,28 @@ fs.createReadStream(csvPath)
   .on("end", () => {
     csvLoaded = true;
     console.log("✅ CSV caricato, righe:", productsData.length);
-  })
-  .on("error", (err) => {
-    console.error("Errore apertura CSV:", err);
   });
 
-// ======================
-// Endpoint API
-// ======================
-app.get("/api/products", (req, res) => {
-  const products = [...new Set(productsData.map((p) => p.Product))];
-  res.json(products);
-});
-
-app.get("/api/countries", (req, res) => {
-  const countries = [...new Set(productsData.map((p) => p.Country))];
-  res.json(countries);
-});
-
-app.get("/api/years", (req, res) => {
-  const years = [...new Set(productsData.map((p) => p.Year))];
-  res.json(years);
-});
-
-// ======================
-// Gestione stanze
-// ======================
 const rooms = {};
 
 io.on("connection", (socket) => {
-  console.log("Nuovo client connesso:", socket.id);
+  console.log("Nuovo client:", socket.id);
 
   // Creazione stanza
   socket.on("createRoom", () => {
-    if (!csvLoaded) {
-      socket.emit(
-        "errorMsg",
-        "⚠️ Dati non ancora pronti. Attendi qualche secondo."
-      );
-      return;
-    }
-
+    if (!csvLoaded) return socket.emit("errorMsg", "CSV non ancora pronto");
     const roomId = Math.random().toString(36).substring(2, 7).toUpperCase();
-    rooms[roomId] = {
-      manager: socket.id,
-      players: [],
-      settings: null,
-      started: false,
-      availableCountries: [],
-    };
+    rooms[roomId] = { manager: socket.id, players: [], settings: null };
     socket.join(roomId);
-
     socket.emit("roomCreated", { roomId });
   });
 
-  // Join stanza
-  socket.on("joinRoom", ({ roomId, name }) => {
-    const room = rooms[roomId];
-    if (!room) {
-      socket.emit("errorMsg", "Stanza non trovata");
-      return;
-    }
-
-    const player = { id: socket.id, name, countries: [], score: 0 };
-    room.players.push(player);
-    socket.join(roomId);
-
-    io.to(roomId).emit("playerList", room.players);
-
-    // 🔹 invia solo le impostazioni, non la lista Paesi
-    if (room.settings) {
-      socket.emit("settingsUpdated", room.settings);
-    }
-  });
-
   // Imposta settaggi
-  socket.on("setSettings", ({ roomId, product, numCountries, year }) => {
+  socket.on("setSettings", ({ roomId, product, year, numCountries }) => {
     const room = rooms[roomId];
     if (!room) return;
     room.settings = { product, year, numCountries };
-
+    // Lista dei Paesi disponibili
     const availableCountries = [
       ...new Set(
         productsData
@@ -131,51 +69,51 @@ io.on("connection", (socket) => {
     room.availableCountries = availableCountries;
 
     io.to(roomId).emit("settingsUpdated", room.settings);
+    io.to(roomId).emit("countriesList", availableCountries);
   });
 
-  // Avvio partita
-  socket.on("startGame", ({ roomId }) => {
+  // Player entra
+  socket.on("joinRoom", ({ roomId, name }) => {
     const room = rooms[roomId];
-    if (!room || !room.settings) return;
-    room.started = true;
+    if (!room) return socket.emit("errorMsg", "Stanza non trovata");
+    const player = { id: socket.id, name, countries: [], score: 0 };
+    room.players.push(player);
+    socket.join(roomId);
 
-    io.to(roomId).emit("gameStarted", room.settings);
-    io.to(roomId).emit("countriesList", room.availableCountries); // 🔹 invia la lista Paesi solo qui
+    io.to(roomId).emit("playerList", room.players);
+
+    if (room.settings) {
+      socket.emit("settingsUpdated", room.settings);
+      socket.emit("countriesList", room.availableCountries);
+    }
   });
 
-  // Scelta Paesi da parte dei giocatori
+  // Player invia scelte
   socket.on("selectCountry", ({ roomId, country }) => {
     const room = rooms[roomId];
     if (!room) return;
     const player = room.players.find((p) => p.id === socket.id);
     if (!player || !room.settings) return;
 
-    if (
-      player.countries.length < room.settings.numCountries &&
-      !player.countries.includes(country)
-    ) {
+    if (!player.countries.includes(country)) {
       player.countries.push(country);
     }
+
+    // Invia aggiornamento in tempo reale al manager
     io.to(roomId).emit("playerList", room.players);
   });
 
-  // Fine partita
+  // Manager termina gioco
   socket.on("endGame", ({ roomId }) => {
     const room = rooms[roomId];
     if (!room || !room.settings) return;
 
     const { product, year } = room.settings;
-
     const filtered = productsData.filter(
       (row) =>
         row.Product.trim().toLowerCase() === product.trim().toLowerCase() &&
         row.Year === year
     );
-
-    if (!filtered.length) {
-      socket.emit("errorMsg", "Nessun dato trovato per questo prodotto/anno!");
-      return;
-    }
 
     const totalWorld = filtered.reduce((acc, r) => acc + r.Value, 0);
 
@@ -188,31 +126,23 @@ io.on("connection", (socket) => {
         if (match) total += match.Value;
       });
       player.score = total;
-      player.percentage = totalWorld > 0 ? (total / totalWorld) * 100 : 0;
+      player.percentage = totalWorld ? (total / totalWorld) * 100 : 0;
     });
 
     const leaderboard = [...room.players].sort((a, b) => b.score - a.score);
-
     const topCountries = filtered
       .sort((a, b) => b.Value - a.Value)
       .slice(0, 5)
-      .map((row) => ({
-        Country: row.Country.trim(),
-        Value: Number(row.Value) || 0,
-        Percent: totalWorld > 0 ? (Number(row.Value) / totalWorld) * 100 : 0,
+      .map((r) => ({
+        Country: r.Country,
+        Value: r.Value,
+        Percent: totalWorld ? (r.Value / totalWorld) * 100 : 0,
       }));
 
-    io.to(roomId).emit("gameEnded", {
-      leaderboard,
-      topCountries,
-      totalWorld,
-      settings: room.settings,
-    });
+    io.to(roomId).emit("gameEnded", { leaderboard, topCountries, totalWorld });
   });
 
-  // Disconnessione
   socket.on("disconnect", () => {
-    console.log("Client disconnesso:", socket.id);
     for (const roomId in rooms) {
       const room = rooms[roomId];
       room.players = room.players.filter((p) => p.id !== socket.id);
@@ -221,9 +151,4 @@ io.on("connection", (socket) => {
   });
 });
 
-// ======================
-// Avvio server
-// ======================
-server.listen(PORT, () => {
-  console.log(`Server attivo su http://localhost:${PORT}`);
-});
+server.listen(PORT, () => console.log(`Server attivo su http://localhost:${PORT}`));
