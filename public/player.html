@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //DEBUG
   console.log("Script player.html caricato");
-  const socket = io();
   console.log("Socket creato:", socket.id);
   socket.on("connect", () => console.log("Connesso con id:", socket.id));
   socket.on("disconnect", () => console.log("Disconnesso"));
