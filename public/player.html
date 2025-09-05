@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   socket.on("gameStarted", (settings) => {
     lobbyContainer.style.display = "none";
     gameContainer.style.display = "block";
-    chooseHeader.textContent = `Scegli i maggiori esportatori di ${settings.product} nel ${settings.year}`;
+    chooseHeader.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
 
     countriesForm.innerHTML = "";
     countriesDatalist.innerHTML = availableCountries.map(c => `<option value="${c}">`).join("");
