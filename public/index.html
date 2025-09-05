@@ -3,10 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>FAOSTAT Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+      color: #2c3e50;
+    }
+    .container {
+      text-align: center;
+      background: #ffffffcc;
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #1a237e;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      color: #388e3c;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #fff;
+      background: #1976d2;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #1565c0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .btn-alt {
+      background: #e53935;
+    }
+    .btn-alt:hover {
+      background: #c62828;
+    }
+  </style>
 </head>
 <body>
-  <h1>FAOSTAT Game</h1>
-  <a href="manager.html">Entra come manager</a><br>
-  <a href="player.html">Entra come giocatrice/giocatore</a>
+  <div class="container">
+    <h1>Cambiamento climatico e produzione di cibo</h1>
+    <h2>Entra come:</h2>
+    <a href="manager.html" class="btn">Manager</a>
+    <a href="player.html" class="btn btn-alt">Giocatore</a>
+  </div>
 </body>
 </html>
