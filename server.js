@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, "public")));
 
 // ======================
-// Lettura CSV
+// Lettura CSV "bulletproof"
 // ======================
 const productsData = [];
 let csvLoaded = false;
@@ -27,15 +27,23 @@ let csvLoaded = false;
 const csvPath = path.join(__dirname, "FAOSTAT_data_it.csv");
 
 fs.createReadStream(csvPath)
-  .pipe(csv({ separator: "\t" })) // TAB-delimited
+  .pipe(csv({ separator: "\t" }))
   .on("data", (row) => {
-    const item = row["Item"]?.trim();
+    // Rimuove BOM, spazi e mette tutto in lowercase per confronto sicuro
+    const item = row["Item"]?.replace(/^\uFEFF/, "").trim();
     const area = row["Area"]?.trim();
     const year = parseInt(row["Year"]);
-    const value = parseFloat(row["Value"]) || 0;
+    const value = parseFloat(row["Value"]);
 
-    if (item && area && year && !isNaN(value)) {
-      productsData.push({ Product: item, Country: area, Year: year, Value: value });
+    if (item && area && !isNaN(year) && !isNaN(value)) {
+      productsData.push({
+        Product: item,
+        ProductLower: item.toLowerCase(),
+        Country: area,
+        CountryLower: area.toLowerCase(),
+        Year: year,
+        Value: value
+      });
     }
   })
   .on("end", () => {
@@ -43,22 +51,7 @@ fs.createReadStream(csvPath)
     console.log("✅ CSV caricato, righe:", productsData.length);
     console.log("Prime 5 righe:", productsData.slice(0,5));
   })
-  .on("error", (err) => {
-    console.error("Errore apertura CSV:", err);
-  });
-
-// ======================
-// Endpoint API opzionali
-// ======================
-app.get("/api/products", (req, res) => {
-  const products = [...new Set(productsData.map(p => p.Product))];
-  res.json(products);
-});
-
-app.get("/api/countries", (req, res) => {
-  const countries = [...new Set(productsData.map(p => p.Country))];
-  res.json(countries);
-});
+  .on("error", (err) => console.error("Errore apertura CSV:", err));
 
 // ======================
 // Gestione stanze
@@ -75,17 +68,18 @@ io.on("connection", (socket) => {
     socket.emit("productsList", products);
   });
 
-  // Creazione stanza con impostazioni già selezionate
+  // Creazione stanza con impostazioni
   socket.on("createRoom", ({ product, numCountries }) => {
     if (!csvLoaded) return socket.emit("errorMsg", "CSV non pronto, attendi...");
     const roomId = Math.random().toString(36).substring(2, 7).toUpperCase();
     const roomSettings = { product, numCountries, year: 2023 };
 
-    // Lista Paesi disponibili per il prodotto
+    // Lista Paesi disponibili
     const availableCountries = [
-      ...new Set(productsData
-        .filter(p => p.Product.trim().toLowerCase() === product.trim().toLowerCase() && p.Year === 2023)
-        .map(p => p.Country)
+      ...new Set(
+        productsData
+          .filter(p => p.ProductLower === product.trim().toLowerCase() && p.Year === 2023)
+          .map(p => p.Country)
       )
     ];
 
@@ -125,7 +119,7 @@ io.on("connection", (socket) => {
     io.to(roomId).emit("gameStarted", room.settings);
   });
 
-  // Scelta Paesi da parte dei giocatori
+  // Scelta Paesi
   socket.on("selectCountry", ({ roomId, country }) => {
     const room = rooms[roomId];
     if (!room) return;
@@ -146,7 +140,7 @@ io.on("connection", (socket) => {
     const { product, year } = room.settings;
 
     const filtered = productsData.filter(
-      row => row.Product.trim().toLowerCase() === product.trim().toLowerCase() && row.Year === year
+      p => p.ProductLower === product.trim().toLowerCase() && p.Year === year
     );
 
     if (!filtered.length) return socket.emit("errorMsg", "Nessun dato trovato per questo prodotto/anno!");
@@ -156,11 +150,11 @@ io.on("connection", (socket) => {
     room.players.forEach(player => {
       let total = 0;
       player.countries.forEach(country => {
-        const match = filtered.find(r => r.Country.trim().toLowerCase() === country.trim().toLowerCase());
+        const match = filtered.find(r => r.CountryLower === country.trim().toLowerCase());
         if (match) total += match.Value;
       });
       player.score = total;
-      player.percentage = totalWorld>0 ? (total/totalWorld)*100 : 0;
+      player.percentage = totalWorld > 0 ? (total / totalWorld) * 100 : 0;
     });
 
     const leaderboard = [...room.players].sort((a,b)=>b.score - a.score);
@@ -169,9 +163,9 @@ io.on("connection", (socket) => {
       .sort((a,b)=>b.Value - a.Value)
       .slice(0,5)
       .map(r => ({
-        Country: r.Country.trim(),
-        Value: Number(r.Value)||0,
-        Percent: totalWorld>0 ? (Number(r.Value)/totalWorld)*100 : 0
+        Country: r.Country,
+        Value: r.Value,
+        Percent: totalWorld > 0 ? (r.Value / totalWorld) * 100 : 0
       }));
 
     io.to(roomId).emit("gameEnded", { leaderboard, topCountries, totalWorld });
@@ -180,7 +174,7 @@ io.on("connection", (socket) => {
   // Disconnessione
   socket.on("disconnect", () => {
     console.log("Client disconnesso:", socket.id);
-    for(const roomId in rooms){
+    for (const roomId in rooms) {
       const room = rooms[roomId];
       room.players = room.players.filter(p => p.id !== socket.id);
       io.to(roomId).emit("playerList", room.players);
