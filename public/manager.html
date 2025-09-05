@@ -59,7 +59,6 @@
 <body>
   <h1>🌍 Manager</h1>
 
-  <!-- Sezione impostazioni di gioco -->
   <div id="settingsSection" class="section">
     <h2>Impostazioni di gioco</h2>
     <label for="productSelect">Prodotto</label>
@@ -74,7 +73,6 @@
     <button id="createRoomBtn">Crea Stanza</button>
   </div>
 
-  <!-- Sezione gestione stanza -->
   <div id="roomSection" class="section hidden">
     <h2>Codice Stanza: <span id="roomIdDisplay"></span></h2>
     <h3>Giocatori connessi:</h3>
@@ -82,14 +80,12 @@
     <button id="startGameBtn">Avvia Gioco</button>
   </div>
 
-  <!-- Sezione gioco in corso -->
   <div id="gameSection" class="section hidden">
     <h2>Gioco in corso...</h2>
     <p>I giocatori stanno facendo le loro scelte.</p>
     <button id="endGameBtn">Termina Gioco</button>
   </div>
 
-  <!-- Sezione risultati -->
   <div id="resultsSection" class="section hidden">
     <h2>Classifica</h2>
     <ul id="resultsList"></ul>
@@ -124,19 +120,18 @@
 
       let currentRoomId = null;
 
-      // Riceve lista prodotti subito all'avvio
-      socket.on("productsList", (products) => {
-        productSelect.innerHTML = products
-          .map(p => `<option value="${p}">${p}</option>`)
-          .join("");
-      });
+      // Carica lista prodotti da API
+      fetch("/api/products")
+        .then(res => res.json())
+        .then(products => {
+          productSelect.innerHTML = products
+            .map(p => `<option value="${p}">${p}</option>`)
+            .join("");
+        });
 
       // Crea stanza
       createRoomBtn.addEventListener("click", () => {
-        const product = productSelect.value;
-        const year = parseInt(yearInput.value);
-        const numCountries = parseInt(numCountriesInput.value);
-        socket.emit("createRoom", { product, year, numCountries });
+        socket.emit("createRoom");
       });
 
       // Conferma creazione stanza
@@ -146,14 +141,17 @@
         settingsSection.classList.add("hidden");
         roomSection.classList.remove("hidden");
         alert(`✅ Stanza creata con codice ${roomId}`);
+
+        const product = productSelect.value;
+        const year = parseInt(yearInput.value);
+        const numCountries = parseInt(numCountriesInput.value);
+        socket.emit("setSettings", { roomId, product, year, numCountries });
       });
 
-      // Aggiorna lista giocatori
-      socket.on("playersUpdate", (players) => {
+      socket.on("playerList", (players) => {
         playersList.innerHTML = players.map(p => `<li>${p.name}</li>`).join("");
       });
 
-      // Avvia gioco
       startGameBtn.addEventListener("click", () => {
         socket.emit("startGame", { roomId: currentRoomId });
         roomSection.classList.add("hidden");
@@ -161,12 +159,10 @@
         alert("🚀 Gioco avviato!");
       });
 
-      // Termina gioco
       endGameBtn.addEventListener("click", () => {
         socket.emit("endGame", { roomId: currentRoomId });
       });
 
-      // Riceve risultati finali
       socket.on("gameEnded", ({ leaderboard, topCountries, totalWorld, settings }) => {
         gameSection.classList.add("hidden");
         resultsSection.classList.remove("hidden");
@@ -175,7 +171,6 @@
           .map((p, i) => `<li>${i+1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
           .join("");
 
-        // Grafico
         const ctx = resultsChart.getContext("2d");
         new Chart(ctx, {
           type: "bar",
