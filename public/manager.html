@@ -1,104 +1,102 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Manager FAOSTAT Game</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-      color: #2c3e50;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .container {
-      background: #ffffffcc;
-      padding: 30px 50px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      width: 500px;
-      text-align: center;
-    }
-    h1 { color: #1a237e; margin-bottom: 20px; }
-    h3 { margin-top: 20px; }
-    button {
-      margin: 10px auto;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #1976d2;
-      color: #fff;
-      display: block;
-      transition: all 0.2s;
-    }
-    button:hover { background: #1565c0; transform: translateY(-2px); }
-    input, select { width: 90%; padding: 8px; margin: 5px 0; border-radius: 6px; border: 1px solid #ccc; }
-    .flex-row { display: flex; justify-content: space-around; align-items: center; margin: 20px 0; }
-    .flex-row img { width: 120px; }
-    #playerList li { margin-bottom: 5px; }
-    #resultsList li { margin-bottom: 5px; }
-  </style>
+<meta charset="UTF-8">
+<title>Manager FAOSTAT Game</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background: #ffffffcc;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 500px;
+  text-align: center;
+}
+h1 { color: #1a237e; margin-bottom: 20px; }
+h3 { margin-top: 20px; }
+button {
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #1976d2;
+  color: #fff;
+  display: block;
+  transition: all 0.2s;
+}
+button:hover { background: #1565c0; transform: translateY(-2px); }
+input, select { width: 90%; padding: 8px; margin: 5px 0; border-radius: 6px; border: 1px solid #ccc; }
+.flex-row { display: flex; justify-content: space-around; align-items: center; margin: 20px 0; }
+.flex-row img { width: 120px; }
+#playerList li, #playerListGame li, #resultsList li { margin-bottom: 5px; }
+</style>
 </head>
 <body>
 <div class="container">
 
-  <h1>Cambiamento climatico e produzione di cibo</h1>
+<h1>Cambiamento climatico e produzione di cibo</h1>
 
-  <!-- SETTINGS -->
-  <div id="settingsContainer">
-    <label>Prodotto:
-      <select id="productSelect"></select>
-    </label>
-    <div style="margin: 10px 0;">
-      Numero Paesi:
-      <input type="radio" name="numCountries" value="3" checked> 3
-      <input type="radio" name="numCountries" value="5"> 5
+<!-- SETTINGS -->
+<div id="settingsContainer">
+  <label>Prodotto:
+    <select id="productSelect"></select>
+  </label>
+  <div style="margin: 10px 0;">
+    Numero Paesi:
+    <input type="radio" name="numCountries" value="3" checked> 3
+    <input type="radio" name="numCountries" value="5"> 5
+  </div>
+  <button id="createRoomBtn">Crea stanza</button>
+</div>
+
+<!-- LOBBY DOPO CREAZIONE STANZA -->
+<div id="lobbyContainer" style="display:none;">
+  <div class="flex-row">
+    <img src="/qr.png" alt="QR Code">
+    <div>
+      <p>Codice della stanza:</p>
+      <h2 id="roomIdSpan" style="font-size: 2.5rem;"></h2>
     </div>
-    <button id="createRoomBtn">Crea stanza</button>
   </div>
+  <h3>Giocatori: <span id="playerCount">0</span></h3>
+  <ul id="playerList"></ul>
+  <button id="startGameBtn">Avvia gioco</button>
+</div>
 
-  <!-- LOBBY DOPO CREAZIONE STANZA -->
-  <div id="lobbyContainer" style="display:none;">
-    <div class="flex-row">
-      <img src="/qr.png" alt="QR Code">
-      <div>
-        <p>Codice della stanza:</p>
-        <h2 id="roomIdSpan" style="font-size: 2.5rem;"></h2>
-      </div>
-    </div>
-    <h3>Giocatori: <span id="playerCount">0</span></h3>
-    <ul id="playerList"></ul>
-    <button id="startGameBtn">Avvia gioco</button>
-  </div>
+<!-- DURANTE IL GIOCO -->
+<div id="gameContainer" style="display:none;">
+  <h3>Giocatori che hanno inviato le scelte: <span id="submittedCount">0</span> / <span id="totalPlayers">0</span></h3>
+  <ul id="playerListGame"></ul>
+  <button id="endGameBtn">Termina il gioco</button>
+</div>
 
-  <!-- DURANTE IL GIOCO -->
-  <div id="gameContainer" style="display:none;">
-    <h3>Giocatori che hanno inviato le scelte: <span id="submittedCount">0</span> / <span id="totalPlayers">0</span></h3>
-    <ul id="playerListGame"></ul>
-    <button id="endGameBtn">Termina il gioco</button>
-  </div>
-
-  <!-- RISULTATI -->
-  <div id="resultsContainer" style="display:none;">
-    <h3>Classifica</h3>
-    <ul id="resultsList"></ul>
-    <canvas id="resultsChart"></canvas>
-    <button onclick="window.location.reload()">Torna alla Home</button>
-  </div>
+<!-- RISULTATI -->
+<div id="resultsContainer" style="display:none;">
+  <h3>Classifica</h3>
+  <ul id="resultsList"></ul>
+  <canvas id="resultsChart"></canvas>
+  <button onclick="window.location.reload()">Torna alla Home</button>
+</div>
 
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const socket = io();
-  socket.emit("getProducts");
 
   const settingsContainer = document.getElementById("settingsContainer");
   const lobbyContainer = document.getElementById("lobbyContainer");
@@ -119,15 +117,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const playerListGame = document.getElementById("playerListGame");
 
   const resultsList = document.getElementById("resultsList");
-  const resultsChart = document.getElementById("resultsChart").getContext("2d");
+  const resultsChartCtx = document.getElementById("resultsChart").getContext("2d");
 
   let currentRoomId = null;
   let settings = {};
   let allPlayers = [];
 
-  // Prendi lista prodotti dal server
+  // Richiesta lista prodotti subito
+  socket.emit("getProducts");
+
   socket.on("productsList", (products) => {
-    productSelect.innerHTML = products.map(p=>`<option value="${p}">${p}</option>`).join("");
+    productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
   });
 
   createRoomBtn.addEventListener("click", () => {
@@ -153,15 +153,15 @@ document.addEventListener("DOMContentLoaded", () => {
     allPlayers = players;
     if(lobbyContainer.style.display === "block") {
       playerCount.textContent = players.length;
-      playerList.innerHTML = players.map(p=>`<li>${p.name}</li>`).join("");
+      playerList.innerHTML = players.map(p => `<li>${p.name}</li>`).join("");
     } else if(gameContainer.style.display === "block") {
-      submittedCount.textContent = players.filter(p=>p.countries.length>0).length;
-      totalPlayers.textContent = players.length;
-      playerListGame.innerHTML = players.map(p=>`<li>${p.name}: ${p.countries.join(", ") || "Nessuna scelta"}</li>`).join("");
+      submittedCount.textContent = players.filter(p => p.countries.length > 0).length;
+      playerListGame.innerHTML = players.map(p => `<li>${p.name}: ${p.countries.join(", ") || "Nessuna scelta"}</li>`).join("");
     }
   });
 
   startGameBtn.addEventListener("click", () => {
+    totalPlayers.textContent = allPlayers.length; // SALVA TOTALE GIOCATORI
     lobbyContainer.style.display = "none";
     gameContainer.style.display = "block";
     socket.emit("startGame", currentRoomId);
@@ -175,21 +175,25 @@ document.addEventListener("DOMContentLoaded", () => {
     gameContainer.style.display = "none";
     resultsContainer.style.display = "block";
 
-    resultsList.innerHTML = leaderboard.map((p,i)=>`<li>${i+1}. ${p.name}: ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join("");
+    resultsList.innerHTML = leaderboard.map((p,i) => `<li>${i+1}. ${p.name}: ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join("");
 
-    new Chart(resultsChart, {
+    new Chart(resultsChartCtx, {
       type: "bar",
       data: {
-        labels: topCountries.map(c=>c.Country),
+        labels: topCountries.map(c => c.Country),
         datasets:[{
           label:`Esportazioni ${settings.product} 2023`,
-          data: topCountries.map(c=>c.Value),
+          data: topCountries.map(c => c.Value),
           backgroundColor:'rgba(54,162,235,0.6)',
           borderColor:'rgba(54,162,235,1)',
           borderWidth:1
         }]
       },
-      options:{responsive:true, plugins:{title:{display:true,text:`Totale mondiale: ${totalWorld.toLocaleString()} t`}}, scales:{y:{beginAtZero:true}}}
+      options:{
+        responsive:true,
+        plugins:{ title:{display:true, text:`Totale mondiale: ${totalWorld.toLocaleString()} t`} },
+        scales:{ y:{ beginAtZero:true } }
+      }
     });
   });
 
