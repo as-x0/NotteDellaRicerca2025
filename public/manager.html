@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Manager FAOSTAT Game</title>
 <script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 body { font-family: Arial, sans-serif; margin: 20px; background:#f4f6f9; color:#2c3e50; }
 h1,h2,h3{text-align:center;}
@@ -44,7 +45,6 @@ li{padding:6px 0;border-bottom:1px solid #eee;}
   <button id="homeBtn">Torna alla Home</button>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const socket = io();
@@ -65,17 +65,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentRoomId = null;
 
-  // Carica lista prodotti
-  fetch('/api/products')
-    .then(res=>res.json())
-    .then(products=>{
-      productSelect.innerHTML = products.map(p=>`<option value="${p}">${p}</option>`).join('');
-    });
+  // Carica lista prodotti dal server
+  async function loadProducts() {
+    try {
+      const res = await fetch('/api/products');
+      const products = await res.json();
+      productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
+    } catch(err) {
+      alert("Errore nel caricamento dei prodotti dal server");
+      console.error(err);
+    }
+  }
+  loadProducts();
 
+  // Crea stanza e invia settings
   createRoomBtn.addEventListener("click", () => {
     const product = productSelect.value;
     const year = parseInt(yearInput.value);
     const numCountries = parseInt(numCountriesInput.value);
+    if(!product) return alert("Seleziona un prodotto!");
+
     socket.emit("createRoom");
     socket.once("roomCreated", ({ roomId }) => {
       currentRoomId = roomId;
@@ -83,17 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
       settingsSection.classList.add("hidden");
       roomSection.classList.remove("hidden");
 
-      // Invia settings al server
       socket.emit("setSettings", { roomId, product, year, numCountries });
     });
   });
 
-  // Aggiorna lista giocatori in tempo reale
+  // Aggiorna lista giocatori e numero di scelte in tempo reale
   socket.on("playerList", (players) => {
-    playersList.innerHTML = players.map(p=>`<li>${p.name} (${p.countries.length})</li>`).join('');
+    playersList.innerHTML = players.map(p => 
+      `<li>${p.name} - ${p.countries.length} / ${numCountriesInput.value}</li>`).join('');
   });
 
-  // Fine gioco
+  // Termina gioco
   endGameBtn.addEventListener("click", () => {
     socket.emit("endGame", { roomId: currentRoomId });
   });
@@ -103,14 +112,20 @@ document.addEventListener("DOMContentLoaded", () => {
     roomSection.classList.add("hidden");
     resultsSection.classList.remove("hidden");
 
-    resultsList.innerHTML = leaderboard.map((p,i)=>`<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join('');
+    resultsList.innerHTML = leaderboard
+      .map((p,i)=>`<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
+      .join('');
 
     const ctx = resultsChart.getContext("2d");
     new Chart(ctx, {
       type:'bar',
       data:{
         labels: topCountries.map(c=>c.Country),
-        datasets:[{label:'Top Paesi',data:topCountries.map(c=>c.Value),backgroundColor:'rgba(54,162,235,0.6)'}]
+        datasets:[{
+          label:'Top Paesi',
+          data: topCountries.map(c=>c.Value),
+          backgroundColor:'rgba(54,162,235,0.6)'
+        }]
       },
       options:{responsive:true,plugins:{legend:{display:false}}}
     });
