@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const roomId = roomIdInput.value.trim();
     if (!name || !roomId) return alert("Inserisci nome e Room ID!");
     currentRoomId = roomId;
-    socket.emit("joinRoom", { roomId, name });
+    socket.emit("joinRoom", { roomId: currentRoomId, name });
     joinRoomBtn.disabled = true;
     alert("Sei entrato nella stanza! Attendi che il manager avvii il gioco.");
   });
