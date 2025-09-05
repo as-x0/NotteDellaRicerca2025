@@ -161,7 +161,12 @@ createRoomBtn.addEventListener("click", () => {
 
 // Avvia gioco
 startGameBtn.addEventListener("click", () => {
+  if (!currentRoomId) {
+    alert("Errore: nessuna stanza attiva!");
+    return;
+  }
   socket.emit("startGame", currentRoomId);
+  alert("✅ Gioco avviato!");
 });
 
 // Termina gioco
