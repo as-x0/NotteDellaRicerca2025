@@ -64,6 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentRoomId = null;
 
+  // Popola prodotti
+  productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
+  alert(`✅ Stanza creata! ID: ${roomId}`);
+
   // 1. Crea stanza
   createRoomBtn.addEventListener("click", () => {
     const product = productSelect.value;
@@ -77,10 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     roomIdSpan.textContent = roomId;
     createSection.classList.add("hidden");
     roomSection.classList.remove("hidden");
-
-    // Popola prodotti
-    productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
-    alert(`✅ Stanza creata! ID: ${roomId}`);
   });
 
   // 2. Giocatori connessi
