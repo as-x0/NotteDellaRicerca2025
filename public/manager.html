@@ -1,101 +1,76 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Manager FAOSTAT Game</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-      color: #2c3e50;
-      text-align: center;
-    }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #ffffffcc;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    h1 { font-size: 2rem; margin-bottom: 20px; color: #1a237e; }
-    h2 { font-size: 1.4rem; margin: 20px 0; color: #388e3c; }
-    select, input[type="radio"] { margin: 10px; }
-    button {
-      margin: 10px;
-      padding: 12px 25px;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #fff;
-      background: #1976d2;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-    }
-    button:hover { background: #1565c0; transform: translateY(-2px); }
-    .btn-red { background: #e53935; }
-    .btn-red:hover { background: #c62828; }
-    .row { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; margin: 20px 0; }
-    .qr { width: 200px; height: 200px; }
-    #resultsChart { margin-top: 20px; }
-  </style>
+<meta charset="UTF-8">
+<title>Manager FAOSTAT Game</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+/* Stile identico a prima */
+body { margin:0; padding:0; font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif; background:linear-gradient(135deg,#e0f7fa,#f1f8e9); color:#2c3e50; text-align:center; }
+.container { max-width:800px; margin:40px auto; background:#ffffffcc; padding:40px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+h1 { font-size:2rem; margin-bottom:20px; color:#1a237e; }
+h2 { font-size:1.4rem; margin:20px 0; color:#388e3c; }
+select, input[type="radio"] { margin:10px; }
+button { margin:10px; padding:12px 25px; font-size:1rem; font-weight:bold; color:#fff; background:#1976d2; border:none; border-radius:8px; cursor:pointer; transition:all 0.2s ease-in-out; }
+button:hover { background:#1565c0; transform:translateY(-2px); }
+.btn-red { background:#e53935; }
+.btn-red:hover { background:#c62828; }
+.row { display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; margin:20px 0; }
+.qr { width:200px; height:200px; }
+#resultsChart { margin-top:20px; }
+</style>
 </head>
 <body>
 <div class="container">
 
-  <!-- Pagina 1: impostazioni -->
-  <div id="settingsPage">
-    <h1>Cambiamento climatico e produzione di cibo</h1>
-    <h2>Scegli le impostazioni di gioco</h2>
+<!-- Pagina 1: impostazioni e creazione stanza -->
+<div id="settingsPage">
+<h1>Cambiamento climatico e produzione di cibo</h1>
+<h2>Scegli le impostazioni e crea la stanza</h2>
 
-    <label>Prodotto:
-      <select id="productSelect"></select>
-    </label>
-    <p>Anno: 2023</p>
-    <p>
-      Numero Paesi:
-      <input type="radio" name="numCountries" value="3" checked> 3
-      <input type="radio" name="numCountries" value="5"> 5
-    </p>
-    <button id="saveSettingsBtn">Salva le impostazioni</button>
-    <button id="createRoomBtn">Crea stanza</button>
-  </div>
+<label>Prodotto:
+<select id="productSelect"></select>
+</label>
+<p>Anno: 2023</p>
+<p>
+Numero Paesi:
+<input type="radio" name="numCountries" value="3" checked> 3
+<input type="radio" name="numCountries" value="5"> 5
+</p>
+<button id="createRoomBtn">Crea stanza</button>
+</div>
 
-  <!-- Pagina 2: attesa giocatori -->
-  <div id="lobbyPage" style="display:none;">
-    <h1>Cambiamento climatico e produzione di cibo</h1>
-    <div class="row">
-      <img src="qr.png" alt="QR Code" class="qr">
-      <div>
-        <h2>Codice gioco: <span id="roomIdSpan"></span></h2>
-      </div>
-    </div>
-    <h3>Giocatrici/Giocatori: <span id="playerCount">0</span></h3>
-    <ul id="playerList"></ul>
-    <button id="startGameBtn" disabled>Avvia</button>
-  </div>
+<!-- Pagina 2: attesa giocatori -->
+<div id="lobbyPage" style="display:none;">
+<h1>Cambiamento climatico e produzione di cibo</h1>
+<div class="row">
+<img src="qr.png" alt="QR Code" class="qr">
+<div>
+<h2>Codice gioco: <span id="roomIdSpan"></span></h2>
+</div>
+</div>
+<h3>Giocatrici/Giocatori: <span id="playerCount">0</span></h3>
+<ul id="playerList"></ul>
+<button id="startGameBtn">Avvia</button>
+</div>
 
-  <!-- Pagina 3: gioco in corso -->
-  <div id="gamePage" style="display:none;">
-    <h1>Cambiamento climatico e produzione di cibo</h1>
-    <h2>Scelte inviate: <span id="submittedCount">0</span> / <span id="totalPlayers">0</span></h2>
-    <ul id="choicesList"></ul>
-    <button id="endGameBtn" class="btn-red">Termina</button>
-  </div>
+<!-- Pagina 3: gioco in corso -->
+<div id="gamePage" style="display:none;">
+<h1>Cambiamento climatico e produzione di cibo</h1>
+<h2>Scelte inviate: <span id="submittedCount">0</span> / <span id="totalPlayers">0</span></h2>
+<ul id="choicesList"></ul>
+<button id="endGameBtn" class="btn-red">Termina</button>
+</div>
 
-  <!-- Pagina 4: risultati -->
-  <div id="resultsPage" style="display:none;">
-    <h1>Cambiamento climatico e produzione di cibo</h1>
-    <h2>Classifica</h2>
-    <ul id="resultsList"></ul>
-    <canvas id="resultsChart"></canvas>
-    <button onclick="window.location.href='index.html'">Torna alla Home</button>
-  </div>
+<!-- Pagina 4: risultati -->
+<div id="resultsPage" style="display:none;">
+<h1>Cambiamento climatico e produzione di cibo</h1>
+<h2>Classifica</h2>
+<ul id="resultsList"></ul>
+<canvas id="resultsChart"></canvas>
+<button onclick="window.location.href='index.html'">Torna alla Home</button>
+</div>
 
 </div>
 
@@ -104,24 +79,15 @@ const socket = io();
 let currentRoomId = null;
 let settings = {};
 
-// Popola subito la lista prodotti dal server
-fetch("/api/products")
-  .then(res => res.json())
-  .then(products => {
-    productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
-  })
-  .catch(err => console.error("Errore caricamento prodotti:", err));
+const productSelect = document.getElementById("productSelect");
+const createRoomBtn = document.getElementById("createRoomBtn");
+const startGameBtn = document.getElementById("startGameBtn");
+const endGameBtn = document.getElementById("endGameBtn");
 
 const settingsPage = document.getElementById("settingsPage");
 const lobbyPage = document.getElementById("lobbyPage");
 const gamePage = document.getElementById("gamePage");
 const resultsPage = document.getElementById("resultsPage");
-
-const productSelect = document.getElementById("productSelect");
-const saveSettingsBtn = document.getElementById("saveSettingsBtn");
-const createRoomBtn = document.getElementById("createRoomBtn");
-const startGameBtn = document.getElementById("startGameBtn");
-const endGameBtn = document.getElementById("endGameBtn");
 
 const roomIdSpan = document.getElementById("roomIdSpan");
 const playerList = document.getElementById("playerList");
@@ -134,87 +100,68 @@ const choicesList = document.getElementById("choicesList");
 const resultsList = document.getElementById("resultsList");
 const resultsChart = document.getElementById("resultsChart");
 
-// --- Eventi bottone ---
-saveSettingsBtn.addEventListener("click", () => {
-  const product = productSelect.value;
-  const numCountries = parseInt(document.querySelector('input[name="numCountries"]:checked').value);
-  settings = { product, year: 2023, numCountries };
+// Popola lista prodotti dal server
+fetch("/api/products")
+.then(res => res.json())
+.then(products => {
+productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
+})
+.catch(err => console.error(err));
 
-  if (currentRoomId) {
-    socket.emit("setSettings", { roomId: currentRoomId, product, numCountries });
-    startGameBtn.disabled = false;
-  }
-
-  alert("✅ Impostazioni salvate!");
-});
-
+// --- Eventi ---
 createRoomBtn.addEventListener("click", () => {
-  socket.emit("createRoom");
+const product = productSelect.value;
+const numCountries = parseInt(document.querySelector('input[name="numCountries"]:checked').value);
+settings = { product, year: 2023, numCountries };
+
+socket.emit("createRoom", settings);
 });
 
 startGameBtn.addEventListener("click", () => {
-  if (!currentRoomId) return alert("Errore: nessuna stanza attiva!");
-  socket.emit("startGame", currentRoomId);
+if (!currentRoomId) return alert("Errore: nessuna stanza attiva!");
+socket.emit("startGame", currentRoomId);
 });
 
 endGameBtn.addEventListener("click", () => {
-  if (!currentRoomId) return;
-  socket.emit("endGame", currentRoomId);
+if (!currentRoomId) return;
+socket.emit("endGame", currentRoomId);
 });
 
 // --- Socket events ---
 socket.on("roomCreated", ({ roomId, products }) => {
-  currentRoomId = roomId;
-  roomIdSpan.textContent = roomId;
-
-  productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
-
-  settingsPage.style.display = "none";
-  lobbyPage.style.display = "block";
-  startGameBtn.disabled = true; // disabilitato finché non ci sono settings
+currentRoomId = roomId;
+roomIdSpan.textContent = roomId;
+settingsPage.style.display = "none";
+lobbyPage.style.display = "block";
+startGameBtn.disabled = false; // subito abilitato perché le settings sono già inviate
 });
 
 socket.on("playerList", (players) => {
-  playerCount.textContent = players.length;
-  playerList.innerHTML = players.map(p => `<li>${p.name} - ${p.countries.join(", ") || "⏳ in attesa..."}</li>`).join("");
-
-  // Aggiorna scelte in corso
-  choicesList.innerHTML = players.map(p => `<li>${p.name}: ${p.countries.join(", ") || "⏳"}</li>`).join("");
-  submittedCount.textContent = players.filter(p => p.countries.length > 0).length;
-  totalPlayers.textContent = players.length;
-});
-
-socket.on("settingsUpdated", (newSettings) => {
-  settings = newSettings;
-  startGameBtn.disabled = false; // ora si può avviare
+playerCount.textContent = players.length;
+playerList.innerHTML = players.map(p => `<li>${p.name} - ${p.countries.join(", ") || "⏳ in attesa..."}</li>`).join("");
+choicesList.innerHTML = players.map(p => `<li>${p.name}: ${p.countries.join(", ") || "⏳"}</li>`).join("");
+submittedCount.textContent = players.filter(p => p.countries.length>0).length;
+totalPlayers.textContent = players.length;
 });
 
 socket.on("gameStarted", () => {
-  lobbyPage.style.display = "none";
-  gamePage.style.display = "block";
+lobbyPage.style.display = "none";
+gamePage.style.display = "block";
 });
 
 socket.on("gameEnded", ({ leaderboard, topCountries, totalWorld }) => {
-  gamePage.style.display = "none";
-  resultsPage.style.display = "block";
+gamePage.style.display = "none";
+resultsPage.style.display = "block";
 
-  resultsList.innerHTML = leaderboard
-    .map((p, i) => `<li>${i+1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
-    .join("");
+resultsList.innerHTML = leaderboard.map((p,i)=>`<li>${i+1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join("");
 
-  const ctx = resultsChart.getContext("2d");
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: topCountries.map(c => c.Country),
-      datasets: [{
-        label: `Esportazioni ${settings.product} 2023`,
-        data: topCountries.map(c => c.Value),
-        backgroundColor: 'rgba(54, 162, 235, 0.6)'
-      }]
-    },
-    options: { responsive: true, scales: { y: { beginAtZero: true } } }
-  });
+const ctx = resultsChart.getContext("2d");
+new Chart(ctx, {
+type:"bar",
+data:{ labels: topCountries.map(c=>c.Country),
+datasets:[{ label:`Esportazioni ${settings.product} 2023`, data: topCountries.map(c=>c.Value), backgroundColor:'rgba(54,162,235,0.6)'}]},
+options:{ responsive:true, scales:{ y:{ beginAtZero:true } } }
+});
 });
 
 socket.on("errorMsg", (msg) => alert(msg));
