@@ -82,9 +82,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
   let settings={};
 
   // Recupero lista prodotti dal CSV tramite API
-  fetch("/api/products")
-    .then(res=>res.json())
-    .then(data=>{ productSelect.innerHTML=data.map(p=>`<option value="${p}">${p}</option>`).join(""); });
+   fetch('/api/products')
+    .then((response) => response.json())
+    .then((products) => {
+      products.forEach((product) => {
+        const option = document.createElement('option');
+        option.value = product;
+        option.textContent = product;
+        productSelect.appendChild(option);
+      });
+    })
+    .catch((error) => {
+      console.error('Errore nel recupero dei prodotti:', error);
+    });
 
   createRoomBtn.addEventListener("click", ()=>{
     const product = productSelect.value;
