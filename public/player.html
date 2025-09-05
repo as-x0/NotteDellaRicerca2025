@@ -39,6 +39,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const socket = io();
 
+  //DEBUG
+  socket.on("connect", () => console.log("Connesso come:", socket.id));
+  socket.on("gameStarted", (settings) => console.log("Game started ricevuto:", settings));
+  socket.on("settingsUpdated", (s) => console.log("Settings ricevute:", s));
+  socket.on("countriesList", (c) => console.log("Lista paesi ricevuta:", c));
+
   const playerNameInput = document.getElementById("playerName");
   const roomIdInput = document.getElementById("roomIdInput");
   const joinRoomBtn = document.getElementById("joinRoomBtn");
