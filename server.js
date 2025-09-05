@@ -81,12 +81,36 @@ io.on("connection", (socket) => {
     }
 
     const roomId = Math.random().toString(36).substring(2, 7).toUpperCase();
-    rooms[roomId] = { manager: socket.id, players: [], settings: null, started: false };
-    socket.join(roomId);
-
+    rooms[roomId] = {
+      manager: socket.id,
+      players: [],
+      settings: null,
+      started: false
+    };
     const products = [...new Set(productsData.map(p => p.Product))].filter(Boolean);
-
+    const availableCountries = [
+      ...new Set(productsData.filter(p => p.Product === settings.product && p.Year === 2023).map(p => p.Country))
+    ];
+    rooms[roomId].availableCountries = availableCountries;
+    socket.join(roomId);
+  
+    // Invia al manager la conferma di stanza creata
     socket.emit("roomCreated", { roomId, products });
+    
+    // Invia ai giocatori (se presenti) eventuale lista Paesi
+      io.to(roomId).emit("settingsUpdated", settings);
+      io.to(roomId).emit("countriesList", availableCountries);
+    });
+
+  // Avvio partita
+  socket.on("startGame", (roomId) => {
+    const room = rooms[roomId];
+    if (!room || !room.settings) {
+      socket.emit("errorMsg", "⚠️ Impostazioni non trovate. Salva prima le impostazioni.");
+      return;
+    }
+    room.started = true;
+    io.to(roomId).emit("gameStarted", room.settings);
   });
 
   // Join stanza
