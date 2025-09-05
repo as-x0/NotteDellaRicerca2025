@@ -23,10 +23,8 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     h1 { font-size: 2rem; margin-bottom: 20px; color: #1a237e; }
-    h2 { font-size: 1.4rem; margin: 20px 0; color: #000000; }
-    select, input[type="radio"] {
-      margin: 10px;
-    }
+    h2 { font-size: 1.4rem; margin: 20px 0; color: #388e3c; }
+    select, input[type="radio"] { margin: 10px; }
     button {
       margin: 10px;
       padding: 12px 25px;
@@ -81,6 +79,7 @@
     <div id="lobbyPage" style="display:none;">
       <h1>Cambiamento climatico e produzione di cibo</h1>
       <div class="row">
+        <!-- QR code statico da public/qr.png -->
         <img src="qr.png" alt="QR Code" class="qr">
         <div>
           <h2>Codice gioco: <span id="roomIdSpan"></span></h2>
@@ -134,7 +133,6 @@ const choicesList = document.getElementById("choicesList");
 
 const resultsList = document.getElementById("resultsList");
 const resultsChart = document.getElementById("resultsChart");
-const qrCode = document.getElementById("qrCode");
 
 let currentRoomId = null;
 let settings = {};
@@ -167,7 +165,6 @@ endGameBtn.addEventListener("click", () => {
 socket.on("roomCreated", ({ roomId, products }) => {
   currentRoomId = roomId;
   roomIdSpan.textContent = roomId;
-  qrCode.src = `https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=${window.location.origin}/player.html`;
 
   // popola select prodotti
   productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
