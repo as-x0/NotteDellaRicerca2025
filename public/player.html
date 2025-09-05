@@ -4,55 +4,15 @@
 <meta charset="UTF-8">
 <title>Player FAOSTAT Game</title>
 <script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-    color: #2c3e50;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .container {
-    background: #ffffffcc;
-    padding: 30px 50px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    max-width: 600px;
-    width: 100%;
-  }
-  h1, h3 {
-    color: #1a237e;
-    margin-bottom: 15px;
-  }
-  input, button {
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-  }
-  button {
-    background: #1976d2;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-  }
-  button:hover {
-    background: #1565c0;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  #countriesForm input {
-    width: 100%;
-    margin-bottom: 8px;
-  }
-  ul { padding-left: 0; list-style: none; }
+  body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #e0f7fa, #f1f8e9); color:#2c3e50; min-height:100vh; display:flex; justify-content:center; align-items:center; }
+  .container { background:#ffffffcc; padding:30px 50px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); max-width:600px; width:100%; }
+  h1,h3 { color:#1a237e; margin-bottom:15px; }
+  input, button { margin:5px 0; padding:8px; border-radius:8px; }
+  button { background:#1976d2;color:#fff;border:none;cursor:pointer;font-weight:bold; transition:all 0.2s; }
+  button:hover { background:#1565c0; transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.2); }
+  #countriesForm input { display:block; margin-bottom:5px; }
 </style>
 </head>
 <body>
@@ -80,72 +40,79 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", ()=>{
   const socket = io();
+
   const playerNameInput = document.getElementById("playerName");
   const roomIdInput = document.getElementById("roomIdInput");
   const joinRoomBtn = document.getElementById("joinRoomBtn");
+
   const gameArea = document.getElementById("gameArea");
   const countriesForm = document.getElementById("countriesForm");
   const submitCountriesBtn = document.getElementById("submitCountriesBtn");
   const chooseCountriesHeader = document.getElementById("chooseCountriesHeader");
+
   const resultsArea = document.getElementById("resultsArea");
   const resultsList = document.getElementById("resultsList");
   const homeBtn = document.getElementById("homeBtn");
 
-  let currentRoomId = null;
-  let numCountries = 0;
+  let currentRoomId=null;
+  let numCountries=0;
+  let availableCountries=[];
 
-  joinRoomBtn.addEventListener("click", () => {
+  joinRoomBtn.addEventListener("click", ()=>{
     const name = playerNameInput.value.trim();
     const roomId = roomIdInput.value.trim();
     if(!name||!roomId) return alert("Inserisci nome e Room ID!");
-    currentRoomId = roomId;
-    socket.emit("joinRoom", { roomId, name });
-    joinRoomBtn.disabled = true;
-    alert(`Sei entrato nella stanza ${roomId} come ${name}! Attendi che la partita venga avviata...`);
+    currentRoomId=roomId;
+    socket.emit("joinRoom",{roomId,name});
+    joinRoomBtn.disabled=true;
   });
 
-  socket.on("settingsUpdated", settings => {
+  socket.on("settingsUpdated", settings=>{
     numCountries = settings.numCountries;
     chooseCountriesHeader.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
   });
 
-  socket.on("countriesList", countries => {
-    gameArea.style.display = "block";
-    countriesForm.innerHTML = "";
-    for(let i=0;i<numCountries;i++){
-      const input = document.createElement("input");
-      input.setAttribute("list","countriesDatalist");
-      input.placeholder = `Paese ${i+1}`;
-      input.required = true;
-      countriesForm.appendChild(input);
-    }
+  socket.on("countriesList", countries=>{
+    availableCountries = countries;
+    gameArea.style.display="block";
+    countriesForm.innerHTML="";
+
     let datalist = document.getElementById("countriesDatalist");
     if(!datalist){
-      datalist = document.createElement("datalist");
-      datalist.id = "countriesDatalist";
+      datalist=document.createElement("datalist");
+      datalist.id="countriesDatalist";
       document.body.appendChild(datalist);
     }
     datalist.innerHTML = countries.map(c=>`<option value="${c}">`).join("");
+
+    for(let i=0;i<numCountries;i++){
+      const input=document.createElement("input");
+      input.setAttribute("list","countriesDatalist");
+      input.placeholder=`Paese ${i+1}`;
+      input.required=true;
+      countriesForm.appendChild(input);
+    }
   });
 
-  submitCountriesBtn.addEventListener("click", e => {
+  submitCountriesBtn.addEventListener("click",e=>{
     e.preventDefault();
     const selectedCountries = Array.from(countriesForm.querySelectorAll("input")).map(i=>i.value.trim()).filter(Boolean);
     if(selectedCountries.length!==numCountries) return alert(`Devi scegliere esattamente ${numCountries} Paesi!`);
-    selectedCountries.forEach(c=>socket.emit("selectCountry",{ roomId: currentRoomId, country:c }));
+    selectedCountries.forEach(c=>socket.emit("selectCountry",{roomId:currentRoomId,country:c}));
+    submitCountriesBtn.disabled=true;
     alert("Scelte inviate!");
-    submitCountriesBtn.disabled = true;
   });
 
-  socket.on("gameEnded", ({ leaderboard }) => {
-    gameArea.style.display = "none";
-    resultsArea.style.display = "block";
+  socket.on("gameEnded", ({leaderboard})=>{
+    gameArea.style.display="none";
+    resultsArea.style.display="block";
     resultsList.innerHTML = leaderboard.map((p,i)=>`<li>${i+1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join("");
   });
 
-  socket.on("errorMsg", msg => alert(msg));
+  socket.on("errorMsg", msg=>alert(msg));
+
   homeBtn.addEventListener("click", ()=>window.location.reload());
 });
 </script>
