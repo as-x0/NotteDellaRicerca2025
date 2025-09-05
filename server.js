@@ -69,6 +69,7 @@ fs.createReadStream(csvPath)
     csvLoaded = true;
     console.log("✅ CSV caricato, righe:", productsData.length);
     console.log("Prime 5 righe:", productsData.slice(0,5));
+    console.log("Paesi:", productsData.Country);
   })
   .on("error", (err) => console.error("Errore apertura CSV:", err));
 
