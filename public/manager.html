@@ -1,199 +1,123 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Manager FAOSTAT Game</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background: #f4f6f9;
-      color: #2c3e50;
-    }
-    h1, h2, h3 {
-      text-align: center;
-    }
-    .section {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    select, input, button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    button {
-      background: #3498db;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #2980b9;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      padding: 6px 0;
-      border-bottom: 1px solid #eee;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Manager FAOSTAT Game</title>
+<script src="/socket.io/socket.io.js"></script>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; background:#f4f6f9; color:#2c3e50; }
+h1,h2,h3{text-align:center;}
+.section{max-width:600px;margin:20px auto;padding:20px;background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+label, select, input, button{width:100%;margin-bottom:10px;}
+button{padding:10px;background:#3498db;color:white;cursor:pointer;border:none;border-radius:8px;}
+button:hover{background:#2980b9;}
+ul{list-style:none;padding:0;}
+li{padding:6px 0;border-bottom:1px solid #eee;}
+</style>
 </head>
 <body>
-  <h1>🌍 Manager</h1>
+<h1>🌍 Manager</h1>
 
-  <div id="settingsSection" class="section">
-    <h2>Impostazioni di gioco</h2>
-    <label for="productSelect">Prodotto</label>
-    <select id="productSelect"></select>
+<div class="section" id="settingsSection">
+  <h2>Impostazioni di gioco</h2>
+  <label for="productSelect">Prodotto</label>
+  <select id="productSelect"></select>
+  <label for="yearInput">Anno</label>
+  <input type="number" id="yearInput" value="2023" min="2000" max="2025">
+  <label for="numCountriesInput">Numero di Paesi da scegliere</label>
+  <input type="number" id="numCountriesInput" value="3" min="1" max="10">
+  <button id="createRoomBtn">Crea Stanza</button>
+</div>
 
-    <p>Anno: 2023</p>
+<div class="section hidden" id="roomSection">
+  <h2>Codice Stanza: <span id="roomIdDisplay"></span></h2>
+  <h3>Giocatori connessi:</h3>
+  <ul id="playersList"></ul>
+  <button id="endGameBtn">Termina Gioco</button>
+</div>
 
-    <label for="numCountriesSelect">Numero di Paesi da scegliere</label>
-    <select id="numCountriesSelect">
-      <option value="3">3</option>
-      <option value="5">5</option>
-    </select>
+<div class="section hidden" id="resultsSection">
+  <h2>Classifica</h2>
+  <ul id="resultsList"></ul>
+  <canvas id="resultsChart"></canvas>
+  <br>
+  <button id="homeBtn">Torna alla Home</button>
+</div>
 
-    <button id="createRoomBtn">Crea Stanza</button>
-  </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const socket = io();
 
-  <div id="roomSection" class="section hidden">
-    <h2>Codice Stanza: <span id="roomIdDisplay"></span></h2>
-    <h3>Giocatori connessi:</h3>
-    <ul id="playersList"></ul>
-    <button id="startGameBtn">Avvia Gioco</button>
-  </div>
+  const productSelect = document.getElementById("productSelect");
+  const yearInput = document.getElementById("yearInput");
+  const numCountriesInput = document.getElementById("numCountriesInput");
+  const createRoomBtn = document.getElementById("createRoomBtn");
+  const settingsSection = document.getElementById("settingsSection");
+  const roomSection = document.getElementById("roomSection");
+  const roomIdDisplay = document.getElementById("roomIdDisplay");
+  const playersList = document.getElementById("playersList");
+  const endGameBtn = document.getElementById("endGameBtn");
+  const resultsSection = document.getElementById("resultsSection");
+  const resultsList = document.getElementById("resultsList");
+  const resultsChart = document.getElementById("resultsChart");
+  const homeBtn = document.getElementById("homeBtn");
 
-  <div id="gameSection" class="section hidden">
-    <h2>Gioco in corso...</h2>
-    <p>I giocatori stanno facendo le loro scelte.</p>
-    <button id="endGameBtn">Termina Gioco</button>
-  </div>
+  let currentRoomId = null;
 
-  <div id="resultsSection" class="section hidden">
-    <h2>Classifica</h2>
-    <ul id="resultsList"></ul>
-    <canvas id="resultsChart"></canvas>
-    <br>
-    <button id="homeBtn">Torna alla Home</button>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const socket = io();
-
-      const productSelect = document.getElementById("productSelect");
-      const yearInput = document.getElementById("yearInput");
-      const numCountriesInput = document.getElementById("numCountriesInput");
-      const createRoomBtn = document.getElementById("createRoomBtn");
-
-      const settingsSection = document.getElementById("settingsSection");
-      const roomSection = document.getElementById("roomSection");
-      const roomIdDisplay = document.getElementById("roomIdDisplay");
-      const playersList = document.getElementById("playersList");
-      const startGameBtn = document.getElementById("startGameBtn");
-
-      const gameSection = document.getElementById("gameSection");
-      const endGameBtn = document.getElementById("endGameBtn");
-
-      const resultsSection = document.getElementById("resultsSection");
-      const resultsList = document.getElementById("resultsList");
-      const resultsChart = document.getElementById("resultsChart");
-      const homeBtn = document.getElementById("homeBtn");
-
-      let currentRoomId = null;
-
-      // Carica lista prodotti da API
-      fetch("/api/products")
-        .then(res => res.json())
-        .then(products => {
-          productSelect.innerHTML = products
-            .map(p => `<option value="${p}">${p}</option>`)
-            .join("");
-        });
-
-      // Crea stanza
-      createRoomBtn.addEventListener("click", () => {
-        socket.emit("createRoom");
-      });
-
-      // Conferma creazione stanza
-      socket.on("roomCreated", ({ roomId }) => {
-        currentRoomId = roomId;
-        roomIdDisplay.textContent = roomId;
-        settingsSection.classList.add("hidden");
-        roomSection.classList.remove("hidden");
-        alert(`✅ Stanza creata con codice ${roomId}`);
-
-        const product = productSelect.value;
-        const year = parseInt(yearInput.value);
-        const numCountries = parseInt(numCountriesInput.value);
-        socket.emit("setSettings", { roomId, product, year, numCountries });
-      });
-
-      socket.on("playerList", (players) => {
-        playersList.innerHTML = players.map(p => `<li>${p.name}</li>`).join("");
-      });
-
-      startGameBtn.addEventListener("click", () => {
-        socket.emit("startGame", { roomId: currentRoomId });
-        roomSection.classList.add("hidden");
-        gameSection.classList.remove("hidden");
-        alert("🚀 Gioco avviato!");
-      });
-
-      endGameBtn.addEventListener("click", () => {
-        socket.emit("endGame", { roomId: currentRoomId });
-      });
-
-      socket.on("gameEnded", ({ leaderboard, topCountries, totalWorld, settings }) => {
-        gameSection.classList.add("hidden");
-        resultsSection.classList.remove("hidden");
-
-        resultsList.innerHTML = leaderboard
-          .map((p, i) => `<li>${i+1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
-          .join("");
-
-        const ctx = resultsChart.getContext("2d");
-        new Chart(ctx, {
-          type: "bar",
-          data: {
-            labels: topCountries.map(c => c.Country),
-            datasets: [{
-              label: `Esportazioni ${settings.product} ${settings.year}`,
-              data: topCountries.map(c => c.Value),
-              backgroundColor: 'rgba(54, 162, 235, 0.6)'
-            }]
-          },
-          options: { responsive: true, plugins: { legend: { display: false } } }
-        });
-      });
-
-      socket.on("errorMsg", (msg) => alert(msg));
-
-      homeBtn.addEventListener("click", () => {
-        window.location.reload();
-      });
+  // Carica lista prodotti
+  fetch('/api/products')
+    .then(res=>res.json())
+    .then(products=>{
+      productSelect.innerHTML = products.map(p=>`<option value="${p}">${p}</option>`).join('');
     });
-  </script>
+
+  createRoomBtn.addEventListener("click", () => {
+    const product = productSelect.value;
+    const year = parseInt(yearInput.value);
+    const numCountries = parseInt(numCountriesInput.value);
+    socket.emit("createRoom");
+    socket.once("roomCreated", ({ roomId }) => {
+      currentRoomId = roomId;
+      roomIdDisplay.textContent = roomId;
+      settingsSection.classList.add("hidden");
+      roomSection.classList.remove("hidden");
+
+      // Invia settings al server
+      socket.emit("setSettings", { roomId, product, year, numCountries });
+    });
+  });
+
+  // Aggiorna lista giocatori in tempo reale
+  socket.on("playerList", (players) => {
+    playersList.innerHTML = players.map(p=>`<li>${p.name} (${p.countries.length})</li>`).join('');
+  });
+
+  // Fine gioco
+  endGameBtn.addEventListener("click", () => {
+    socket.emit("endGame", { roomId: currentRoomId });
+  });
+
+  // Mostra risultati
+  socket.on("gameEnded", ({ leaderboard, topCountries }) => {
+    roomSection.classList.add("hidden");
+    resultsSection.classList.remove("hidden");
+
+    resultsList.innerHTML = leaderboard.map((p,i)=>`<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join('');
+
+    const ctx = resultsChart.getContext("2d");
+    new Chart(ctx, {
+      type:'bar',
+      data:{
+        labels: topCountries.map(c=>c.Country),
+        datasets:[{label:'Top Paesi',data:topCountries.map(c=>c.Value),backgroundColor:'rgba(54,162,235,0.6)'}]
+      },
+      options:{responsive:true,plugins:{legend:{display:false}}}
+    });
+  });
+
+  homeBtn.addEventListener("click", ()=>location.reload());
+});
+</script>
 </body>
 </html>
