@@ -7,8 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
   body {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
     color: #2c3e50;
@@ -25,154 +24,100 @@
     max-width: 800px;
     width: 100%;
   }
-  h1, h3 {
-    color: #1a237e;
-    margin-bottom: 15px;
-  }
-  select, input[type="radio"] {
-    margin: 5px 0;
-    padding: 5px;
-  }
+  h1,h3 { color:#1a237e; margin-bottom:15px; }
+  select,input[type="radio"],button { margin:5px 0; padding:8px; border-radius:8px; }
   button {
-    margin: 5px 5px 15px 0;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background: #1976d2;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    background:#1976d2;color:#fff;border:none;cursor:pointer;font-weight:bold;
     transition: all 0.2s ease-in-out;
   }
-  button:hover {
-    background: #1565c0;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  li {
-    margin-bottom: 5px;
-  }
-  canvas {
-    margin-top: 15px;
-  }
+  button:hover { background:#1565c0; transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+  ul { list-style:none; padding-left:0; }
+  canvas { margin-top:15px; }
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>Manager</h1>
+<h1>Manager</h1>
 
-  <!-- Creazione stanza -->
-  <div id="createSection">
-    <button id="createRoomBtn">Crea Stanza</button>
-  </div>
+<h3>Impostazioni gioco</h3>
+<label>Prodotto:
+  <select id="productSelect"></select>
+</label>
+<p>Anno: 2023</p>
+<label>Numero Paesi:</label>
+<input type="radio" name="numCountries" value="3" checked> 3
+<input type="radio" name="numCountries" value="5"> 5
+<br>
+<button id="createRoomBtn">Crea Stanza</button>
 
-  <!-- Stanza attiva -->
-  <div id="roomSection" style="display:none;">
-    <p>ID Stanza: <span id="roomIdSpan"></span></p>
+<div id="roomSection" style="display:none;">
+  <p>ID Stanza: <span id="roomIdSpan"></span></p>
 
-    <h3>Impostazioni gioco</h3>
-    <label>Prodotto:
-      <select id="productSelect"></select>
-    </label>
-    <p>Anno: 2023</p>
-    <label>Numero Paesi:</label>
-    <input type="radio" name="numCountries" value="3" checked> 3
-    <input type="radio" name="numCountries" value="5"> 5
-    <br>
-    <button id="saveSettingsBtn">Salva impostazioni</button>
-    <button id="startGameBtn">Avvia Gioco</button>
-    <button id="endGameBtn">Termina Gioco</button>
+  <h3>Giocatori</h3>
+  <ul id="playerList"></ul>
 
-    <h3>Giocatori</h3>
-    <ul id="playerList"></ul>
-
-    <h3>Risultati</h3>
-    <ul id="resultsList"></ul>
-    <canvas id="resultsChart"></canvas>
-    <br>
-    <button onclick="window.location.reload()">Torna alla Home</button>
-  </div>
+  <h3>Risultati</h3>
+  <ul id="resultsList"></ul>
+  <canvas id="resultsChart"></canvas>
+  <br>
+  <button id="startGameBtn">Avvia Gioco</button>
+  <button id="endGameBtn">Termina Gioco</button>
+  <button onclick="window.location.reload()">Torna alla Home</button>
+</div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", ()=>{
   const socket = io();
+  const productSelect = document.getElementById("productSelect");
   const createRoomBtn = document.getElementById("createRoomBtn");
   const roomSection = document.getElementById("roomSection");
   const roomIdSpan = document.getElementById("roomIdSpan");
-  const productSelect = document.getElementById("productSelect");
-  const saveSettingsBtn = document.getElementById("saveSettingsBtn");
-  const startGameBtn = document.getElementById("startGameBtn");
-  const endGameBtn = document.getElementById("endGameBtn");
   const playerList = document.getElementById("playerList");
   const resultsList = document.getElementById("resultsList");
+  const startGameBtn = document.getElementById("startGameBtn");
+  const endGameBtn = document.getElementById("endGameBtn");
 
-  let currentRoomId = null;
-  let settings = {};
+  let currentRoomId=null;
+  let settings={};
 
-  createRoomBtn.addEventListener("click", () => socket.emit("createRoom"));
+  // Recupero lista prodotti dal CSV tramite API
+  fetch("/api/products")
+    .then(res=>res.json())
+    .then(data=>{ productSelect.innerHTML=data.map(p=>`<option value="${p}">${p}</option>`).join(""); });
 
-  saveSettingsBtn.addEventListener("click", () => {
+  createRoomBtn.addEventListener("click", ()=>{
     const product = productSelect.value;
     const numCountries = parseInt(document.querySelector('input[name="numCountries"]:checked').value);
-    settings = { product, year: 2023, numCountries };
-    socket.emit("setSettings", { roomId: currentRoomId, ...settings });
-    alert("Impostazioni salvate!");
+    settings={product,numCountries,year:2023};
+    socket.emit("createRoom", { product,numCountries });
   });
 
-  startGameBtn.addEventListener("click", () => {
-    socket.emit("startGame", currentRoomId);
-    alert("Il gioco è stato avviato!");
+  socket.on("roomCreated", ({roomId,settings})=>{
+    currentRoomId=roomId;
+    roomIdSpan.textContent=roomId;
+    roomSection.style.display="block";
+    alert(`Stanza creata con ID ${roomId}`);
   });
 
-  endGameBtn.addEventListener("click", () => {
-    socket.emit("endGame", currentRoomId);
-    alert("Il gioco è terminato!");
+  socket.on("playerList", players=>{
+    playerList.innerHTML=players.map(p=>`<li>${p.name} - ${p.countries.join(", ")||"Nessuna scelta"}</li>`).join("");
   });
 
-  socket.on("roomCreated", ({ roomId, products }) => {
-    currentRoomId = roomId;
-    roomIdSpan.textContent = roomId;
-    roomSection.style.display = "block";
-    if (products.length === 0) return alert("❌ Nessun prodotto disponibile!");
-    productSelect.innerHTML = products.map(p => `<option value="${p}">${p}</option>`).join("");
-  });
+  startGameBtn.addEventListener("click", ()=>{ socket.emit("startGame", currentRoomId); alert("Gioco avviato!"); });
+  endGameBtn.addEventListener("click", ()=>{ socket.emit("endGame", currentRoomId); alert("Gioco terminato!"); });
 
-  socket.on("playerList", players => {
-    playerList.innerHTML = players.map(p => `<li>${p.name} - ${p.countries.join(", ") || "Nessuna scelta"}</li>`).join("");
-  });
-
-  socket.on("gameEnded", ({ leaderboard, topCountries, totalWorld }) => {
-    resultsList.innerHTML = leaderboard
-      .map((p,i) => `<li>${i+1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join("");
-    
-    const ctx = document.getElementById("resultsChart").getContext("2d");
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: topCountries.map(c => c.Country),
-        datasets: [{
-          label: `Esportazioni ${settings.product} 2023`,
-          data: topCountries.map(c => c.Value),
-          backgroundColor: 'rgba(54, 162, 235, 0.6)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { title: { display: true, text: `Totale mondiale: ${totalWorld.toLocaleString()} t` } },
-        scales: { y: { beginAtZero: true } }
-      }
+  socket.on("gameEnded", ({leaderboard, topCountries, totalWorld})=>{
+    resultsList.innerHTML = leaderboard.map((p,i)=>`<li>${i+1}. <strong>${p.name}</strong> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`).join("");
+    const ctx=document.getElementById("resultsChart").getContext("2d");
+    new Chart(ctx,{
+      type:"bar",
+      data:{ labels:topCountries.map(c=>c.Country), datasets:[{label:`Esportazioni ${settings.product} 2023`, data:topCountries.map(c=>c.Value), backgroundColor:'rgba(54, 162, 235, 0.6)', borderColor:'rgba(54, 162, 235,1)', borderWidth:1 }]},
+      options:{ responsive:true, plugins:{ title:{ display:true, text:`Totale mondiale: ${totalWorld.toLocaleString()} t`}}, scales:{y:{beginAtZero:true}} }
     });
   });
 
-  socket.on("errorMsg", msg => alert(msg));
+  socket.on("errorMsg", msg=>alert(msg));
 });
 </script>
 </body>
