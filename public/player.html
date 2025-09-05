@@ -22,6 +22,10 @@
   <button id="joinRoomBtn">Entra</button>
 </div>
 
+<div id="waitingArea" style="display:none;">
+  <h3 id="status">In attesa del manager...</h3>
+</div>
+
 <div id="gameArea" style="display:none;">
   <h3 id="chooseText">Scegli i Paesi</h3>
   <form id="countriesForm"></form>
@@ -44,6 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const roomIdInput = document.getElementById("roomIdInput");
   const joinRoomBtn = document.getElementById("joinRoomBtn");
 
+  const waitingArea = document.getElementById("waitingArea");
+  const statusText = document.getElementById("status");
+
   const gameArea = document.getElementById("gameArea");
   const countriesForm = document.getElementById("countriesForm");
   const submitCountriesBtn = document.getElementById("submitCountriesBtn");
@@ -55,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentRoomId = null;
   let numCountries = 0;
+  let gameStarted = false;
 
   // Entra in stanza
   joinRoomBtn.addEventListener("click", () => {
@@ -62,8 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const roomId = roomIdInput.value.trim();
     if (!name || !roomId) return alert("Inserisci nome e Room ID!");
     currentRoomId = roomId;
+
     socket.emit("joinRoom", { roomId, name });
     joinRoomBtn.disabled = true;
+
+    joinSection.style.display = "none";
+    waitingArea.style.display = "block";
+    statusText.textContent = "In attesa del manager...";
   });
 
   socket.on("connect", () => {
@@ -76,9 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
     chooseText.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
   });
 
-  // Riceve lista Paesi disponibili
+  // Riceve lista Paesi disponibili (ancora in attesa di start)
   socket.on("countriesList", (countries) => {
-    gameArea.style.display = "block";
     countriesForm.innerHTML = "";
 
     for (let i = 0; i < numCountries; i++) {
@@ -99,9 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
     datalist.innerHTML = countries.map(c => `<option value="${c}">`).join("");
   });
 
+  // 🔹 Nuovo: riceve evento di avvio gioco dal manager
+  socket.on("gameStarted", () => {
+    gameStarted = true;
+    waitingArea.style.display = "none";
+    gameArea.style.display = "block";
+    statusText.textContent = "";
+  });
+
   // Invio Paesi scelti
   submitCountriesBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    if (!gameStarted) return alert("Il gioco non è ancora iniziato!");
+
     const selectedCountries = Array.from(countriesForm.querySelectorAll("input"))
                                   .map(i => i.value.trim())
                                   .filter(Boolean);
