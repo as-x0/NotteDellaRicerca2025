@@ -5,15 +5,16 @@
   <title>Player - FAOSTAT Game</title>
   <script src="/socket.io/socket.io.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; text-align:center; margin:30px; }
+    body { font-family: Arial, sans-serif; text-align:center; margin:30px; background:#f4f6f9; }
     h1 { color:#2c3e50; margin-bottom:20px; }
-    button { padding:10px 20px; margin:10px; cursor:pointer; }
-    input { padding:8px; margin:5px; }
+    button { padding:10px 20px; margin:10px; cursor:pointer; border:none; border-radius:6px; background:#3498db; color:white; font-weight:bold; }
+    button:hover { background:#2980b9; }
+    input { padding:8px; margin:5px; border:1px solid #ccc; border-radius:6px; }
     .hidden { display:none; }
   </style>
 </head>
 <body>
-  <h1>Player - Cambiamento climatico e produzione di cibo</h1>
+  <h1>👩‍🌾 Player - Cambiamento climatico e produzione di cibo</h1>
 
   <!-- 1. Entra -->
   <div id="joinSection">
@@ -41,7 +42,7 @@
 
   <!-- 5. Risultati -->
   <div id="resultsSection" class="hidden">
-    <h3>Classifica</h3>
+    <h3>🏆 Classifica</h3>
     <ul id="resultsList"></ul>
     <button id="homeBtn">Torna alla Home</button>
   </div>
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
   joinRoomBtn.addEventListener("click", () => {
     const name = playerNameInput.value.trim();
     const roomId = roomIdInput.value.trim();
-    if(!name||!roomId) return alert("Inserisci nome e Room ID!");
+    if(!name || !roomId) return alert("Inserisci nome e codice stanza!");
     currentRoomId = roomId;
     socket.emit("joinRoom", { roomId, name });
     joinSection.classList.add("hidden");
@@ -80,13 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
     alert(`✅ Sei entrato nella stanza ${roomId}`);
   });
 
-  // 2. Riceve impostazioni
+  // 2. Riceve impostazioni dal manager
   socket.on("settingsUpdated", (settings) => {
     numCountries = settings.numCountries;
     chooseTitle.textContent = `Scegli i maggiori esportatori di ${settings.product.toLowerCase()} nel ${settings.year}`;
   });
 
-  // 3. Inizio gioco
+  // 3. Riceve lista paesi disponibili e mostra input
   socket.on("countriesList", (countries) => {
     waitSection.classList.add("hidden");
     selectSection.classList.remove("hidden");
@@ -109,39 +110,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 4. Invio scelte
+  // 4. Invio scelte al server
   submitCountriesBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const selectedCountries = Array.from(countriesForm.querySelectorAll("input"))
-      .map(i=>i.value.trim()).filter(Boolean);
+      .map(i => i.value.trim())
+      .filter(Boolean);
+
     if (selectedCountries.length !== numCountries) {
       return alert(`Devi scegliere esattamente ${numCountries} Paesi!`);
     }
-    selectedCountries.forEach(c=>{
+
+    selectedCountries.forEach(c => {
       socket.emit("selectCountry", { roomId: currentRoomId, country: c });
     });
+
     selectSection.classList.add("hidden");
     waitResultsSection.classList.remove("hidden");
     alert("✅ Scelte inviate!");
   });
 
-  // 5. Risultati
+  // 5. Mostra risultati finali
   socket.on("gameEnded", ({ leaderboard }) => {
     waitResultsSection.classList.add("hidden");
     resultsSection.classList.remove("hidden");
 
     resultsList.innerHTML = leaderboard
-      .map((p,i)=>`<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
+      .map((p,i) => `<li>${i+1}. <b>${p.name}</b> → ${p.score.toLocaleString()} t (${p.percentage.toFixed(2)}%)</li>`)
       .join("");
   });
 
-  // Torna alla Home
+  // Ritorna alla home
   homeBtn.addEventListener("click", () => {
     resultsSection.classList.add("hidden");
     joinSection.classList.remove("hidden");
+    playerNameInput.value = "";
+    roomIdInput.value = "";
   });
 
-  socket.on("errorMsg", (msg)=>alert(msg));
+  // Gestione errori
+  socket.on("errorMsg", (msg) => alert(msg));
 });
 </script>
 </body>
