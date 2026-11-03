@@ -42,8 +42,8 @@ The application uses FAOSTAT data to support the game's comparisons and visualiz
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/as-x0/NotteDellaRicerca2025
+   cd NotteDellaRicerca2025
    ```
 
 2. Install the dependencies:
