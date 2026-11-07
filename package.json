@@ -15,9 +15,6 @@
     "socket.io": "^4.7.5",
     "csv-parser": "^3.0.0"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.0"
-  },
   "engines": {
     "node": "26.13.0"
   },
